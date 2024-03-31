@@ -41,16 +41,10 @@ Phần bù của một biến cố E là tập hợp các **điểm mẫu thuộ
 
 **Xác suất phần bù** của biến cố E:
 
-
+{: .highlight }
 $$
 P(E^c) = 1 - P(E)
 $$
-
-```markdown
-{: .highlight }
-A paragraph 
-```
-
 
 Ví dụ:
 
