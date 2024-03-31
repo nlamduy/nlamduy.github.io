@@ -1,6 +1,7 @@
 ---
 title: About
-layout: home
+layout: about
+nav_order: 1
 ---
 
 My name is Nguyen Lam Duy and this is my blog where I've curated a collection of my learning journey, interests, and the personal projects that I'm most proud of.
