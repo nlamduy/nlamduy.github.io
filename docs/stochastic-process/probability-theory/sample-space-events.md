@@ -7,7 +7,7 @@ grand_parent: Stochastic Process
 nav_order: 1
 ---
 
-# Navigation Structure
+# Sample Space and Events
 {: .no_toc }
 
 ## Table of contents

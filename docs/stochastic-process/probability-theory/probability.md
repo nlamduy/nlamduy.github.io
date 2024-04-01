@@ -7,7 +7,7 @@ grand_parent: Stochastic Process
 nav_order: 2
 ---
 
-# Navigation Structure
+# Probability
 {: .no_toc }
 
 ## Table of contents
@@ -16,8 +16,6 @@ nav_order: 2
 1. TOC
 {:toc}
 
-
-# Probability
 
 **Các nguyên tắc cơ bản** khi tính xác suất:
 
@@ -32,7 +30,7 @@ nav_order: 2
 
 **Nguyên tắc thứ 3 là quan trọng nhất**.
 
-## Addition law
+# Addition law
 
 **Xác suất cộng** của 2 sự kiện:
 
@@ -62,7 +60,7 @@ Một loại thuốc có thông tin như sau:
 
 Xác suất bị ít nhất một tác dụng phụ: $$P(H \cup N) = P(H) + P(N) - P(H \cap N) = 0.1 + 0.15 - 0.05 = 0.2$$
 
-## Poincaré's theorem (inclusion-exclusion principle)
+# Poincaré's theorem (inclusion-exclusion principle)
 
 Định lý [Poincaré](https://vi.wikipedia.org/wiki/Henri_Poincaré) dùng để tính **xác suất cộng của $$n$$ biến cố**.
 
@@ -71,11 +69,14 @@ Ví dụ, tính xác suất của $$P(E_1 \cup E_2 \cup E_3)$$.
 {: .highlight }
 
 $$
-P(E_1 \cup E_2 \cup E_3) = P(E_1) + P(E_2) + P(E_3) - P(E_1 \cap E_2) - P(E_1 \cap E_3) - P(E_2 \cap E_3) + P(E_1 \cap E_2 \cap E_3)
+\begin{aligned}
+P(E_1 \cup E_2 \cup E_3) = P(E_1) + P(E_2) + P(E_3) - P(E_1 \cap E_2) \\
+ - P(E_1 \cap E_3) - P(E_2 \cap E_3) + P(E_1 \cap E_2 \cap E_3)
+\end{aligned}
 $$
 
 
-## Conditional probabilities
+# Conditional probabilities
 
 **Xác suất có điều kiện** của sự kiện $$E_1$$ khi $$E_2$$ đã xảy ra được tính:
 
@@ -112,7 +113,7 @@ $$
 P(Y | F) = \frac{P(Y \cap F)}{P(F)} = \frac{.03}{.20} = .15
 $$
 
-## Independent events
+# Independent events
 
 **Hai biến cố $$E_1$$ và $$E_2$$ là độc lập** nếu:
 
@@ -123,19 +124,21 @@ P(E_1 | E_2) = P(E_1)
 $$
 
 
-Tuy nhiên, đối với **từ ba biến cố trở lên**, cần phải kiểm tra đồng thời:
+Tuy nhiên, đối với **ba biến cố trở lên**, cần phải kiểm tra đồng thời:
 
 {: .highlight }
 
 $$
-E_1 \perp E_2 \perp E_3  = \begin{cases} 
-E_1 \perp E_2, E_1 \perp E_3, E_2 \perp E_3 \\
-P(E_1 E_2 E_3) = P(E_1)P(E_2)P(E_3)
+E_1 \perp E_2 \perp E_3  = \begin{cases}
+P(E_1 | E_2) = P(E_1)\\
+P(E_1 | E_3) = P(E_1)\\
+P(E_2 | E_3) = P(E_2)\\
+P(E_1 \cap E_2 \cap E_3) = P(E_1)P(E_2)P(E_3)
 \end{cases}
 $$
 
 
-## Multiplication law
+# Multiplication law
 
 **Quy tắc nhân** được dùng để tính xác suất của phần giao hai biến cố:
 
@@ -160,7 +163,7 @@ $$
 
 
 
-## Total probability law
+# Total probability law
 
 Quy tắc **xác suất toàn phần**:
 
@@ -178,16 +181,13 @@ Cho dãy $$\{A_1, A_2, A_3, ... A_i \}$$ là các sự kiện xung khắc và h�
 
 Giả sử, dãy $$\{A_1, A_2, A_3\}$$ là cơ sở của $$\Omega$$. Cho sự kiện bất kỳ $$E$$ thuộc $$\Omega$$. Sử dụng xác suất toàn phần để tính $$E$$: $$P(E) = P(E \| A_1)P(A_1) + P(E \| A_2)P(A_2) + P(E \| A_3)P(A_3)$$
 
-## Bayes' theorem 
+# Bayes' theorem 
 
 Thông thường, chúng ta phân tích với mức xác suất ban đầu, hay xác suất tiên nghiệm (prior probability). Định lý Bayes cung cấp công thức để tính xác suất hậu nghiệm (posterior probability) khi có thông tin mới được bổ sung.
 
-```mermaid
-flowchart LR;
-    A["Xác suất tiên nghiệm"] --> B["Thông tin mới"] --> C["Công thức Bayes"] --> D["Xác suất hậu nghiệm"]
-```
+**Xác suất tiên nghiệm ---> Thông tin mới ---> Bayes ---> Xác suất hậu nghiệm**
 
-### Two-event case
+## Two-event case
 
 Cho hai biến cố $$A,B$$, áp dụng định lý Bayes:
 
@@ -198,7 +198,7 @@ P(B | A) = \frac{P(A | B)P(B)}{P(A | B)P(B) + P(A | B^c)P(B^c)} = \frac{P(A | B)
 $$
 
 
-### Case of n events
+## Case of n events
 
 Cho dãy $$\{B_1, B_2,..., B_n\}$$ là cơ sở của $$\Omega$$.
 
@@ -209,7 +209,7 @@ P(B_i | A) = \frac{P(A|B_i)P(B_i)}{P(A)} = \frac{P(A|B)P(B)}{\Sigma^n_{i=1} P(A|
 $$
 
 
-### Tabular approach
+## Tabular approach
 
 Xét chất lượng cung cấp đơn hàng của hai nhà thầu A1 và A2:
 
@@ -231,7 +231,7 @@ Xét chất lượng cung cấp đơn hàng của hai nhà thầu A1 và A2:
 |        | 1.00       |                  | P(B) = .0305 | 1.0000            |
 
 
-## References
+# References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
 
