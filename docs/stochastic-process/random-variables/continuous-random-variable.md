@@ -1,13 +1,13 @@
 ---
 layout: default
 math: mathjax
-title: Continuous Random Variable
-parent: Probability Theory
+title: Continuous Random Variables
+parent: Random Variables
 grand_parent: Stochastic Process
 nav_order: 2
 ---
 
-# Continuous Random Variable
+# Continuous Random Variables
 {: .no_toc }
 
 ## Table of contents
@@ -30,20 +30,24 @@ Ví dụ:
 
 Hàm mật độ xác suất (PDF) của một biến ngẫu nhiên liên tục X được tính bằng:
 
-{:. highlight }
+{: .highlight }
 
 $$
 P\{X \in B\} = \int_B f_X(x)dx
 $$
 
-Trong đó: $$B \subset \mathbb{R}$$
+*Trong đó: $$B \subset \mathbb{R}$$*
 
 
 Ví dụ:
 
-Tính xác suất $$P\{X > 3\}$$ với $$B = (3, +\infty)$$: $$P\{X > 3\} = \int_3^{+\infty} f_X(x)dx$$.
+Tính xác suất $$P\{X > 3\}$$ với $$B = (3, +\infty)$$: 
+
+$$P\{X > 3\} = \int_3^{+\infty} f_X(x)dx$$.
 
 **Một số tính chất cơ bản:**
+
+{: .highlight }
 
 - Xác suất của biến ngẫu nhiên liên tục X nằm giữa đoạn $$(a,b)$$ là tích phân của hàm $$f_X$$ trên đoạn đó: $$P\{a \le X \le b\} = \int_a^b f_X(x)dx$$, cho $$a \le b$$
 
@@ -78,12 +82,10 @@ $$
 
 Trực quan hoá với Python:
 
-![pdf_example1](https://github.com/nlamduy/nlamduy.github.io/blob/3336c810381c58bf328747cc2d2190ef320c4a23/_assets/img/pdf_eg1.png)
+![pdf_eg1](/assets/img/stochastic-process/pdf_eg1.png)
 
 
-
-
-## References
+# References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
 
