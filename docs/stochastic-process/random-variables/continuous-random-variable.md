@@ -174,8 +174,6 @@ $$
 
 ![norm_eg1](/assets/img/stochastic-process/normal_eg1.png)
 
-Ví dụ 1: 
-
 Từ $$X \sim N(0,1)$$, có thể định nghĩa một biến $$Y = \alpha X + \beta$$ tuỳ ý, với $$Y \sim N(\beta, \alpha^2)$$. Cần lưu ý hai điểm sau:
 
 {: .highlight }
