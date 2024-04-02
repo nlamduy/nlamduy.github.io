@@ -131,6 +131,7 @@ $$
 
 Một số ứng dụng của phân phối mũ như tính xác suất giữa các lượt khách hàng đến quầy giao dịch, khoảng cách giữa các ổ gà trên đường.
 
+
 Ví dụ: thời gian trung bình để xử lý một hồ sơ vay là 15 phút và tuân theo phân phối mũ. Tìm xác suất hồ sơ được xử lý trong 6 đến 18 phút.
 
 $$\lambda = \frac{1}{\mu} = \frac{1}{15}$$
@@ -149,12 +150,72 @@ Trực quan hoá với Python:
 
 ![exp_eg1](/assets/img/stochastic-process/exp_eg1.png)
 
+{: .highlight }
 
+Tương tự như phân phối hình học (geometric distribution), phân phối mũ cũng có **tính không nhớ**.
+
+$$
+P\{X > x + t | X > t\} = P\{X > s\}
+$$
+
+Giả sử, một khách hàng đã chờ 15 phút ở ngân hàng, xác suất phải chờ thêm 5 phút để được phục vụ không bị ảnh hưởng bởi quá khứ.
+
+Mối quan hệ giữa phân phối Poisson và phân phối mũ có thể được diễn đạt như sau: Phân phối Poisson dùng để tính xác suất số lần xuất hiện trong một khoảng không gian, thời gian. Phân phối mũ cung cấp xác suất của khoảng giữa các lần xuất hiện.
+
+# Normal random variable
+
+Phân phối chuẩn (normal distribution) cũng là một trong những **phân phối quan trọng** và được ứng dụng rộng rãi. Cho X là biến ngẫu nhiên chuẩn **có hai tham số với trung bình (hay kỳ vọng) $$\mu > 0$$ và phương sai $$\sigma^2 > 0$$** (ký hiệu: $$X \sim N(0,1)$$), hàm mật độ xác suất (PDF) được cho bởi:
+
+{: .highlight }
+
+$$
+f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-(x - \mu)^2 / 2\sigma^2} \text{ , } -\infty < x < \infty
+$$
+
+![norm_eg1](/assets/img/stochastic-process/normal_eg1.png)
+
+Ví dụ 1: 
+
+Từ $$X \sim N(0,1)$$, có thể định nghĩa một biến $$Y = \alpha X + \beta$$ tuỳ ý, với $$Y \sim N(\beta, \alpha^2)$$. Cần lưu ý hai điểm sau:
+
+{: .highlight }
+- Cộng một hằng số $$\beta$$ vào biến ngẫu nhiên chuẩn chỉ làm thay đổi kỳ vọng (trung bình) của biến đó.
+- Nhân một hệ số $$\alpha$$ vào biến ngẫu nhiên chuẩn sẽ làm thay đổi phương sai thành $$\alpha^2$$.
+
+Trường hợp **trung bình $$\mu = 0$$ và độ lệch chuẩn $$\sigma = 1$$, ta có phân phối chuẩn chuẩn hoá** (standard normal distribution). **Ký tự $$z$$ thường được sử dụng** để ký hiệu cho biến ngẫu nhiên có phân phối đặc biệt này.
+
+Công thức để chuyển đổi một biến ngẫu nhiên $$x$$ bất kỳ về phân phối chuẩn chuẩn hoá:
+
+{: .highlight }
+
+$$
+z = \frac{x - \mu}{\sigma}
+$$
+
+Chuyển đổi về phân phối chuẩn chuẩn hoá sẽ giúp việc tính toán xác suất dễ dàng hơn, đặc biệt trong việc tính CDF. Việc chuyển đổi còn giúp chúng ta so sánh những biến có thang đo và phân phối khác nhau. Chẳng hạn, làm sao để so sánh điểm tiếng anh IELTS và TOEFL của hai sinh viên.
+
+Sau khi tính được giá trị $$z$$, có thể sử dụng bảng xác suất chuẩn hoá[^1] để tìm xác suất mong muốn. Các phần mềm như Geogebra cũng cung cấp công cụ để giải và trực quan hoá các kết quả.
+
+Ví dụ 1: Một cổ phiếu có lợi nhuận kỳ vọng là 5%, độ lệch chuẩn là 20% và tuân theo phân phối chuẩn. Tìm xác suất lợi nhuận từ 7%.
+
+Tìm giá trị $$z$$:
+
+$$
+z = \frac{0.07 - 0.05}{0.2} = 0.1
+$$
+
+Sử dụng z table, có thể tra được xác suất $$P\{x < 0.07\} =0.5398$$. Như vậy, xác suất có lợi nhuận từ 7% là 46.02%.  
 
 # References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
 
+CrashCourse. (2018, May 30). Z-Scores and Percentiles: Crash Course Statistics #18. [Youtube Video](https://www.youtube.com/watch?v=uAxyI_XfqXk).
+
 Nguyen Huu, Thai (n.d.). Lecture: Random Variables. Stochastic models and applications. University of Economics HCMC.
 
 Ross, S. M. (2019). Introduction to probability models. Academic Press.
+
+# Notes
+
+[^1]: Sử dụng https://www.z-table.com hoặc tương đương.
