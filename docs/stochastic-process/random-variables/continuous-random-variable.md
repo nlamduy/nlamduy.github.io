@@ -104,16 +104,16 @@ Phân phối đều thường được dùng để diễn tả những sự ki�
 Giả sử thời gian di chuyển từ nhà đến công ty có thể nhận bất kỳ giá trị nào trong khoảng từ 30 đến 45 phút. Xác suất di chuyển trong khoảng 35 đến 40 phút là bao nhiêu?
 
 $$
-P(35 \leq X \leq 40) = (40-35) \cdot \frac{1}{45-30} = \frac{5}{15} = \frac{1}{3} \approx 0.33
+P\{35 < X < 40\} = (40-35) \cdot \frac{1}{45-30} = \frac{5}{15} = \frac{1}{3} \approx 0.33
 $$
 
-Vậy xác suất di chuyển trong khoảng từ 35 đến 40 phút là $\frac{1}{3}$ hoặc khoảng 33.33%.
+Vậy xác suất di chuyển trong khoảng từ 35 đến 40 phút là $$\frac{1}{3}$$ hoặc khoảng 33.33%.
 
 Trực quan hoá với Python:
 
 ![uni_eg1](/assets/img/stochastic-process/uni_eg1.png)
 
-Như vậy, xác suất là diện tích của hình chữ nhật với chiều cao là $$\frac{1}{45 - 30}$$ và chiều rộng là $$P(35 \leq X \leq 40)$$.
+Như vậy, xác suất là diện tích của hình chữ nhật với chiều cao là $$\frac{1}{45 - 30}$$ và chiều rộng là $$P\{35 < X < 40\}$$.
 
 # Exponential random variable
 
