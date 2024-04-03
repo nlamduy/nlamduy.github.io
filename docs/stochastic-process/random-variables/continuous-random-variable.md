@@ -321,11 +321,36 @@ The probability that a batch of 500 screws has exactly 3 defective screws is 0.1
 
 **Từ các kết quả trên, xấp xỉ phân phối nhị thức của phân phối Poisson cho giá trị gần giá trị thực tế hơn phân phối chuẩn.**
 
+# Gamma random variable
+
+Phân phối Gamma cũng là một phân phối quan trọng và được ứng dụng rộng rãi, đặc biệt trong tài chính, kinh tế lượng, kỹ thuật xây dựng dân dụng và khí hậu học. Phân phối gamma là một dạng tổng quát hoá của phân phối mũ dùng để tính xác suất giữa hai sự kiện trong một quá trình Possion. Phân phối mũ, phân phối chi-square là những trường hợp đặc biệt của phân phối gamma.
+
+Cho biến ngẫu nhiên X tuân theo phân phối Gamma với $$\alpha > 0$$ và $$\lambda > 0$$, hàm mật độ xác suất (PDF) được cho bởi:
+
+{: .highlight }
+
+$$
+f(x) = \begin{cases}
+\frac{\lambda e^{-\lambda x}(\lambda x)^{\alpha - 1}}{\Gamma(\alpha)} \text{ , if } x \ge 0 \\
+0 \text{ , otherwise }
+\end{cases}
+$$
+
+Trong đó tích phân suy rộng: 
+
+$$
+\Gamma(\alpha) = \int_0^{\infty} e^{-x} x^{\alpha - 1} dx
+$$ 
+
+được gọi là hàm gamma.
+
 # References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
 
 CrashCourse. (2018, May 30). Z-Scores and Percentiles: Crash Course Statistics #18. [Youtube Video](https://www.youtube.com/watch?v=uAxyI_XfqXk).
+
+Eberly College of Science. (n.d.). 15.7 - A gamma example | STAT 414. (n.d.). PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/15/15.7
 
 Nguyen Huu, Thai (n.d.). Lecture: Random Variables. Stochastic models and applications. University of Economics HCMC.
 
