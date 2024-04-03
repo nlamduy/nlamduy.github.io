@@ -164,6 +164,8 @@ Mối quan hệ giữa phân phối Poisson và phân phối mũ có thể đư�
 
 # Normal random variable
 
+## Normal distribution
+
 Phân phối chuẩn (normal distribution) cũng là một trong những **phân phối quan trọng** và được ứng dụng rộng rãi. Cho X là biến ngẫu nhiên chuẩn **có hai tham số với trung bình (hay kỳ vọng) $$\mu > 0$$ và phương sai $$\sigma^2 > 0$$** (ký hiệu: $$X \sim N(0,1)$$), hàm mật độ xác suất (PDF) được cho bởi:
 
 {: .highlight }
@@ -180,6 +182,24 @@ Từ $$X \sim N(0,1)$$, có thể định nghĩa một biến $$Y = \alpha X + \
 - Cộng một hằng số $$\beta$$ vào biến ngẫu nhiên chuẩn chỉ làm thay đổi kỳ vọng (trung bình) của biến đó.
 - Nhân một hệ số $$\alpha$$ vào biến ngẫu nhiên chuẩn sẽ làm thay đổi phương sai thành $$\alpha^2$$.
 
+**Một số đặc điểm của phân phối chuẩn:**
+
+{: .highlight }
+1. Các phân phối chuẩn được phân biệt bởi 2 tham số: trung bình $$\mu$$ và độ lệch chuẩn $$\sigma$$ (hoặc phương sai $$\sigma^2$$).
+2. Điểm cao nhất của đường cong chuẩn nằm tại vị trí trung bình, đây cũng là trung vị (median) và mode của phân phối.
+3. Giá trị trung bình của phân phối chuẩn có nhận bất kỳ số nào (âm, dương, bằng 0).
+4. Phân phối chuẩn là đối xứng với hai đuôi kéo dài đến vô cực.
+5. Độ lệch chuẩn quy định độ rộng và phẳng (kurtosis) của đường cong chuẩn.
+6. Xác suất được cho bởi diện tích nằm dưới đường cong chuẩn.
+7. Phần trăm để giá trị của biến ngẫu nhiên nằm trong khoảng thông dụng[^2] là:
+- 68.3% giá trị sẽ nằm trong khoảng $$(\mu - \sigma; \mu + \sigma)$$
+- 95.4% giá trị sẽ nằm trong khoảng $$(\mu - 2\sigma; \mu + 2\sigma)$$
+- 99.7% giá trị sẽ nằm trong khoảng $$(\mu - 3\sigma; \mu + 3\sigma)$$
+
+
+
+## Standard normal distribution
+
 Trường hợp **trung bình $$\mu = 0$$ và độ lệch chuẩn $$\sigma = 1$$, ta có phân phối chuẩn chuẩn hoá** (standard normal distribution). **Ký tự $$z$$ thường được sử dụng** để ký hiệu cho biến ngẫu nhiên có phân phối đặc biệt này.
 
 Công thức để chuyển đổi một biến ngẫu nhiên $$x$$ bất kỳ về phân phối chuẩn chuẩn hoá:
@@ -194,7 +214,9 @@ Chuyển đổi về phân phối chuẩn chuẩn hoá sẽ giúp việc tính t
 
 Sau khi tính được giá trị $$z$$, có thể sử dụng bảng xác suất chuẩn hoá[^1] để tìm xác suất mong muốn. Các phần mềm như Geogebra cũng cung cấp công cụ để giải và trực quan hoá các kết quả.
 
-Ví dụ 1: Một cổ phiếu có lợi nhuận kỳ vọng là 5%, độ lệch chuẩn là 20% và tuân theo phân phối chuẩn. Tìm xác suất lợi nhuận từ 7%.
+Ví dụ 1: 
+
+Một cổ phiếu có lợi nhuận kỳ vọng là 5%, độ lệch chuẩn là 20% và tuân theo phân phối chuẩn. Tìm xác suất lợi nhuận từ 7%.
 
 Tìm giá trị $$z$$:
 
@@ -203,6 +225,101 @@ z = \frac{0.07 - 0.05}{0.2} = 0.1
 $$
 
 Sử dụng z table, có thể tra được xác suất $$P\{x < 0.07\} =0.5398$$. Như vậy, xác suất có lợi nhuận từ 7% là 46.02%.  
+
+Ví dụ 2: Vấn đề của Công ty Lốp xe Grear
+
+Trung bình số dặm lốp xe chịu được là $$\mu = 36,500$$km, với độ lệch chuẩn $$\sigma = 5000$$, và tuân theo phân phối chuẩn.
+
+a. Tìm xác suất lốp xe chịu được $$x > 40,000$$km. 
+b. Công ty Grear sẽ giảm giá khi thay lốp nếu xe bị hỏng trong số dặm bảo hành. Tuy nhiên, Grear không muốn có hơn 10% số lốp xe đủ điều kiện bảo hành. Tìm số dặm bảo hành đảm bảo điều kiện này.
+
+Trả lời:
+
+a. Tìm giá trị $$z = \frac{40000 - 36500}{5000} = 0.7$$
+
+```python
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+
+probability = 1 - stats.norm.cdf(0.7)
+
+print(f"The probability that the tire lasts more than 40,000km is {probability}")
+```
+```
+The probability that the tire lasts more than 40,000km is 0.24196365222307303
+```
+
+b. Dùng z-table có thể xác định $$z = -1.28$$ tương ứng với phần diện tích 10% ở đuôi trái phân phối chuẩn. Suy ra, $$x = 30100$$ km sẽ thoả điều kiện chỉ khoảng 10% lốp xe đủ điều kiện bảo hành.
+
+Có thể sử dụng Python như bên dưới:
+
+```python
+# Find the mileage
+mileage = stats.norm.ppf(0.1, loc=36500, scale=5000)
+
+print(f"The mileage for the warranty to ensure no more than 10% of tires are eligible is {mileage} km")
+
+```
+```
+The mileage for the warranty to ensure no more than 10% of tires are eligible is 30092.242172276998 km
+```
+![normal_eg2](/assets/img/stochastic-process/normal_eg2.png)
+
+## Normal approximation of binomial probabilities
+
+Khi số lượng phép thử của biến nhị thức lớn, cụ thể $$np \ge 5$$ và $$n(1 - p) \ge 5$$, với $$n$$ là số lượng phép thử và $$p$$ là xác suất thành công. Có thể sử dụng phân phối chuẩn để xấp xỉ nhị thức với $$\mu = np$$ và $$\sigma = \sqrt{np(1-p}$$.
+
+Lấy lại ví dụ ở phần xấp xỉ phân phối nhị thức với phân phối Poisson. Giả sử rằng 1% số ốc vít được sản xuất bởi một máy là lỗi. Tính xác suất rằng một lô 500 ốc vít có đúng 3 ốc vít lỗi.
+
+- Kết quả từ phân phối nhị thức với Python:
+
+```python
+from scipy.stats import binom
+
+#calculate binomial probability
+binom.pmf(k=3, n=500, p=0.01)
+```
+```
+0.1402
+```
+
+- Kết quả từ xấp xỉ Poisson:
+
+$$\lambda = np = 500 \cdot 0.01 = 5$$
+
+$$P \{ X = 3 \} \approx e^{-5} \frac{5^3}{3!} \approx 0.1404$$
+
+
+- Kết quả từ xấp xỉ phân phối chuẩn:
+
+$$\mu = np = 500 * 0.01 = 5$$
+
+$$\sigma = \sqrt{np(1-p)} = \sqrt{500 * 0.01 * 0.99} \approx 2.23$$
+
+Vì phân phối chuẩn là liên tục, ta không thể tìm trực tiếp $$x = 3$$ mà phải sử dụng **yếu tố điều chỉnh tính liên tục (continuity correction)** để tìm xác suất có 3 ốc vít lỗi trong lô 500 ốc vít. Do đó, cần tìm $$z$$ với $$x = 2.5$$ và $$x = 3.5$$ như sau:
+
+```python
+# Calculate the Z-scores
+Z_2_5 = (2.5 - 5) / 2.23
+Z_3_5 = (3.5 - 5) / 2.23
+
+# Calculate the probabilities
+probability_2_5 = stats.norm.cdf(Z_2_5)
+probability_3_5 = stats.norm.cdf(Z_3_5)
+
+# Find the probability for exactly 3 defective screws
+probability_3 = probability_3_5 - probability_2_5
+
+print(f"The probability that a batch of 500 screws has exactly 3 defective screws is {probability_3}")
+```
+```
+The probability that a batch of 500 screws has exactly 3 defective screws is 0.1194586403509098
+```
+
+![normal_eg3](/assets/img/stochastic-process/normal_eg3.png)
+
+**Từ các kết quả trên, xấp xỉ phân phối nhị thức của phân phối Poisson cho giá trị gần giá trị thực tế hơn phân phối chuẩn.**
 
 # References
 
@@ -214,6 +331,129 @@ Nguyen Huu, Thai (n.d.). Lecture: Random Variables. Stochastic models and applic
 
 Ross, S. M. (2019). Introduction to probability models. Academic Press.
 
+# Appendix
+
+## Exponential random variable
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import expon
+
+# Parameters
+mean = 15  # average time to process a loan application
+lambda_ = 1 / mean  # rate parameter for the exponential distribution
+
+# Calculate the probability
+prob = expon.cdf(18, scale=mean) - expon.cdf(6, scale=mean)
+
+print(f"The probability that the loan application will be processed in 6 to 18 minutes is {prob:.4f}")
+
+# Visualization
+x = np.linspace(0, 30, 1000)
+y = expon.pdf(x, scale=mean)
+
+plt.figure(figsize=(8, 6))
+plt.plot(x, y, label="Exponential distribution")
+plt.fill_between(x, y, where=(6 <= x) & (x <= 18), color="red", alpha=0.3, label="6 to 18 minutes")
+plt.title("Exponential Distribution of Loan Processing Time")
+plt.xlabel("Time (minutes)")
+plt.ylabel("Probability Density Function (pdf)")
+plt.legend()
+plt.grid(True)
+plt.show()
+
+```
+
+## Normal random variable
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.stats import norm
+
+# Set the mean (mu) and standard deviations (sigma)
+mu = 0
+sigmas = [0.5, 1.0, 1.5]
+
+# Create a range of x values
+x = np.linspace(-5, 5, 100)
+
+# Plot each normal distribution
+for sigma in sigmas:
+    plt.plot(x, norm.pdf(x, mu, sigma), label=f'sigma={sigma}')
+
+# Add title and legend, then show the plot
+plt.title('Normal Distributions with Same Mean and Different Variances')
+plt.legend()
+plt.show()
+```
+
+```python
+# Generate data
+x = np.linspace(20000, 50000, 1000)
+y = stats.norm.pdf(x, 36500, 5000)
+
+# Create the plot
+plt.figure(figsize=(10,6))
+plt.plot(x, y)
+
+# Shade the area under the curve for part a
+x_fill_a = np.linspace(40000, 50000, 1000)
+y_fill_a = stats.norm.pdf(x_fill_a, 36500, 5000)
+plt.fill_between(x_fill_a, y_fill_a, alpha=0.5, color='blue', label='P(X > 40000)')
+
+# Shade the area under the curve for part b
+x_fill_b = np.linspace(20000, mileage, 1000)
+y_fill_b = stats.norm.pdf(x_fill_b, 36500, 5000)
+plt.fill_between(x_fill_b, y_fill_b, alpha=0.5, color='orange', label='Eligible 10%')
+
+# Show the plot
+plt.title('Normal Distribution of Tire Durability')
+plt.xlabel('Mileage (km)')
+plt.ylabel('Probability Density')
+plt.legend()
+plt.show()
+```
+
+```python
+# Calculate the Z-scores
+Z_2_5 = (2.5 - 5) / 2.23
+Z_3_5 = (3.5 - 5) / 2.23
+
+# Calculate the probabilities
+probability_2_5 = stats.norm.cdf(Z_2_5)
+probability_3_5 = stats.norm.cdf(Z_3_5)
+
+# Find the probability for exactly 3 defective screws
+probability_3 = probability_3_5 - probability_2_5
+
+# Generate data
+x = np.linspace(0, 10, 1000)
+y = stats.norm.pdf(x, 5, 2.23)
+
+# Create the plot
+plt.figure(figsize=(10,6))
+plt.plot(x, y)
+
+# Shade the area under the curve for exactly 3 defective screws
+x_fill = np.linspace(2.5, 3.5, 1000)
+y_fill = stats.norm.pdf(x_fill, 5, 2.23)
+plt.fill_between(x_fill, y_fill, alpha=0.5, color='red', label='P(X = 3)')
+
+# Show the plot
+plt.title('Normal Distribution of Defective Screws')
+plt.xlabel('Number of Defective Screws')
+plt.ylabel('Probability Density')
+plt.legend()
+plt.show()
+
+print(f"The probability that a batch of 500 screws has exactly 3 defective screws is {probability_3}")
+
+```
+
 # Notes
 
 [^1]: Sử dụng https://www.z-table.com hoặc tương đương.
+
+[^2]: Xem thêm quy tắc thực nghiệm (Emperical rule).
