@@ -117,7 +117,7 @@ Như vậy, xác suất là diện tích của hình chữ nhật với chiều 
 
 # Exponential random variable
 
-Phân phối mũ là một phân phối quan trọng được sử dụng trong nhiều mô hình kinh tế, tài chính hoặc bảo hiểm. Phân phối mũ có tham số $$\lambda > 0$$ và hàm mật độ xác suất (PDF) được cho bởi:
+Phân phối mũ có tham số $$\lambda > 0$$ và hàm mật độ xác suất (PDF) được cho bởi:
 
 {: .highlight }
 
@@ -166,7 +166,7 @@ Mối quan hệ giữa phân phối Poisson và phân phối mũ có thể đư�
 
 ## Normal distribution
 
-Phân phối chuẩn (normal distribution) cũng là một trong những **phân phối quan trọng** và được ứng dụng rộng rãi. Cho X là biến ngẫu nhiên chuẩn **có hai tham số với trung bình (hay kỳ vọng) $$\mu > 0$$ và phương sai $$\sigma^2 > 0$$** (ký hiệu: $$X \sim N(0,1)$$), hàm mật độ xác suất (PDF) được cho bởi:
+Cho X là biến ngẫu nhiên chuẩn **có hai tham số với trung bình (hay kỳ vọng) $$\mu > 0$$ và phương sai $$\sigma^2 > 0$$** (ký hiệu: $$X \sim N(0,1)$$), hàm mật độ xác suất (PDF) được cho bởi:
 
 {: .highlight }
 
@@ -323,7 +323,7 @@ The probability that a batch of 500 screws has exactly 3 defective screws is 0.1
 
 # Gamma random variable
 
-Phân phối Gamma cũng là một phân phối quan trọng và được ứng dụng rộng rãi, đặc biệt trong tài chính, kinh tế lượng, kỹ thuật xây dựng dân dụng và khí hậu học. Phân phối gamma là một dạng tổng quát hoá của phân phối mũ dùng để tính xác suất giữa hai sự kiện trong một quá trình Possion. Phân phối mũ, phân phối chi-square là những trường hợp đặc biệt của phân phối gamma.
+Phân phối gamma là một dạng **tổng quát hoá của phân phối mũ**. Phân phối mũ, phân phối chi-square là những trường hợp đặc biệt của phân phối gamma. Một trong những ứng dụng điển hình của phân phối gamma là **tính xác suất thời gian chờ giữa các sự kiện**, với tốc độ trung bình $$\lambda$$ không đổi.
 
 Cho biến ngẫu nhiên X tuân theo phân phối Gamma với $$\alpha > 0$$ và $$\lambda > 0$$, hàm mật độ xác suất (PDF) được cho bởi:
 
@@ -336,13 +336,74 @@ f(x) = \begin{cases}
 \end{cases}
 $$
 
-Trong đó tích phân suy rộng: 
+Trong đó:
+
+- Nếu $$\alpha$$ thuộc tập số thực ($$\alpha \in \mathbb{R}$$), hàm gamma được định nghĩa [^3]:
 
 $$
 \Gamma(\alpha) = \int_0^{\infty} e^{-x} x^{\alpha - 1} dx
-$$ 
+$$
 
-được gọi là hàm gamma.
+
+- Nếu $$\alpha$$ thuộc tập nguyên dương ($$\alpha \in \mathbb{Z}+$$):
+
+$$
+\Gamma(\alpha) = (\alpha - 1)!
+$$
+
+Ví dụ 1:
+
+Các kỹ sư thiết kế thế hệ tàu vũ trụ tiếp theo dự định sẽ bao gồm hai bơm nhiên liệu — một bơm đang hoạt động, bơm còn lại dự phòng. Nếu bơm chính gặp sự cố, bơm thứ hai sẽ tự động được đưa vào hoạt động. Giả sử một nhiệm vụ điển hình dự kiến sẽ cần bơm nhiên liệu tối đa 50 giờ. Theo thông số kỹ thuật của nhà sản xuất, bơm dự kiến sẽ hỏng một lần mỗi 100 giờ. Khả năng hệ thống bơm nhiên liệu như vậy không hoạt động liên tục trong suốt 50 giờ là bao nhiêu?
+
+Ta có: $$\lambda = \frac{1}{100}$$, $$\alpha = 2$$.
+
+Hàm PDF:
+
+$$
+f_X(x) = \frac{\frac{1}{100} \cdot e^{- \frac{1}{100} \cdot x}(\frac{1}{100} \cdot x)^{2 - 1}}{(2-1)!}
+$$
+
+Hàm CDF:
+
+$$
+P\{X < 50\} = \int_0^{50} f_X(x) dx \approx 0.0902
+$$
+
+Sử dụng Python:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import gamma
+
+# Parameters of the Gamma distribution
+k = 2
+theta = 100
+
+# Calculate the CDF at 50 hours
+x = 50
+cdf_at_x = gamma.cdf(x, k, scale=theta)
+
+# Calculate the probability that the system does fail within 50 hours
+prob_fail = cdf_at_x
+
+print(f"The probability that the system does fail within 50 hours is {prob_fail}")
+```
+```
+The probability that the system does fail within 50 hours is 0.09020401043104986
+```
+
+![gamma_eg1](/assets/img/stochastic-process/gamma_eg1.png)
+
+Ví dụ 2: 
+
+Trung bình cứ mỗi 2 phút sẽ có 1 người đi thang máy vào giờ cao điểm. Cho X là biến ngẫu nhiên đại diện cho thời gian chờ và tuân theo phân phối gamma. Tính xác suất chờ từ 5 đến 10 phút đến khi người thứ 5 đến.
+
+Ta có: $$\lambda = \frac{1}{\beta} = \frac{1}{2}$$, $$\alpha = 5$$.
+
+Tìm $$P\{5 < X < 10\}$$ với công cụ tính xác suất từ [GeoGebra](https://www.geogebra.org/calculator):
+
+![gamma_eg2](/assets/img/stochastic-process/gamma_eg2.png)
 
 # References
 
@@ -350,7 +411,7 @@ Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. 
 
 CrashCourse. (2018, May 30). Z-Scores and Percentiles: Crash Course Statistics #18. [Youtube Video](https://www.youtube.com/watch?v=uAxyI_XfqXk).
 
-Eberly College of Science. (n.d.). 15.7 - A gamma example \| STAT 414. (n.d.). PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/15/15.7
+Eberly College of Science. (n.d.). 15.7 - A gamma example \| STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/15/15.7
 
 Nguyen Huu, Thai (n.d.). Lecture: Random Variables. Stochastic models and applications. University of Economics HCMC.
 
@@ -477,8 +538,46 @@ print(f"The probability that a batch of 500 screws has exactly 3 defective screw
 
 ```
 
+## Gamma random variable
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import gamma
+
+# Parameters of the Gamma distribution
+k = 2
+theta = 100
+
+# Calculate the CDF at 50 hours
+x = 50
+cdf_at_x = gamma.cdf(x, k, scale=theta)
+
+# Calculate the probability that the system does fail within 50 hours
+prob_fail = cdf_at_x
+
+print(f"The probability that the system does fail within 50 hours is {prob_fail}")
+
+# Plot the Gamma distribution
+x = np.linspace(0, 200, 1000)
+y = gamma.pdf(x, k, scale=theta)
+
+plt.figure(figsize=(12, 6))
+plt.plot(x, y, label='Gamma distribution')
+plt.fill_between(x, y, where=(x<=50), color='red', alpha=0.5, label='Area under curve within 50 hours')
+plt.title('Gamma Distribution of Fuel Pump Failures')
+plt.xlabel('Time (hours)')
+plt.ylabel('Probability Density Function (PDF)')
+plt.legend()
+plt.grid(True)
+plt.show()
+
+```
+
 # Notes
 
 [^1]: Sử dụng https://www.z-table.com hoặc tương đương.
 
 [^2]: Xem thêm quy tắc thực nghiệm (Emperical rule).
+
+[^3]: Xem thêm tích phân suy rộng.
