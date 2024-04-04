@@ -350,7 +350,7 @@ Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. 
 
 CrashCourse. (2018, May 30). Z-Scores and Percentiles: Crash Course Statistics #18. [Youtube Video](https://www.youtube.com/watch?v=uAxyI_XfqXk).
 
-Eberly College of Science. (n.d.). 15.7 - A gamma example | STAT 414. (n.d.). PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/15/15.7
+Eberly College of Science. (n.d.). 15.7 - A gamma example \| STAT 414. (n.d.). PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/15/15.7
 
 Nguyen Huu, Thai (n.d.). Lecture: Random Variables. Stochastic models and applications. University of Economics HCMC.
 
