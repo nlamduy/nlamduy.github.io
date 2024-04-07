@@ -127,7 +127,7 @@ Time:  0.006623812999805523
 
 # Quadratic interpolation
 
-Phương pháp **nội suy tuyến tính thường tạo ra sai số lớn** do chúng ta đang sử dụng được thẳng nối giữa hai điểm để ước tính giá trị của $$f(x)$$. **Nếu sử dụng ba điểm, sử dụng nội suy đa thức bậc 2 sẽ cho ước lượng tốt hơn**. Công thức được trình bày như sau:
+Phương pháp **nội suy tuyến tính thường tạo ra sai số lớn** do chúng ta đang sử dụng đường thẳng nối giữa hai điểm để ước tính giá trị của $$f(x)$$. **Nếu sử dụng ba điểm, sử dụng nội suy đa thức bậc 2 sẽ cho ước lượng tốt hơn**. Công thức được trình bày như sau:
 
 {: .highlight }
 $$

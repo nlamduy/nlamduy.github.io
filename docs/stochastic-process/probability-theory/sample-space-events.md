@@ -76,9 +76,9 @@ Hai biến cố xung khắc nếu không có điểm mẫu chung nào, hay $$E_1
 
 **Các biến cố xung khắc và đẩy đủ nếu thoả những điều kiện sau:**
 
-1. Không có điểm mẫu chung nào, $$E_1 \cap E_2 = \emptyset$$, $$P(E_1 \cap E_2) = 0$$.
-2. Tập hợp điểm mẫu của tất cả biến cố chính bằng không gian mẫu $$\Omega$$, $$E_1 \cup E_2 = \Omega$$.
-3. Một trong các biến cố nhất định phải xảy ra, $$P(E_1 \cup E_2) = 1$$.
+1. Không có điểm mẫu chung nào: $$E_1 \cap E_2 = \emptyset$$, $$P(E_1 \cap E_2) = 0$$.
+2. Tập hợp điểm mẫu của tất cả biến cố chính bằng không gian mẫu: $$\Omega$$, $$E_1 \cup E_2 = \Omega$$.
+3. Một trong các biến cố nhất định phải xảy ra: $$P(E_1 \cup E_2) = 1$$.
 
 # References
 

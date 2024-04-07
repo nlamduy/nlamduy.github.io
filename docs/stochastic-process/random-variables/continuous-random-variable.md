@@ -49,17 +49,17 @@ $$P\{X > 3\} = \int_3^{+\infty} f_X(x)dx$$
 
 {: .highlight }
 
-1. Xác suất của biến ngẫu nhiên liên tục X nằm giữa đoạn $$(a,b)$$ là tích phân của hàm $$f_X$$ trên đoạn đó: $$P\{a \le X \le b\} = \int_a^b f_X(x)dx$$, cho $$a \le b$$
+1. Xác suất của biến ngẫu nhiên liên tục X nằm giữa khoảng $$(a; b)$$ là tích phân của hàm $$f_X$$ trên đoạn đó: $$P\{a \le X \le b\} = \int_a^b f_X(x)dx$$, cho $$a \le b$$
 
 2. Xác suất của biến ngẫu nhiên liên tục X tại một điểm cụ thể gần như bằng 0: $$P\{X = a\} = \int_a^a f_X(x)dx = 0$$
 
 3. Xác suất từ âm đến dương vô cực là 1: $$\int_{-\infty}^{+\infty} f_X(x)dx = 1$$
 
-4. CDF của X là tích phân của hàm PDF trên đoạn $$(-\infty, x)$$: $$F_X(x) = \int_{-\infty}^x f_X(x)dx$$
+4. CDF của X là tích phân của hàm PDF trên khoảng $$(-\infty; x)$$: $$F_X(x) = \int_{-\infty}^x f_X(x)dx$$
 
 5. PDF của X là đạo hàm CDF: $$\frac{dF(x)}{dx} = f(x)$$
 
-Ở tính chất số (2), vì X có thể nhận vô hạn giá trị trên một đoạn (ví dụ từ 0 đến 1), nên xác suất tại một điểm gần như bằng 0.
+Ở tính chất số (2), vì X có thể nhận vô hạn giá trị trên một khoảng (ví dụ từ 0 đến 1), nên xác suất tại một điểm gần như bằng 0.
 
 Ví dụ:
 
@@ -231,6 +231,7 @@ Ví dụ 2: Vấn đề của Công ty Lốp xe Grear
 Trung bình số dặm lốp xe chịu được là $$\mu = 36,500$$km, với độ lệch chuẩn $$\sigma = 5000$$, và tuân theo phân phối chuẩn.
 
 a. Tìm xác suất lốp xe chịu được $$x > 40,000$$km. 
+
 b. Công ty Grear sẽ giảm giá khi thay lốp nếu xe bị hỏng trong số dặm bảo hành. Tuy nhiên, Grear không muốn có hơn 10% số lốp xe đủ điều kiện bảo hành. Tìm số dặm bảo hành đảm bảo điều kiện này.
 
 Trả lời:
@@ -345,7 +346,7 @@ $$
 $$
 
 
-- Nếu $$\alpha$$ thuộc tập nguyên dương ($$\alpha \in \mathbb{Z}+$$):
+- Nếu $$\alpha$$ thuộc tập nguyên dương ($$\alpha \in \mathbb{Z}^+$$):
 
 $$
 \Gamma(\alpha) = (\alpha - 1)!

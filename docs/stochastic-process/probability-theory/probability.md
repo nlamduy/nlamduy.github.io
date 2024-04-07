@@ -179,7 +179,11 @@ Trong đó, $$E_1^c$$ là phần bù của biến cố $$E_1$$.
 
 Cho dãy $$\{A_1, A_2, A_3, ... A_i \}$$ là các sự kiện xung khắc và hợp của chúng bằng không gian mẫu $$\Omega$$, thì ta có một **cơ sở (base)** của $$\Omega$$.
 
-Giả sử, dãy $$\{A_1, A_2, A_3\}$$ là cơ sở của $$\Omega$$. Cho sự kiện bất kỳ $$E$$ thuộc $$\Omega$$. Sử dụng xác suất toàn phần để tính $$E$$: $$P(E) = P(E \| A_1)P(A_1) + P(E \| A_2)P(A_2) + P(E \| A_3)P(A_3)$$
+Giả sử, dãy $$\{A_1, A_2, A_3\}$$ là cơ sở của $$\Omega$$. Cho sự kiện bất kỳ $$E$$ thuộc $$\Omega$$. Sử dụng xác suất toàn phần để tính $$E$$: 
+
+$$P
+(E) = P(E | A_1)P(A_1) + P(E | A_2)P(A_2) + P(E | A_3)P(A_3)
+$$
 
 # Bayes' theorem 
 

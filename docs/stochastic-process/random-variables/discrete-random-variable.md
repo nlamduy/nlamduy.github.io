@@ -95,7 +95,7 @@ P\{X = 0\} + P\{X=1\} + P\{X=2\} = 4/8 + 3/8 = 7/8 \text{ , } 2 \le x < 3 \\
 
 # Bernoulli and Binomial random variable
 
-Phân phối nhị thức (binomial distribution) được sử dụng để tính **xác suất số lần thành công $$i$$ trong $$n$$ phép thử**.
+Phân phối nhị thức (binomial distribution) được sử dụng để tính **xác suất số lần thành công $$i$$ trong $$n$$ phép thử (trials)**.
 
 **Tính chất phép thử nhị nhức (binomial):**
 
@@ -162,7 +162,11 @@ $$
 
 # Negative binomial random variable
 
-Phân phối nhị thức âm là một dạng mở rộng của phân phối hình học, được dùng để tính **xác suất của lần thành công thứ $$r^{th}$$ trong $$n$$ phép thử**. Cho X là biến nhị thức âm, **hàm khối xác suất (PMF)** được trình bày như sau:
+Phân phối nhị thức âm là một dạng mở rộng của phân phối hình học, được dùng để tính **xác suất của lần thành công thứ $$r^{th}$$ trong $$n$$ phép thử**. 
+
+Trong phân phối nhị thức, số lượng phép thử được xác định. Chẳng hạn, chúng ta quan tâm xác suất có 3 lần thành công trong 10 phép thử. Đối với nhị thức âm, số lần thành công được xác định. Chẳng hạn, chúng ta quan tâm xác suất số lượng phép thử bằng 10 khi thành công lần thứ 3. Nói cách khác, số phép thử sẽ tăng lên cho đến khi đạt được $$r^{th}$$ thành công. Không có giới hạn trên (upper bound) nào cho số lượng phép thử. 
+
+Cho X là biến nhị thức âm, **hàm khối xác suất (PMF)** được trình bày như sau:
 
 {: .highlight }
 
@@ -171,7 +175,11 @@ p(n) = P \{ X=n \} = \binom{n - 1}{r - 1}(1-p)^{n-r}p^r \text{ , n = r, r+1, r+2
 $$
 
 
-Ví dụ: Tung 1 đồng xu 10 lần với xác suất mặt ngửa không đổi $$p = 0.5$$.
+Ví dụ: Xác suất mặt ngửa (thành công) của việc tung một đồng xu $$p = 0.5$$. Gọi X là số lượng tung đồng xu cho đến khi được mặt ngửa thứ 3. Tìm xác suất X = 10.
+
+
+$$ P\{X = 10\} = \binom{10-1}{3-1} \cdot (1-0.5)^{10-3} \cdot (0.5)^3 \approx 0.035$$
+
 
 # Poisson random variable
 
@@ -212,7 +220,7 @@ $$P \{ X=1 \} = e^{-2}\frac{2^1}{1!} \approx 0.2707$$
 
 Một tính chất quan trọng khác là có thể **xấp xỉ phân phối nhị thức bằng phân phối Poisson** khi số lần thử lớn và xác suất thành công nhỏ, với tham số $$\lambda = np$$. Theo kinh nghiệm, khi phép thử nhị thức có **$$n \ge 100$$ và $$np \le 10$$** thì phân phối Poisson có thể cung cấp xấp xỉ tốt.
 
-Ví dụ: Giả sử rằng 1% số ốc vít được sản xuất bởi một máy là lỗi. Tính xác suất rằng một lô 500 ốc vít có đúng 3 ốc vít lỗi.
+Ví dụ 4: Giả sử rằng 1% số ốc vít được sản xuất bởi một máy là lỗi. Tính xác suất rằng một lô 500 ốc vít có đúng 3 ốc vít lỗi.
 
 - Sử dụng phân phối nhị thức: $$P \{ X = 3 \} = \binom{500}{3} (0.01)^3 (0.99)^{497}$$
 
