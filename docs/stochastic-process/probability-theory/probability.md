@@ -97,7 +97,7 @@ Xét tình trạng thăng cấp của viên chức cảnh sát trong hai năm qu
 | No    | 627  | 204    | 876   |
 | Total | 960  | 240    | 1200  |
 
-Bảng xác suất đồng thời (join probability):
+Bảng **xác suất đồng thời (join probability)**:
 
 |       | Male | Female | Total |
 |-------|------|--------|-------|
@@ -105,7 +105,7 @@ Bảng xác suất đồng thời (join probability):
 | No    | .56  | .17    | .73   |
 | Total | .80  | .20    | 1.00  |
 
-Xác suất đồng thời được thể hiện trong phần giữa bảng. Các xác suất biên (marginal probabilities) được thể hiện ở phần lề của bảng.
+Xác suất đồng thời được thể hiện trong phần giữa bảng. Các **xác suất biên (marginal probabilities)** được thể hiện ở phần lề của bảng.
 
 Xác suất được thăng tiến nếu biết người đó là nữ: 
 

@@ -169,6 +169,54 @@ $$
 F(a, b) = P\{X \le a, Y \le b\} \text{ , } -\infty < a, b < \infty
 $$
 
+**Một số tính chất của xác suất đồng thời:**
+
+{: .highlight }
+
+1. Đạo hàm cấp 2 hàm CDF của phân phối đồng thời sẽ được hàm PDF: $$\frac{d^2}{dxdy}F_{X,Y}(x, y) = f_{X,Y}(x, y)$$.
+2. Hàm CDF của phân phối biên: $$F_X(a) = F(a, \infty)$$, và $$F_Y(b) = F(\infty, b)$$.
+3. Phân phối đồng thời rời rạc: $$p_X(x) = \sum_{y:p(x,y)>0} p(x,y)$$, và $$p_Y(y) = \sum_{x:p(x,y)>0} p(x,y)$$.
+4. Phân phối đồng thời liên tục: $$f_X(x) = \int_{-\infty}^{\infty} f(x,y)dy$$, $$f_Y(y) = \int_{-\infty}^{\infty} f(x,y)dx$$, và $$\frac{d^2}{dadb}F(a,b)=f(a,b)$$.
+5. Cho $$g$$ là hàm của biến X, Y:
+$$
+E[g(X,Y)] = \begin{cases}
+\sum_y \sum_x g(x,y) p(x,y) \text{ , in the discrete case}\\
+\int_{-\infty}^{\infty} \int_{-\infty}^{\infty}g(x,y)f(x,y)dxdy \text{ , in the continuous case}
+\end{cases}
+$$
+
+Ví dụ: 
+
+Cho hàm xác suất đồng thời:
+
+$$
+f(x,y) = \begin{cases}
+6xy(2 - x - y), 0 < x < 1, 0 < y < 1 \\
+0 \text{ , otherwise}
+\end{cases}
+$$
+
+Tính xác suất biên $$f_X(x)$$.
+
+Ta có:
+
+$$
+\begin{aligned}
+& \int_{-\infty}^{\infty} f_{X,Y}(x,y)dy = \int_0^1 f_{X,Y}(x,y)dy\\
+& = \int_0^1 6xy(2 - x - y)dy = \left[ 12x \frac{y^2}{2} - 6x^2\frac{y^2}{2} - 6x\frac{y^3}{3} \right]^1_0\\
+& = 4x - 3x^2\\
+\end{aligned}
+$$
+
+Như vậy:
+
+$$
+f_X(x) = \begin{cases}
+4x - 3x^2 \text{ , if 0 < x < 1}\\
+0 \text{ , otherwise}
+\end{cases}
+$$
+
 ## Discrete random variable
 
 Nếu **X và Y là hai biến ngẫu nhiên rời rạc**:
@@ -234,7 +282,35 @@ Sử dụng phần mềm GeoGebra để trực quan hoá. Xác suất đồng th
 
 ![joint_eg3](/assets/img/stochastic-process/joint_eg3.png)
 
+# Independent random variables
+
+Hai biến ngẫu nhiên X, Y là độc lập cho mọi giá trị a, b nếu:
+
+{: .highlight }
+$$
+F(a, b) = P\{X \le a, Y \le b\} = P\{X \le a\}P\{Y \le b\} = F_X(a)F_Y(b)
+$$
+
+- Đối với phân phối đồng thời cho biến rời rạc, hai biến độc lập nếu:
+$$
+p(x,y) = p_X(x)p_Y(y)
+$$
+
+- Đối với phân phối đồng thời cho biến liên tục, hai biến độc lập nếu:
+$$
+f(x,y) = f_X(x)f_Y(y)
+$$
+
+- Nếu X, Y độc lập thì hai hàm số h, g bất kỳ:
+$$
+E[g(X)h(Y)] = E[g(X)]E[h(Y)]
+$$
+
+Điều này vẫn đúng cho trường hợp: $$E[X^2Y] = E[X^2]E[Y]$$.
+
 # Variance and Covariance
+
+## Variance
 
 **Phương sai (variance) của một biến ngẫu nhiên cho biết sự phân tán của dữ liệu xung quanh giá trị kỳ vọng**. Được định nghĩa:
 
@@ -245,7 +321,28 @@ $$
 
 **Trong đó, $$E[X^2]$$ là moment bậc 2 của kỳ vọng $$E[X]$$.**
 
+## Covariance
 
+**Hiệp phương sai (covariance) của hai biến ngẫu nhiên X, Y** cho biến sự phân tán **liên hợp** của hai biến này, được định nghĩa:
+
+{: .highlight }
+$$
+\text{cov}(X, Y) = E[(X - E(X))(Y - E(Y))] = E(XY) - E(X)(Y)
+$$
+
+Từ biểu thức trên có thể thấy, **để tính được phương sai và hiệp phương sai, cần tính được kỳ vọng**.
+
+**Một số tính chất của hiệp phương sai:**
+
+{: .highlight }
+1. Nếu X và Y độc lập: Cov(X, Y) = 0
+2. Cov(X,Y) = Cov(Y,X)
+3. Cov(X,X) = Var(X)
+4. Cov(cX, Y) = cCov(X, Y)
+5. Cov(X, Y + Z) = Cov(X, Y) + Cov(X, Z)
+6. $$\text{Var}(\sum_{i = 1}^n X_i) = \sum_{i = 1}^n \text{Var}(X_i) + 2\sum^n_{i=1} \sum_{j<i}\text{Cov}(X_i, X_j)$$
+
+**Tính chất 4, 5, 6 là quan trọng**. Trong đó, tính chất 6 phát biểu rằng, nếu **$${X_1, X_2, ..., X_n}$$ là độc lập** thì $$2\sum^n_{i=1} \sum_{j<i}\text{Cov}(X_i, X_j) = 0$$, hay $$\text{Var}(\sum_{i = 1}^n X_i) = \sum_{i = 1}^n \text{Var}(X_i)$$.
 
 # References
 
