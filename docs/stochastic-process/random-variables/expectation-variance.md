@@ -162,7 +162,7 @@ Khi tính hàm MGF, có hai lưu ý:
 
 # Join probability distribution
 
-Phân phối xác suất đồng thời của hai biến ngẫu nhiên X và Y đã được giới thiệu qua trong phần [xác suất có điều kiện]({{site.baseurl}}/docs/stochastic-process/probability-theory/probability/#conditional-probabilities). Trong phần này, xác suất của X và Y đồng thời cùng xảy ra được định nghĩa:
+Phân phối xác suất đồng thời của hai biến ngẫu nhiên X và Y đã được giới thiệu qua trong phần [xác suất có điều kiện](https://nlamduy.github.io/docs/stochastic-process/probability-theory/probability.html#conditional-probabilities). Trong phần này, xác suất của X và Y đồng thời cùng xảy ra được định nghĩa:
 
 {: .highlight }
 $$
