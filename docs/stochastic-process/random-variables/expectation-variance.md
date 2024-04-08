@@ -344,6 +344,39 @@ Từ biểu thức trên có thể thấy, **để tính được phương sai v
 
 **Tính chất 4, 5, 6 là quan trọng**. Trong đó, tính chất 6 phát biểu rằng, nếu **$${X_1, X_2, ..., X_n}$$ là độc lập** thì $$2\sum^n_{i=1} \sum_{j<i}\text{Cov}(X_i, X_j) = 0$$, hay $$\text{Var}(\sum_{i = 1}^n X_i) = \sum_{i = 1}^n \text{Var}(X_i)$$.
 
+Ví dụ:
+
+Hàm phân phối đồng thời của X, Y được cho bởi: $$f(x,y) = \frac{1}{y}e^{-(y + x/y)}$$, $$0 < x, y < \infty$$. Tìm Cov(X,Y).
+
+$$\text{Cov}(X,Y) = E[XY] - E[X]E[Y]$$
+
+- Tính E[XY]:
+$$
+E[XY] = \int_0^{\infty} \left( \int_0^{\infty} \frac{1}{y}e^{-(y + x/y)} dx\right)dy
+$$
+
+- Tính E[X]:
+$$
+E[X] = f_X(x) = \int_0^{} f_{X, Y}(x, y)dy
+$$
+
+- Tính E[Y]:
+$$
+E[Y] = f_Y(y) = \int f_{X, Y}(x, y)dx
+$$
+
+# Markov's inequality
+
+Nếu X là biến ngẫu nhiên chỉ nhận giá trị không âm, thì với bất kỳ giá trị $$a > 0$$, bất đẳng thức Markov cho ta:
+
+{: .highlight }
+$$
+P\{ X \ge a \} \le \frac{E[X]}{a}
+$$
+
+Thông thường, chúng ta có thể tính toán xác suất dựa trên hàm PMF/PDF đã xác định. Tuy nhiên, không phải lúc nào chúng ta cũng biết được các hàm này mà chỉ có trong tay trung bình và phương sai. Một ví dụ điển hình là chúng ta có thể thu thập thông tin về thời gian xử lý hồ sơ vay của một nhân viên trong một tháng. Ta dễ dàng tính được trung bình và phương sai nhưng không biết chính xác phân phối của tập dữ liệu này. Sau đó sử dụng bất đẳng thức Markov để tính xác suất một bộ hồ sơ xử lý lâu hơn thời gian a bất kỳ bằng bao nhiêu.
+
+
 # References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
