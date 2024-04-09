@@ -367,19 +367,41 @@ $$
 
 # Markov's inequality
 
-Nếu X là biến ngẫu nhiên chỉ nhận giá trị không âm, thì với bất kỳ giá trị $$a > 0$$, bất đẳng thức Markov cho ta:
+Bất đẳng thức [Markov](https://vi.wikipedia.org/wiki/Andrey_Andreyevich_Markov) giúp chúng ta **đánh giá nhanh (mặc dù không phải tốt nhất) xác suất đuôi của phân phối**. Nếu X là biến ngẫu nhiên chỉ nhận giá trị không âm, thì với bất kỳ giá trị $$a > 0$$, bất đẳng thức Markov là:
 
 {: .highlight }
 $$
 P\{ X \ge a \} \le \frac{E[X]}{a}
 $$
 
-Thông thường, chúng ta có thể tính toán xác suất dựa trên hàm PMF/PDF đã xác định. Tuy nhiên, không phải lúc nào chúng ta cũng biết được các hàm này mà chỉ có trong tay trung bình và phương sai. Một ví dụ điển hình là chúng ta có thể thu thập thông tin về thời gian xử lý hồ sơ vay của một nhân viên trong một tháng. Ta dễ dàng tính được trung bình và phương sai nhưng không biết chính xác phân phối của tập dữ liệu này. Sau đó sử dụng bất đẳng thức Markov để tính xác suất một bộ hồ sơ xử lý lâu hơn thời gian a bất kỳ bằng bao nhiêu.
+Thông thường, chúng ta có thể tính toán xác suất dựa trên hàm PMF/PDF đã xác định. Tuy nhiên, không phải lúc nào chúng ta cũng biết được các hàm này mà chỉ có trong tay giá trị trung bình. 
 
+Ví dụ: sử dụng lại vấn đề của Công ty lốp xe Grear ở phần (phân phối chuẩn chuẩn hoá)[https://nlamduy.github.io/docs/stochastic-process/random-variables/continuous-random-variable.html#standard-normal-distribution]. Ta có trung bình $$E[X] = 36500$$km, và xác suất thực tế $$P\{X > 40000\} \approx 0.2420$$. 
+
+Giả sử, ta không biết biến ngẫu nhiên X tuân theo phân phối chuẩn chuẩn hoá mà chỉ có thông tin về trung bình $$E[X]$$. Sử dụng bất đẳng thức Markov để ước lượng, ta được: 
+
+$$
+P\{X \ge 40000\} \le \frac{36500}{40000} = 0.9125
+$$. 
+
+Xác suất lốp xe chịu được tối thiểu 40,000km là 91.25%. Có thể thấy xác suất này sai số rất lớn so với thực tế là 24.20%. Liệu chúng ta có thể tìm được ước lượng nào tốt hơn bất đẳng thức Markov? Đây chính là động lực cho bất đẳng thức Chebyshev.
+
+# Chebyshev's inequality
+
+Nếu biết phương sai, bất đẳng thức [Chebyshev](https://vi.wikipedia.org/wiki/Pafnuty_Lvovich_Chebyshev) sẽ cho ước lượng tốt hơn bất đẳng thức Markov. Nếu X là biến ngẫu nhiên độc lập có trung bình $$\mu$$ và phương sai $$\sigma^2$$, với bất kỳ giá trị $$k > 0$$, bất đẳng thức Chebyshev cho ta:
+
+{: .highlight }
+$$
+P\{|X - \mu| \ge k\} \le \frac{\sigma^2}{k^2}
+$$
+
+*Bất đẳng thức Chebyshev cho phép X nhận giá trị âm.*
 
 # References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
+
+Dartmouth Mathematics. (n.d.). Math 20 – Inequalities of Markov and Chebyshev. math.dartmouth.edu.
 
 Department of Mathematics, University of Texas at Austin. (n.d.). Fubini’s theorem. M408M Learning Module Pages. https://web.ma.utexas.edu/users/m408m/Display15-2-3.shtml
 
