@@ -376,7 +376,7 @@ $$
 
 Thông thường, chúng ta có thể tính toán xác suất dựa trên hàm PMF/PDF đã xác định. Tuy nhiên, không phải lúc nào chúng ta cũng biết được các hàm này mà chỉ có trong tay giá trị trung bình. 
 
-Ví dụ: sử dụng lại vấn đề của Công ty lốp xe Grear ở phần (phân phối chuẩn chuẩn hoá)[https://nlamduy.github.io/docs/stochastic-process/random-variables/continuous-random-variable.html#standard-normal-distribution]. Ta có trung bình $$E[X] = 36500$$km, và xác suất thực tế $$P\{X > 40000\} \approx 0.2420$$. 
+Ví dụ: sử dụng lại vấn đề của Công ty lốp xe Grear ở phần [phân phối chuẩn chuẩn hoá](https://nlamduy.github.io/docs/stochastic-process/random-variables/continuous-random-variable.html#standard-normal-distribution). Ta có trung bình $$E[X] = 36500$$km, và xác suất thực tế $$P\{X > 40000\} \approx 0.2420$$. 
 
 Giả sử, ta không biết biến ngẫu nhiên X tuân theo phân phối chuẩn chuẩn hoá mà chỉ có thông tin về trung bình $$E[X]$$. Sử dụng bất đẳng thức Markov để ước lượng, ta được: 
 
