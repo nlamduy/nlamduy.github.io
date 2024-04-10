@@ -397,6 +397,30 @@ $$
 
 *Bất đẳng thức Chebyshev cho phép X nhận giá trị âm.*
 
+# Strong law of large number
+
+Định lý luật số lớn phát biểu rằng, cho $$X_1, X_2, ...$$ là một dãy các biến ngẫu nhiên độc lập và có phân phối giống nhau thì:
+
+{: .hightlight }
+$$
+\frac{X_1 + X_2 + ... + X_n}{n} \rightarrow \mu \text{ as } n \to \infty
+$$
+
+Nói cách khác, nếu chúng ta lấy mẫu 1, mẫu 2 , ..., mẫu n với phân phối giữa các mẫu là giống nhau, và lấy trung bình của mẫu. Thì trung bình mẫu $$E[X_i]$$ sẽ tiến gần tới trung bình thực tế $$\mu$$.
+
+# Central limit theorem
+
+Định lý giới hạn trung tâm phát biểu rằng, cho $$X_1, X_2, ..., X_n$$ là một dãy các biến ngẫu nhiên độc lập có cùng phân phối với trung bình $$\mu$$ và phương sai $$\sigma^2$$. Thì phân phối của $$\frac{X_1 + X_2 + ... + X_n - n\mu}{\sigma\sqrt{n}}$$ tiến về phân phối chuẩn chuẩn hoá khi $$n \to \infty$$.
+
+{: .highlight }
+$$
+P\{\frac{X_1 + X_2 + ... + X_n - n\mu}{\sigma\sqrt{n}} \le a\} \to \frac{1}{\sqrt{2\pi}}\int_{-\infty}^a e^{-x^2/2} dx 
+$$
+
+Định lý này được chứng minh **đúng cho bất kỳ phân phối** nào của $$X_i$$.
+
+Có thể sử dụng một số công cụ giả lập CLT trên internet để quan sát định lý trên.
+
 # References
 
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.

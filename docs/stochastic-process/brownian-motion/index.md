@@ -3,7 +3,7 @@ layout: default
 title: Brownian Motion
 parent: Stochastic Process
 has_children: true
-nav_order: 3
+nav_order: 4
 ---
 
 
