@@ -218,7 +218,7 @@ Kỹ thuật này rất hữu ích, đặc biệt với trường hợp chúng t
 
 # References
 
-Eberly College of Science. (n.d.-b). 20.2 - Conditional distributions for continuous random variables | STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/20/20.2
+Eberly College of Science. (n.d.-b). 20.2 - Conditional distributions for continuous random variables \| STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/20/20.2
 
 Nguyen Huu, Thai (n.d.). Lecture: Conditional Probability and Conditional Expectation. Stochastic models and applications. University of Economics HCMC.
 
