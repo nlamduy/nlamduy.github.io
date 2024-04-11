@@ -78,7 +78,7 @@ $$
 P\{X=1 | Y = 2\} = \frac{P\{X = 1, Y = 2\}}{P\{Y = 2\}} = \frac{0.4}{0.55} \approx 0.72
 $$. 
 
-Tính tương tự cho các x còn lại. Một điều cần lưu ý là **tổng của $$P\{X=1 | Y = 2\}, P\{X=2 | Y = 2\}, P\{X=3 | Y = 2\}$$ phải bằng 1.**
+Tính tương tự cho các x còn lại. Một điều cần lưu ý là **tổng của $$P\{X=1 \vert Y = 2\}, P\{X=2 \vert Y = 2\}, P\{X=3 \vert Y = 2\}$$ phải bằng 1.**
 
 b. 
 $$
