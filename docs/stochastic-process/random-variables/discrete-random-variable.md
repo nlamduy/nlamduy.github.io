@@ -26,6 +26,15 @@ Ví dụ:
 | Number of Heads in 10 Coin Flips      | Counts how many times a head appears when a fair coin is flipped 10 times.       | 0, 1, 2, ..., 10                       |
 | Dice Roll Outcome                     | Represents the outcome of rolling a fair six-sided die.                          | 1, 2, 3, 4, 5, 6                       |
 
+Bên dưới là bảng tổng hợp một số thông tin quan trọng cho các biến rời rạc. Chi tiết sẽ được trình bày trong từng mục cụ thể.
+
+| Phân phối                       | Mục đích                                                                                                                       | Hàm khối xác suất (PMF), $$p(x)$$                                                                                             | Kỳ vọng, E[X]      | Phương sai, Var[X]                                     |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------------|--------------------------------------------------------|
+| Nhị thức (binomial)             | Tính xác suất có $$i$$ lần thành công trong $$n$$ phép thử                                                                     | $$ \binom{n}{x}p^x(1-p)^{n-x} $$ ,  $$ x = 0, 1, ..., n $$                                                                    | $$np$$             | $$np(1-p)$$                                            |
+| Poisson                         | Tính xác suất có $$i$$ lần sự kiện xảy ra trong không gian, hoặc thời gian xác định                                            | $$ e^-\lambda \cdot \frac{\lambda^x}{x!} $$ ,  $$ x = 0, 1, 2, ... $$                                                         | $$\lambda$$        | $$\lambda$$                                            |
+| Hình học (geometric)            | Tính xác suất có $$n$$ phép thử cho đến khi thành công (lần đầu tiên)                                                          | $$ p(1-p)^{x - 1} $$ ,  $$ x = 1, 2, ... $$                                                                                   | $$\frac{1}{p}$$    | $$\frac{1-p}{p^2}$$                                    |
+| Nhị thức âm (negative binomial) | Tính xác suất lần thành công thứ $$r^{th}$$ ở lần thử thứ $$n$$                                                                | $$ \binom{n - 1}{r - 1}(1-p)^{n-r}p^r $$                                                                                      | $$\frac{r}{p}$$    | $$r\frac{1-p}{p^2}$$                                   |
+| Siêu bội (hypergemetric)        | Tính xác suất có $$x$$ lần thành công trong mẫu $$n$$ được chọn (không hoàn lại) từ tổng thể $$N$$ với số lần thành công $$r$$ | $$ P\{ X = x \} = f(x) = \frac{\binom{r}{x} \binom{N - r}{n - x}}{\binom{N}{n}} $$ ,  $$ x \le n, x \le r, n - x \le N - r $$ | $$n(\frac{r}{N})$$ | $$n(\frac{r}{N})(1-\frac{r}{N})(\frac{N - n}{N - 1})$$ |
 
 # Cumulative Distribution Function
 
@@ -42,9 +51,10 @@ $$
 
 {: .highlight }
 
-- $$F_X(x)$$ là một hàm không giảm (nondecreasing function)[^1] của x.
-- $$\lim_{x \to \infty} F_X(x) = F(+\infty) = 1$$.
-- $$\lim_{x \to -\infty} F_X(x) = F(-\infty) = 0$$.
+- $$F_X(x)
+$$ là một hàm không giảm (nondecreasing function)[^1] của x
+- $$ \lim_{x \to \infty} F_X(x) = F(+\infty) = 1 $$
+- $$\lim_{x \to -\infty} F_X(x) = F(-\infty) = 0$$
 
 # Probability mass function
 
@@ -162,7 +172,7 @@ $$
 
 # Negative binomial random variable
 
-Phân phối nhị thức âm là một dạng mở rộng của phân phối hình học, được dùng để tính **xác suất của lần thành công thứ $$r^{th}$$ trong $$n$$ phép thử**. 
+Phân phối nhị thức âm là một dạng mở rộng của phân phối hình học, được dùng để tính **xác suất lần thành công thứ $$r^{th}$$ ở lần thử thứ $$n$$**. 
 
 Trong phân phối nhị thức, số lượng phép thử được xác định. Chẳng hạn, chúng ta quan tâm xác suất có 3 lần thành công trong 10 phép thử. Đối với nhị thức âm, số lần thành công được xác định. Chẳng hạn, chúng ta quan tâm xác suất số lượng phép thử bằng 10 khi thành công lần thứ 3. Nói cách khác, số phép thử sẽ tăng lên cho đến khi đạt được $$r^{th}$$ thành công. Không có giới hạn trên (upper bound) nào cho số lượng phép thử. 
 
@@ -265,11 +275,13 @@ $$
 P\{ X = x \} = f(x) = \frac{\binom{r}{x} \binom{N - r}{n - x}}{\binom{N}{n}}
 $$
 
-*Trong đó:
+*Trong đó:*
 
 *$$x$$ = số lần thành công trong $$n$$ phép thử*
 
 *$$N$$ = kích thước tổng thể*
+
+*$$n$$ = kích thước mẫu không hoàn lại*
 
 *$$r$$ = số phần tử của tổng thể được xem là thành công*
 
@@ -282,6 +294,8 @@ $$P\{ X = 4 \} = \frac{\binom{6}{4} \binom{14}{1}}{\binom{20}{5}} = 0.0135$$
 Anderson, D. R., Sweeney, D. J., Williams, T. A., Camm, J. D., & Cochran, J. J. (2016). Statistics for Business & Economics. Cengage Learning.
 
 Eberly College of Science. (n.d.). 7.4 - Hypergeometric Distribution \| STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/7/7.4
+
+Eberly College of Science. (n.d.-b). 11.5 - Key Properties of a Negative Binomial Random Variable \| STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/11/11.5
 
 Eberly College of Science. (n.d.). 11.4 - Negative Binomial Distributions \| STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/11/11.4
 

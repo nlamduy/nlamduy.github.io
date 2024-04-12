@@ -2,6 +2,7 @@
 layout: default
 title: Conditional Probability and Expectation
 parent: Stochastic Process
+math: mathjax
 # has_children: true
 nav_order: 3
 ---
@@ -214,7 +215,26 @@ E[X] & = E[E[X | Y]] \\
 \end{aligned}
 $$
 
-Kỹ thuật này rất hữu ích, đặc biệt với trường hợp chúng ta không thể tính trực tiếp $$E[X]$$ vì không biết phân phối của X, nhưng lại tìm được mối quan hệ của X với một biến ngẫu nhiên khác.
+Kỹ thuật này rất hữu ích, đặc biệt với trường hợp chúng ta không thể tính trực tiếp $$E[X]$$, nhưng lại tìm được mối quan hệ của X với một biến ngẫu nhiên khác.
+
+Ví dụ:
+
+Một danh mục bảo hiểm có 3 loại rủi ro: thấp (G), trung bình (N) và cao (B). Số tiền đền bù khi có yêu cầu từ khách hàng tuân theo [phân phối mũ](https://nlamduy.github.io/docs/stochastic-process/random-variables/continuous-random-variable.html#exponential-random-variable) với tham số $$\lambda$$ phụ thuộc vào loại rủi ro. Cụ thể, $$\lambda_G = 0.1, \lambda_N = 0.05, \lambda_B = 0.02$$. Cho rằng danh mục có 60% khách hàng là rủi ro thấp, 30% rủi ro trung bình và 10% là rủi ro cao:
+a. Tìm số tiền đền bù trung bình nếu chọn ngẫu nhiên từ danh mục. 
+
+Trả lời:
+Gọi X là biến ngẫu nhiên đại diện số tiền đền bù, Y là biến ngẫu nhiên đại diện cho mức độ rủi ro. 
+
+$$
+\begin{aligned}
+E[X] & = E[E[X|Y]] \\
+& = E[X|Y=G]P(Y=G) \\
+& = E[X|Y=N]P(Y=N) \\
+& = E[X|Y=B]P(Y=B) \\
+\end{aligned}
+$$
+
+Từ dữ kiện đề bài ta có $$P(Y=G) = 0.6, P(Y=N) = 0.3, P(Y=B)=0.1$$. Ta biết, phân phối của X khi Y xảy ra tuân theo phân phối mũ.
 
 # References
 

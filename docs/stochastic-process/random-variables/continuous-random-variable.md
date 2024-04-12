@@ -26,7 +26,6 @@ Ví dụ:
 | Amount of Iced Tea in a Glass | The amount of iced tea in a glass is another continuous random variable.  | Real numbers (e.g., volume in milliliters) |
 | Change in Temperature Throughout a Day | The change in temperature over the course of a day is a continuous random variable.  | Real numbers (e.g., degrees Celsius or Fahrenheit) |
 
-
 # Cumulative distribution function
 
 Hàm phân phối tích luỹ CDF của biến ngẫu nhiên liên tục được định nghĩa:
