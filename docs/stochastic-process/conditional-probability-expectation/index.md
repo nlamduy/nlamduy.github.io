@@ -234,7 +234,38 @@ E[X] & = E[E[X|Y]] \\
 \end{aligned}
 $$
 
-Từ dữ kiện đề bài ta có $$P(Y=G) = 0.6, P(Y=N) = 0.3, P(Y=B)=0.1$$. Ta biết, phân phối của X khi Y xảy ra tuân theo phân phối mũ.
+Từ dữ kiện đề bài ta có $$P(Y=G) = 0.6, P(Y=N) = 0.3, P(Y=B)=0.1$$. Ta biết, [kỳ vọng của phân phối mũ](https://nlamduy.github.io/docs/stochastic-process/random-variables/expectation-variance.html) là $$E[X] = \frac{1}{\lambda}$$. Mà kỳ vọng của X khi Y xảy ra tuân theo phân phối mũ, do đó:
+
+- $$E[X | Y = G] = \frac{1}{\lambda_G} = 10$$
+- $$E[X | Y = N] = \frac{1}{\lambda_N} = 20$$
+- $$E[X | Y = B] = \frac{1}{\lambda_B} = 50$$
+
+Như vậy, nếu chọn ngẫu nhiên một hồ sơ đền bù từ danh mục bảo hiểm, thì số tiền đền bù trung bình là: 
+
+$$
+E[X] = 10 \ cdot 0.6 + 20 \cdot 0.3 + 50 \cdot 0.1 = 17
+$$
+
+
+# Computing variances by conditiong
+
+Để tính phương sai với phương pháp điều kiện hoá, chúng ta có 2 phương pháp như bên dưới:
+
+**Cách 1 (Phương sai cổ điển):**
+
+{: .highlight}
+$$
+Var(X) = E[X^2] - (E[X^2]) = E[E[X^2 | Y]] - (E[E[X | Y]])^2
+$$
+
+**Cách 2 (Phương sai toàn phần):**
+
+{: .highlight}
+$$
+Var(X) = E[Var(X | Y)] + Var(E[X | Y])
+$$
+
+Trong đó, $$E[Var(X \vert Y)]$$ là phương sai giải thích được và $$Var(E[X \vert Y])$$ là phương sai không giải thích được.
 
 # References
 
