@@ -26,7 +26,20 @@ Ví dụ:
 | Amount of Iced Tea in a Glass | The amount of iced tea in a glass is another continuous random variable.  | Real numbers (e.g., volume in milliliters) |
 | Change in Temperature Throughout a Day | The change in temperature over the course of a day is a continuous random variable.  | Real numbers (e.g., degrees Celsius or Fahrenheit) |
 
+**Hai điểm khác biệt cơ bản của biến ngẫu nhiên liên tục so với rời rạc**:
 
+{: .highlight}
+1. Có thể tính xác suất tại một điểm cụ thể với biến rời rạc. Nhưng phải tính xác suất trong một khoảng cho trước (dù khoảng đó là rất bé) với biến liên tục vì xác suất tại một điểm là gần như bằng 0.
+2. Xác suất trong một khoảng (a,b) cho trước là diện tích nằm dưới đồ thì của hàm mật độ xác suất (PDF).
+
+**Bên dưới là bảng tóm tắt hàm mật độ xác suất (PDF) của một số phân phối liên tục:**
+
+| Phân phối        | Mục đích                                                                                      | Hàm mật độ xác suất (PDF), $$f(x)$$                                                                                                              |
+|------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Đều (uniform)    | Tính xác suất cho một khoảng biết phân phối trên mỗi đơn vị thời gian, không gian là như nhau | $$ f(x) = \begin{cases} \frac{1}{b - a} \text{ , } a < x < b \\ 0 \text{ , otherwise} \end{cases} $$                                       |
+| Mũ (exponential) | Tính xác suất cho thời gian, không gian xảy ra giữa hai sự kiện                               | $$ f(x) = \begin{cases} \lambda e^{-\lambda x} \text{ , } x \ge 0 \\ 0 \text{ , } x < 0 \end{cases} $$                                     |
+| Gamma            | Tính xác suất cho đến khi một sự kiện xảy ra biết thời gian trung bình sự kiện này xảy ra     | $$ f(x) = \begin{cases} \frac{\lambda e^{-\lambda x}(\lambda x)^{n - 1}}{(n - 1)!} \text{ , } x \ge 0 \\ 0 \text{ , } x < 0 \end{cases} $$ |
+| Chuẩn (normal)   | Tính xác suất cho biến ngẫu nhiên tuân theo phân phối chuẩn                                   | $$ f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \cdot e^{-(x - \mu)^2 / 2\sigma^2}, $$  $$-\infty < x < \infty$$                                   |
 
 # Cumulative distribution function
 

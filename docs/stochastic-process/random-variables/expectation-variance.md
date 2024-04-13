@@ -16,6 +16,25 @@ nav_order: 3
 1. TOC
 {:toc}
 
+**Giá trị kỳ vọng và phương sai của một số phân phối xác suất rời rạc:**
+
+| Phân phối                       | Kỳ vọng, E[X]      | Phương sai, Var(X)                                     |
+|---------------------------------|--------------------|--------------------------------------------------------|
+| Nhị thức (binomial)             | $$np$$             | $$np(1-p)$$                                            |
+| Poisson                         | $$\lambda$$        | $$\lambda$$                                            |
+| Hình học (geometric)            | $$\frac{1}{p}$$    | $$\frac{1-p}{p^2}$$                                    |
+| Nhị thức âm (negative binomial) | $$\frac{r}{p}$$    | $$r\frac{1-p}{p^2}$$                                   |
+| Siêu bội (hypergemetric)        | $$n(\frac{r}{N})$$ | $$n(\frac{r}{N})(1-\frac{r}{N})(\frac{N - n}{N - 1})$$ |
+
+**Giá trị kỳ vọng và phương sai của một số phân phối xác suất liên tục:**
+
+| Phân phối        | Kỳ vọng, E[X]           | Phương sai, Var(X)         |
+|------------------|-------------------------|----------------------------|
+| Đều (uniform)    | $$ \frac{a + b}{2} $$   | $$ \frac{(b - a)^2}{12} $$ |
+| Mũ (exponential) | $$ \frac{1}{\lambda} $$ | $$ \frac{1}{\lambda^2} $$  |
+| Gamma            | $$ \frac{n}{\lambda} $$ | $$ \frac{n}{\lambda^2} $$  |
+| Chuẩn (normal)   | $$ \mu $$               | $$ \sigma^2 $$             |
+
 # Expected value
 
 Trong lý thuyết xác suất, **giá trị kỳ vọng** cơ bản là kết quả trung bình chúng ta sẽ nhận được nếu có thể lặp lại một thí nghiệm nhiều lần. Nó được tính toán bằng cách nhân mỗi kết quả có thể xảy ra với xác suất của nó và sau đó cộng tất cả những tích đó lại với nhau.
@@ -159,6 +178,30 @@ Khi tính hàm MGF, có hai lưu ý:
 
 1. $$\phi^n(0) = E[X^n], n \ge 1$$
 2. $$\phi_{X + Y}(t) = \phi_X(t)\phi_Y(t) \text{ , if X and Y are independent}$$
+
+
+**Hàm MGF của một số phân phối rời rạc:**
+
+| Phân phối                       | Hàm sinh moment (MGF), $$\phi(t)$$ | Moment bậc 1, $$\phi^{'}(t)$$           | Moment bậc 2, $$\phi^{''}(t)$$                                               |
+|---------------------------------|------------------------------------|-----------------------------------------|------------------------------------------------------------------------------|
+| Nhị thức (binomial)             | $$ (pe^t + (1 - p))^n $$           | $$ n(pe^t + 1 - p)^{n - 1}pe^t $$       | $$ n(n - 1)(pe^t + 1 - p)^{n - 2}(pe^t)^2 + n(pe^t + 1 - p)^{n - 1}pe^t $$   |
+| Poisson                         | $$ e^{\lambda(e^t - 1)} $$         | $$ \lambda e^t e^{\lambda (e^t - 1)} $$ | $$ (\lambda e^t)^2 e^{\lambda(e^t - 1)} + \lambda e^t e^{\lambda(e^t -1)} $$ |
+| Hình học (geometric)            | $$ \frac{pe^t}{1 - (1 - p)e^t} $$  |                                         |                                                                              |
+| Nhị thức âm (negative binomial) |                                    |                                         |                                                                              |
+| Siêu bội (hypergemetric)        |                                    |                                         |                                                                              |
+
+
+**Hàm MGF của một số phân phối liên tục:**
+
+| Phân phối        | Hàm sinh moment (MGF), $$\phi(t)$$       | Moment bậc 1, $$\phi^{'}(t)$$                               | Moment bậc 2, $$\phi^{''}(t)$$$$                                                                            |
+|------------------|------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| Đều (uniform)    | $$ \frac{e^{tb} - e^{ta}}{t(b-a)} $$     |                                                           |                                                                                                           |
+| Mũ (exponential) | $$ \frac{\lambda}{\lambda - t} $$        | $$ \frac{\lambda}{(\lambda - t)^2} $$                     | $$ \frac{2\lambda}{(\lambda - t)^3} $$                                                                    |
+| Gamma            | $$ (\frac{\lambda}{\lambda - t})^n $$    |                                                           |                                                                                                           |
+| Chuẩn (normal)   | $$ e^{\mu t + \frac{\sigma^2 t^2}{2}} $$ | $$ (\mu + t\sigma^2)e^{\frac{\sigma^2 t^2}{2} + \mu t} $$ | $$ (\mu + t\sigma^2)^2 e^{\frac{\sigma^2 t^2}{2} + \mu t} + \sigma^2 e^{\frac{\sigma^2 t^2}{2} + \mu t} $$ |
+
+
+Có thể thấy, **nếu $$t = 0$$ thì hàm MGF bậc 1 sẽ chính bằng kỳ vọng của phân phối.** MGF bậc 2 khi $$t = 0$$ chính bằng $$E[X^2]$$ và được sử dụng để tính phương sai với $$\text{Var}(X) = E[X^2] - (E[X])^2$$ 
 
 # Join probability distribution
 
