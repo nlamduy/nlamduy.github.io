@@ -438,7 +438,34 @@ $$
 P\{|X - \mu| \ge k\} \le \frac{\sigma^2}{k^2}
 $$
 
+hoặc
+
+{: .highlight }
+$$
+P\{|X - \mu| \ge k\sigma\} \le \frac{1}{k^2}
+$$
+
 *Bất đẳng thức Chebyshev cho phép X nhận giá trị âm.*
+
+**Một điểm quan trọng là $$k > \sigma^2$$ hoặc $$k \ge 1$$. Nếu điều kiện này không thoả, xác suất tính ra sẽ lơn hơn 1.**
+
+Ví dụ:
+
+Sử dụng lại ví dụ của Công ty lốp xe Grear ở phần [phân phối chuẩn chuẩn hoá](https://nlamduy.github.io/docs/stochastic-process/random-variables/continuous-random-variable.html#standard-normal-distribution), nhưng lần này muốn ước lượng xác suất khi $$X \ge 42000$$km. Ta biết trung bình $$\mu = 36500$$ và phương sai $$\sigma^2 = 5000^2$$ và X tuân theo phân phối chuẩn. Có thể dễ dàng tính được xác suất $$P\{ X \ge 42000 \} \approx 0.1357$$.
+
+Giả sử ta không có thông tin về phân phối của X, mà chỉ có trung bình và phương sai, thì ước lượng từ các bất đẳng thức như thế nào?
+
+- Sử dụng bất đẳng thức Markov (chỉ có thông tin về trung bình):
+$$
+P\{X \ge 42000\} \le \frac{36500}{42000} \approx 0.8690
+$$
+
+- Sử dụng bất đẳng thức Chebyshev (có thông tin về trung bình và phương sai):
+$$
+P\{|42000 - 36500| \ge 5500\} \le \frac{5000^2}{5500^2} \approx 0.8264
+$$
+
+Như vậy, **bất đẳng thức Chebyshev cho kết quả gần với thực tế (P = 0.1357) hơn là bất đẳng thức Markov.**
 
 # Strong law of large number
 

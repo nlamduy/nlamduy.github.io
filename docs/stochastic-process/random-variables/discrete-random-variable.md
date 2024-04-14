@@ -204,6 +204,8 @@ Tính chất của phép thử [Poisson](https://vi.wikipedia.org/wiki/Siméon-D
 
 Gọi X là biến ngẫu nhiên cần quan tâm với số lần xảy ra $$i$$ nhận các giá trị 0, 1, 2, ... X là biến Poisson có tham số $$\lambda$$, với $$\lambda > 0$$. **Hàm khối xác suất (PMF)** được trình bày như sau:
 
+Lưu ý $$\lambda$$ có ý nghĩa khác trung bình $$\mu$$. Cụ thể, **$$\lambda$$ là tốc độ (rate) của sự kiện** còn $$\mu$$ là trung bình của biến. Ví dụ: X là biến ngẫu nhiên rời rạc thể hiện số lượng người đi thang máy trong một giờ. Trung bình trong một phút có 20 người đi thang máy, thì $$\lambda = \frac{1}{20}$$.
+
 {: .highlight }
 
 $$

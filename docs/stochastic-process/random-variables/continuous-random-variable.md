@@ -354,7 +354,7 @@ The probability that a batch of 500 screws has exactly 3 defective screws is 0.1
 
 # Gamma random variable
 
-Phân phối gamma là một dạng **tổng quát hoá của phân phối mũ**. Phân phối mũ, phân phối chi-square là những trường hợp đặc biệt của phân phối gamma. Một trong những ứng dụng điển hình của phân phối gamma là **tính xác suất thời gian chờ giữa các sự kiện**, với tốc độ trung bình $$\lambda$$ không đổi.
+Phân phối gamma là một dạng **tổng quát hoá của phân phối mũ**. Phân phối mũ, phân phối chi-square là những trường hợp đặc biệt của phân phối gamma. Một trong những ứng dụng điển hình của phân phối gamma là **tính xác suất thời gian chờ giữa các sự kiện liên tục**, với tốc độ trung bình $$\lambda$$ không đổi.
 
 Cho biến ngẫu nhiên X tuân theo phân phối Gamma với $$\alpha > 0$$ và $$\lambda > 0$$, hàm mật độ xác suất (PDF) được cho bởi:
 
@@ -428,7 +428,10 @@ The probability that the system does fail within 50 hours is 0.09020401043104986
 
 Ví dụ 2: 
 
-Trung bình cứ mỗi 2 phút sẽ có 1 người đi thang máy vào giờ cao điểm. Cho X là biến ngẫu nhiên đại diện cho thời gian chờ và tuân theo phân phối gamma. Tính xác suất chờ từ 5 đến 10 phút đến khi người thứ 5 đến.
+Trung bình cứ mỗi 2 phút sẽ có 1 người đi thang máy vào giờ cao điểm. Cho X là biến ngẫu nhiên đại diện cho thời gian đi thang máy và tuân theo phân phối mũ. Tính xác suất chờ từ 5 đến 10 phút đến khi người thứ 5 đến.
+
+![gamma_eg3](/assets/img/stochastic-process/gamma_eg3.png)
+
 
 Ta có: $$\lambda = \frac{1}{\beta} = \frac{1}{2}$$, $$\alpha = 5$$.
 
