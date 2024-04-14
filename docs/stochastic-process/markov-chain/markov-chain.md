@@ -111,7 +111,7 @@ Tính:
 
 Để tính được các xác suất trên, cần sử dụng [xác suất có điều kiện](https://nlamduy.github.io/docs/stochastic-process/probability-theory/probability.html#conditional-probabilities).
 
-1. Tính $$P(X_0 = 0, X_1 = 2, X_2 = 2)$$:
+- Tính $$P(X_0 = 0, X_1 = 2, X_2 = 2)$$:
 
 $$
 \begin{aligned}
@@ -124,7 +124,7 @@ $$
 
 Ở đây, $$P(X_2 = 2 \vert X_0 = 0, X_1 = 1)$$ có thể bằng $$P(X_2 = 2 \vert X_1 = 1)$$ vì giả định của xích Markov là những gì xảy ra ở tương lai ($$X_2$$) chỉ phụ thuộc vào hiện tại ($$X_1$$), nên ta có thể bỏ qua quá khứ $$X_0$$ trong trường hợp này.
 
-2. Tính $$P(X_1 = 1, X_2 = 1 \vert X_0 = 0)$$:
+- Tính $$P(X_1 = 1, X_2 = 1 \vert X_0 = 0)$$:
 
 $$
 \begin{aligned}
