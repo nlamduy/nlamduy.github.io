@@ -161,19 +161,15 @@ $$
 P(E_1 \cap E_2) = P(E_1)P(E_2)
 $$
 
-
-
 # Total probability law
 
-Quy tắc **xác suất toàn phần**:
+Một trong những **quy tắc rất quan trọng** trong lý thuyết xác suất đó là quy tắc **xác suất toàn phần**:
 
 {: .highlight }
 
 $$
 P(E_2) = P(E_2 \cap E_1) + P(E_2 \cap E_1^c) = P(E_1)P(E_2|E_1) + P(E_1^c)P(E_2|E_1^c)
 $$
-
-
 
 Trong đó, $$E_1^c$$ là phần bù của biến cố $$E_1$$.
 
@@ -184,6 +180,10 @@ Giả sử, dãy $$\{A_1, A_2, A_3\}$$ là cơ sở của $$\Omega$$. Cho sự k
 $$P
 (E) = P(E | A_1)P(A_1) + P(E | A_2)P(A_2) + P(E | A_3)P(A_3)
 $$
+
+![total_prob_eg1](/assets/img/stochastic-process/total_prob_eg1.png)
+
+![total_prob_eg2](/assets/img/stochastic-process/total_prob_eg2.png)
 
 # Bayes' theorem 
 

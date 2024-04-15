@@ -10,7 +10,7 @@ nav_order: 4
 # Markov Chain
 {: .no_toc }
 
-Xích Markov là một hệ thống toán học diễn ra các chuyển đổi từ trạng thái này sang trạng thái khác, trong một số lượng hữu hạn hoặc đếm được các trạng thái có thể. Đây là một quá trình ngẫu nhiên nơi trạng thái tương lai chỉ phụ thuộc vào trạng thái hiện tại và không phụ thuộc vào chuỗi các sự kiện đã xảy ra trước đó. Tính chất này được gọi là **“không nhớ” và là một đặc điểm chính của chuỗi Markov**.
+Xích Markov là một hệ thống toán học diễn ra các chuyển đổi từ trạng thái này sang trạng thái khác, trong một số lượng hữu hạn hoặc đếm được các trạng thái có thể. Đây là một quá trình ngẫu nhiên nơi trạng thái tương lai chỉ phụ thuộc vào trạng thái hiện tại và không phụ thuộc vào chuỗi các sự kiện đã xảy ra trước đó. Tính chất này được gọi là **“không nhớ” và là một đặc điểm chính của xích Markov**.
 
 ## Table of contents
 {: .no_toc .text-delta }
@@ -144,6 +144,48 @@ P(A,B|C) & = \frac{P(A,B,C)}{P(C)} \\
 & = \frac{P(A|B,C)P(B,C)}{P(C)} \\
 & = P(A|B,C)P(B|C) \\
 & = P(A,B|C) = P(A|B,C)P(B|C)
+\end{aligned}
+$$
+
+# Chapman-Kolmogorov equation
+
+Cho $$P_{ij}^(n)$$ là xác suất trạng thái $$i$$ chuyển sang trạng thái $$j$$ sau $$n$$ bước chuyển, tức là:
+
+{: .highlight }
+$$
+P_{ij}^{(n)} = P\{X_{n + 1} = j \vert X_k = i\} \text{ , } n \ge 0, i, j \ge 0
+$$
+
+Thì phương trình Chapman-Kolmogorov để tính xác suất chuyển sau $$n$$ bước là:
+
+{: .highlight }
+$$
+P_{ij}^{(n + m)} = \sum_{k = 0}^{\infty} P_{ik}^{(n)} P_{kj}^{(m)} \text{ for all } n, m \ge 0 \text{ , all } i, j
+$$
+
+Ví dụ:
+
+Cho xích Markov với 3 trạng thái $$\{1, 2, 3\}$$ và ma trận xác suất chuyển:
+
+$$ P = \begin{bmatrix}
+0.1 & 0.3 & 0.6 \\
+0.4 & 0.2 & 0.4 \\
+0.3 & 0.3 & 0.4 
+\end{bmatrix}  $$
+
+Tính xác suất chuyển $$P\{X_2 = 3 \vert X_0 = 2\}$$.
+
+Đáp án:
+
+Áp dụng công thức [xác suất toàn phần](https://nlamduy.github.io/docs/stochastic-process/probability-theory/probability.html#total-probability-law):
+
+$$
+\begin{aligned}
+& P\{X_2 = 3 | X_0 = 2\} \\
+& = P\{X_2 = 3 | X_1 = 1, X_0 = 2\}P\{X_1 = 1 | X_0 = 2\} \\
+& + P\{X_2 = 3 | X_1 = 2, X_0 = 2\}P\{X_1 = 2 | X_0 = 2\} \\
+& + P\{X_2 = 3 | X_1 = 3, X_0 = 2\}P\{X_1 = 3 | X_0 = 2\} \\
+& = 0.6 \cdot 0.4 + 0.4 \cdot 0.2 + 0.4 \cdot 0.4 = 0.48
 \end{aligned}
 $$
 

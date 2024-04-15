@@ -265,8 +265,6 @@ $$
 Var(X) = E[Var(X | Y)] + Var(E[X | Y])
 $$
 
-Trong đó, $$E[Var(X \vert Y)]$$ là phương sai giải thích được và $$Var(E[X \vert Y])$$ là phương sai không giải thích được.
-
 # References
 
 Eberly College of Science. (n.d.-b). 20.2 - Conditional distributions for continuous random variables \| STAT 414. PennState: Statistics Online Courses. https://online.stat.psu.edu/stat414/lesson/20/20.2
