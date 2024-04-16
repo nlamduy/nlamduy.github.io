@@ -18,20 +18,20 @@ nav_order: 1
 
 # Sample Space
 
-Không gian mẫu (sample space) là **tập hợp tất cả kết quả có thể xảy ra** của một thí nghiệm (experiment), được ký hiệu là $$\Omega$$. Xác suất 
+Không gian mẫu (sample space) là **tập hợp tất cả kết quả có thể xảy ra** của một thí nghiệm (experiment), được ký hiệu là $$\Omega$$. Xác suất không gian mẫu:
 
 {: .highlight }
 $$
 P(\Omega) = 1
-$$.
+$$
 
 **Mỗi kết quả trong không gian mẫu là một điểm mẫu** (sample point).
 
 Ví dụ, xác định không gian mẫu:
 
-- Tung một đồng xu? $$\Rightarrow \Omega = \{H,T\}$$
-- Đổ một con xúc xắc? $$\Rightarrow \Omega = \{1,2,3,4,5,6\}$$
-- Đổ hai con xúc xắc? $$\Rightarrow \Omega = \{(1,1), (1,2), (1,3), ..., (6,6)\}$$
+- Tung một đồng xu? $$\Rightarrow \Omega = \{H,T\}$$.
+- Đổ một con xúc xắc? $$\Rightarrow \Omega = \{1,2,3,4,5,6\}$$.
+- Đổ hai con xúc xắc? $$\Rightarrow \Omega = \{(1,1), (1,2), (1,3), ..., (6,6)\}$$.
 
 # Events
 
@@ -41,7 +41,7 @@ Ví dụ, biến cố mặt xúc xắc là chẵn: $$E = \{2, 4, 6\} \subseteq \
 
 ## Complement of an event
 
-Phần bù của một biến cố $$E$$ là tập hợp các **điểm mẫu thuộc không gian mẫu** $$\Omega$$ nhưng **không thuộc biến cố E**, được kí hiệu $$E^c$$.
+Phần bù của một biến cố $$E$$ là tập hợp các **điểm mẫu thuộc không gian mẫu** $$\Omega$$ nhưng **không thuộc biến cố $$E$$**, được kí hiệu $$E^c$$.
 
 
 **Xác suất phần bù** của biến cố $$E$$:
@@ -55,14 +55,14 @@ Ví dụ:
 
 Gọi $$E$$ là biến cố mặt xúc xắc chẵn. Tính xác suất phần bù $$E^c$$.
 
-Ta biết không gian mẫu $$\Omega = \{1, 2, 3, 4, 5, 6\}$$, biến cố $$E = \{2, 4, 6\}$$, $$P(E) = \frac{3}{6}$$. Do đó $$P(E^c) = 1 - \frac{3}{6} = \frac{1}{2}$$
+Ta biết không gian mẫu $$\Omega = \{1, 2, 3, 4, 5, 6\}$$, biến cố $$E = \{2, 4, 6\}$$, $$P(E) = \frac{3}{6}$$. Do đó $$P(E^c) = 1 - \frac{3}{6} = \frac{1}{2}$$.
 
 
 ## Union of two events
 
 Hợp của hai biến cố $$E_1$$ và $$E_2$$ là tập hợp **tất cả điểm mẫu thuộc** $$E_1$$ **hoặc** $$E_2$$ **hoặc cả hai**, được ký hiệu $$E_1 \cup E_2$$.
 
-Ví dụ, xác định hợp của biến cố $$E_1 = \{1,2,3\}$$ và $$E_2 = \{3,4\}$$: $$E_1 \cup E_2 = \{1,2,3,4\}$$
+Ví dụ, xác định hợp của biến cố $$E_1 = \{1,2,3\}$$ và $$E_2 = \{3,4\}$$: $$E_1 \cup E_2 = \{1,2,3,4\}$$.
 
 
 ## Intersection of two events
