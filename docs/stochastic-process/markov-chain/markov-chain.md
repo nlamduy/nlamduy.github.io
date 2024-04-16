@@ -149,7 +149,7 @@ $$
 
 # Chapman-Kolmogorov equation
 
-Cho $$P_{ij}^(n)$$ là xác suất trạng thái $$i$$ chuyển sang trạng thái $$j$$ sau $$n$$ bước chuyển, tức là:
+Cho $$P_{ij}^{(n)}$$ là xác suất trạng thái $$i$$ chuyển sang trạng thái $$j$$ sau $$n$$ bước chuyển, tức là:
 
 {: .highlight }
 $$
