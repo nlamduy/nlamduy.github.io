@@ -243,7 +243,7 @@ Từ dữ kiện đề bài ta có $$P(Y=G) = 0.6, P(Y=N) = 0.3, P(Y=B)=0.1$$. T
 Như vậy, nếu chọn ngẫu nhiên một hồ sơ đền bù từ danh mục bảo hiểm, thì số tiền đền bù trung bình là: 
 
 $$
-E[X] = 10 \ cdot 0.6 + 20 \cdot 0.3 + 50 \cdot 0.1 = 17
+E[X] = 10 \cdot 0.6 + 20 \cdot 0.3 + 50 \cdot 0.1 = 17
 $$
 
 
@@ -251,14 +251,14 @@ $$
 
 Để tính phương sai với phương pháp điều kiện hoá, chúng ta có 2 phương pháp như bên dưới:
 
-**Cách 1 (Phương sai cổ điển):**
+**Cách 1 - Phương sai cổ điển:**
 
 {: .highlight}
 $$
 Var(X) = E[X^2] - (E[X^2]) = E[E[X^2 | Y]] - (E[E[X | Y]])^2
 $$
 
-**Cách 2 (Phương sai toàn phần):**
+**Cách 2 - Phương sai toàn phần (Total variance):**
 
 {: .highlight}
 $$
