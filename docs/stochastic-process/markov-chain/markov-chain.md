@@ -23,7 +23,7 @@ Xích Markov là một hệ thống toán học diễn ra các chuyển đổi t
 
 Một quá trình ngẫu nhiên là họ của biến ngẫu nhiên $$\{X_t : t \in T\}$$ nhận giá trị trong không gian trạng thái, trong đó:
 
-{: .highlight }
+{: .note }
 - Cho mỗi $$t \in T, X_t$$ là một biến ngẫu nhiên.
 - Chỉ số $$T$$ và không gian trạng thái (state space) có thể là liên tục hoặc rời rạc.
 - Cho $$T = \{0,1,2,3,4,...,\}$$ (rời rạc) hoặc $$T = \mathbb{R}, \mathbb{R^+}, \mathbb{R^2}, \mathbb{R^3}$$ (liên tục).
@@ -262,6 +262,65 @@ Các trạng thái trong một xích Markov có thể được phân loại thà
 3. **Trạng thái thường xuyên:** Một trạng thái là thường xuyên nếu xuất phát từ một trạng thái $$i$$ và sẽ quay lại trạng thái $$i$$ vô hạn lần với xác suất $$P \{ \text{ever re-enter } i \vert X_0 = i \} = 1$$.
 4. **Trạng thái tạm thời:** Một trạng thái là tạm thời nếu xuất phát từ một trạng thái $$i$$ và sẽ quay lại trạng thái $$i$$ hữu hạn lần với xác suất $$P\{ \text{ever re-enter } i \vert X_0 = i \} < 1$$.
 5. **Trạng thái hấp thụ:** Một trạng thái là hấp thụ nếu một khi đã vào, không thể rời khỏi trạng thái đó.
+
+Ví dụ 1:
+
+Cho ma trận xác suất chuyển với 3 trạng thái {1, 2, 3} như sau:
+
+$$
+P = \begin{bmatrix}
+0.1 & 0.2 & 0.7 \\
+0.4 & 0.4 & 0.2 \\
+0   & 0   & 1
+\end{bmatrix}  
+$$
+
+![markov_eg9](/assets/img/stochastic-process/markov_eg9.png)
+
+Có thể rút ra những nhận xét sau:
+- Trạng thái 1 có thể tiếp cận từ 2, 2 có thể tiếp cận được từ 1, 3 có thể tiếp cận được từ 1 và 2.
+- Trạng thái 1 và 2 có khả năng liên lạc với nhau.
+- Trạng thái 3 là một trạng thái hấp thụ vì khi đã vào thì không thể thoát ra.
+
+{: .highlight }
+- Hai trạng thái nếu liên lạc được với nhau thì cùng một lớp (class) và có tính chất tương tự nhau.
+- Một xích Markov được gọi là tối giản (irreducible) nếu chi có một lớp.
+
+Ví dụ 2:
+
+Cho ma trận xác suất chuyển với 3 trạng thái {1, 2, 3} như sau:
+
+$$
+P = \begin{bmatrix}
+1/2 & 1/2 & 0 \\
+1/2 & 1/4 & 1/4 \\
+0   & 1/3 & 2/3
+\end{bmatrix}  
+$$
+
+Trạng thái 3 có thể tiếp cận được từ trạng thái 1 hay không?
+
+Đáp án:
+
+Trạng thái 3 không thể tiếp cận trực tiếp từ trạng thái 1, nhưng có thể sau 2 bước. Cụ thể, trạng thái 1 chuyển sang trạng thái 2 và từ trạng thái 2 chuyển sang trạng thái 3. Xác suất $$P_{13}^{(2)} = 0.125$$.
+
+```python
+from numpy.linalg import matrix_power
+import numpy as np
+
+P = np.array([[0.5, 0.5, 0], [0.5, 0.25, 0.25], [0, 1/3, 2/3]])
+
+#Ma trận xác suất chuyển sau 2 bước
+matrix_power(P, 2)
+```
+```
+array([[0.5       , 0.375     , 0.125     ],
+       [0.375     , 0.39583333, 0.22916667],
+       [0.16666667, 0.30555556, 0.52777778]])
+```
+
+{: .highlight }
+Trạng thái $$j$$ có thể tiếp cận được từ trạng thái $$i$$ sau $$n$$ bước.
 
 
 
