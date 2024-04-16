@@ -21,12 +21,9 @@ nav_order: 2
 
 {: .highlight }
 
-- Xác suất của không gian mẫu: $$P(\Omega) = 1$$
-
-- Xác suất của một sự kiện $$E$$ bất kỳ: $$0 \le P(E) \le 1$$
-
-- Tổng xác suất các biến cố xung khắc $$E_i, i=1,2,3...$$: $$P\left(\bigcup_i E_i\right) = {\displaystyle \sum_i P(E_i)}$$
-
+- Xác suất của không gian mẫu: $$P(\Omega) = 1$$.
+- Xác suất của một biến cố $$E$$ bất kỳ: $$0 \le P(E) \le 1$$.
+- Tổng xác suất các biến cố xung khắc $$ E_i, i=1,2,3, ... $$: $$P\left(\bigcup_i E_i\right) = {\displaystyle \sum_i P(E_i)}$$.
 
 **Nguyên tắc thứ 3 là quan trọng nhất**.
 
@@ -48,7 +45,6 @@ Nếu $$E_1$$ và $$E_2$$ là **hai biến cố xung khắc**:
 $$
 P(E_1 \cup E_2) = P(E_1) + P(E_2)
 $$
-
 
 Ví dụ:
 
@@ -165,6 +161,8 @@ $$
 
 Một trong những **quy tắc rất quan trọng** trong lý thuyết xác suất đó là quy tắc **xác suất toàn phần**:
 
+Giả sử không gian mẫu $$\Omega$$ chỉ gồm ba biến cố $$E_1, E_1^c, E_2$$, thì:
+
 {: .highlight }
 
 $$
@@ -173,9 +171,9 @@ $$
 
 Trong đó, $$E_1^c$$ là phần bù của biến cố $$E_1$$.
 
-Cho dãy $$\{A_1, A_2, A_3, ... A_i \}$$ là các sự kiện xung khắc và hợp của chúng bằng không gian mẫu $$\Omega$$, thì ta có một **cơ sở (base)** của $$\Omega$$.
+Nếu dãy $$\{A_1, A_2, A_3, ... A_i \}$$ là các biến cố xung khắc và hợp của chúng bằng không gian mẫu $$\Omega$$, thì ta có một **cơ sở (base)** của $$\Omega$$.
 
-Giả sử, dãy $$\{A_1, A_2, A_3\}$$ là cơ sở của $$\Omega$$. Cho sự kiện bất kỳ $$E$$ thuộc $$\Omega$$. Sử dụng xác suất toàn phần để tính $$E$$: 
+Cho dãy $$\{A_1, A_2, A_3\}$$ là cơ sở của $$\Omega$$ và biến cố $$E$$ thuộc $$\Omega$$. Sử dụng xác suất toàn phần để tính $$E$$: 
 
 $$P
 (E) = P(E | A_1)P(A_1) + P(E | A_2)P(A_2) + P(E | A_3)P(A_3)
