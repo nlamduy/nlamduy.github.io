@@ -163,15 +163,17 @@ $$
 P_{ij}^{(n + m)} = \sum_{k = 0}^{\infty} P_{ik}^{(n)} P_{kj}^{(m)} \text{ for all } n, m \ge 0 \text{ , all } i, j
 $$
 
-Ví dụ:
+Ví dụ 1:
 
 Cho xích Markov với 3 trạng thái $$\{1, 2, 3\}$$ và ma trận xác suất chuyển:
 
-$$ P = \begin{bmatrix}
+$$ 
+P = \begin{bmatrix}
 0.1 & 0.3 & 0.6 \\
 0.4 & 0.2 & 0.4 \\
 0.3 & 0.3 & 0.4 
-\end{bmatrix}  $$
+\end{bmatrix}  
+$$
 
 Tính xác suất chuyển $$P\{X_2 = 3 \vert X_0 = 2\}$$.
 
@@ -188,6 +190,71 @@ $$
 & = 0.6 \cdot 0.4 + 0.4 \cdot 0.2 + 0.4 \cdot 0.4 = 0.48
 \end{aligned}
 $$
+
+Từ công thức trên có thể viết thành:
+
+$$
+P\{X_2 = 3 | X_0 = 2\} = P_{21}P_{13} + P_{22}P_{23} + P_{23}P_{33}
+$$
+
+Trực quan hơn:
+
+![markov_eg8](/assets/img/stochastic-process/markov_eg8.png)
+
+Điều này cũng có thể đạt được bằng cách luỹ thừa ma trận xác suất chuyển lên 2 lần:
+
+```python
+from numpy.linalg import matrix_power
+import numpy as np
+
+P = np.array([[0.1, 0.3, 0.6], [0.4, 0.2, .4], [0.3, 0.3, 0.4]])
+
+#Ma trận xác suất chuyển sau 2 bước
+matrix_power(P, 2)
+```
+```
+array([[0.31, 0.27, 0.42],
+       [0.24, 0.28, 0.48],
+       [0.27, 0.27, 0.46]])
+```
+
+Kết quả từ dòng 2, cột 3 là $$P_{23} = 0.48$$.
+
+Ví dụ 2:
+
+Cho ma trận xác suất chuyển với 2 trạng thái như sau:
+
+$$
+P = \begin{bmatrix}
+0.7 & 0.3 \\
+0.4 & 0.6
+\end{bmatrix}  
+$$
+
+Tính xác suất chuyển $$P_{00}$$ sau 4 bước.
+
+Đáp án:
+
+```python
+from numpy.linalg import matrix_power
+import numpy as np
+
+P = np.array([[0.7, 0.3], [0.4, 0.6]])
+
+#Ma trận xác suất chuyển sau 4 bước
+matrix_power(P, 4)
+```
+```
+array([[0.5749, 0.4251],
+       [0.5668, 0.4332]])
+```
+Như vậy, $$P_{00}^{(4)} = 0.5749$$.
+
+# Classification of states
+
+Các trạng thái trong một xích Markov có thể được phân loại thành thường xuyên (recurrent), tạm thời (transient) và hấp thụ (absorbing) dựa vào khả năng tiếp cận (accessible), liên lạc (communicate) của chúng.
+
+{: .highlight }
 
 # References
 
