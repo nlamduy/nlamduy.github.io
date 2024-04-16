@@ -43,7 +43,7 @@ Một số ví dụ:
 
 ![markov_eg3](/assets/img/stochastic-process/markov_eg3.png)
 
-{: .highlight }
+{: .important }
 **Những gì xảy ra trong tương lai chỉ phụ thuộc vào hiện tại:**
 $$
 P\{X_{n + 1} = j \vert X_n = i, X_{n - 1} = a\} = P\{X_{n + 1} = j \vert X_n = i\}
