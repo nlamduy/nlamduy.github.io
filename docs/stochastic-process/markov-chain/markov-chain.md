@@ -23,7 +23,7 @@ Xích Markov là một hệ thống toán học diễn ra các chuyển đổi t
 
 Một quá trình ngẫu nhiên là họ của biến ngẫu nhiên $$\{X_t : t \in T\}$$ nhận giá trị trong không gian trạng thái, trong đó:
 
-{: .highlight}
+{: .highlight }
 - Cho mỗi $$t \in T, X_t$$ là một biến ngẫu nhiên.
 - Chỉ số $$T$$ và không gian trạng thái (state space) có thể là liên tục hoặc rời rạc.
 - Cho $$T = \{0,1,2,3,4,...,\}$$ (rời rạc) hoặc $$T = \mathbb{R}, \mathbb{R^+}, \mathbb{R^2}, \mathbb{R^3}$$ (liên tục).
@@ -65,10 +65,12 @@ P_{i0} & P_{i1} & P_{i2} & ... & P_{ij} & ... \\
 \end{bmatrix}
 $$
 
+{: .note }
 Xác suất chuyển $$P_{ij}$$ thoả mãn những điều sau:
 - Xác suất chuyển không âm $$P_{ij} \ge 0$$ cho mọi $$i, j$$.
 - Tổng xác suất (theo dòng) $$\sum_j P_{ij} = 1$$ cho mọi $$i$$.
 
+{: .highlight }
 **Quy tắc đọc là dòng sang cột.**
 
 Ví dụ 1:
@@ -137,7 +139,7 @@ $$
 
 Từ ví dụ này, **ta có thể mở rộng thêm phần xác suất có điều kiện** cho xích Markov:
 
-{: .highlight}
+{: .new }
 $$
 \begin{aligned}
 P(A,B|C) & = \frac{P(A,B,C)}{P(C)} \\
@@ -151,14 +153,14 @@ $$
 
 Cho $$P_{ij}^{(n)}$$ là xác suất trạng thái $$i$$ chuyển sang trạng thái $$j$$ sau $$n$$ bước chuyển, tức là:
 
-{: .highlight }
+{: .important }
 $$
 P_{ij}^{(n)} = P\{X_{n + 1} = j \vert X_k = i\} \text{ , } n \ge 0, i, j \ge 0
 $$
 
 Thì phương trình Chapman-Kolmogorov để tính xác suất chuyển sau $$n$$ bước là:
 
-{: .highlight }
+{: .important }
 $$
 P_{ij}^{(n + m)} = \sum_{k = 0}^{\infty} P_{ik}^{(n)} P_{kj}^{(m)} \text{ for all } n, m \ge 0 \text{ , all } i, j
 $$
@@ -254,11 +256,18 @@ Như vậy, $$P_{00}^{(4)} = 0.5749$$.
 
 Các trạng thái trong một xích Markov có thể được phân loại thành thường xuyên (recurrent), tạm thời (transient) và hấp thụ (absorbing) dựa vào khả năng tiếp cận (accessible), liên lạc (communicate) của chúng.
 
-{: .highlight }
+{: .note }
+1. **Khả năng tiếp cận:** Một trạng thái $$j$$ được cho là có thể tiếp cận từ trạng thái $$i$$, được ký hiệu là $$i \rightarrow j$$, nếu có một xác suất chuyển từ $$i$$ sang $$j$$ trong một số bước hữu hạn, lớn hơn 0.
+2. **Khả năng liên lạc:** Các trạng thái $$i$$ và $$j$$ liên lạc với nhau nếu $$i$$ có thể tiếp cận từ $$j$$ và $$j$$ có thể tiếp cận từ $$i$$, được ký hiệu là $$i \leftrightarrow j$$.
+3. **Trạng thái thường xuyên:** Một trạng thái là thường xuyên nếu xuất phát từ một trạng thái $$i$$ và sẽ quay lại trạng thái $$i$$ vô hạn lần với xác suất $$P \{ \text{ever re-enter } i \vert X_0 = i \} = 1$$.
+4. **Trạng thái tạm thời:** Một trạng thái là tạm thời nếu xuất phát từ một trạng thái $$i$$ và sẽ quay lại trạng thái $$i$$ hữu hạn lần với xác suất $$P\{ \text{ever re-enter } i \vert X_0 = i \} < 1$$.
+5. **Trạng thái hấp thụ:** Một trạng thái là hấp thụ nếu một khi đã vào, không thể rời khỏi trạng thái đó.
+
+
 
 # References
 
-Nguyen Huu, Thai (n.d.). Lecture: Conditional Probability and Conditional Expectation. Stochastic models and applications. University of Economics HCMC.
+Nguyen Huu, Thai (n.d.). Lecture: Introduction to Markov Chain. Stochastic models and applications. University of Economics HCMC.
 
 Ross, S. M. (2019). Introduction to probability models. Academic Press.
 

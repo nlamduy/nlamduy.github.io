@@ -26,16 +26,16 @@ color_scheme: nil
 callouts_level: quiet # or loud
 callouts:
   highlight:
-    color: yellow
+    color: green
   important:
     title: Important
-    color: blue
+    color: yellow
   new:
     title: New
-    color: green
+    color: purple
   note:
     title: Note
-    color: purple
+    color: blue
   warning:
     title: Warning
     color: red
