@@ -18,7 +18,12 @@ nav_order: 1
 
 # Sample Space
 
-Không gian mẫu (sample space) là **tập hợp tất cả kết quả có thể xảy ra** của một thí nghiệm (experiment), được ký hiệu là $$\Omega$$. Xác suất $$P(\Omega) = 1$$.
+Không gian mẫu (sample space) là **tập hợp tất cả kết quả có thể xảy ra** của một thí nghiệm (experiment), được ký hiệu là $$\Omega$$. Xác suất 
+
+{: .highlight }
+$$
+P(\Omega) = 1
+$$.
 
 **Mỗi kết quả trong không gian mẫu là một điểm mẫu** (sample point).
 
@@ -32,14 +37,14 @@ Ví dụ, xác định không gian mẫu:
 
 Biến cố (events) là một **tập con của không gian mẫu** $$\Omega$$, được ký hiệu $$E \subseteq \Omega$$.
 
-Ví dụ, biến cố mặt xúc xắc là chẵn: $$E = \{2, 4, 6\}$$.
+Ví dụ, biến cố mặt xúc xắc là chẵn: $$E = \{2, 4, 6\} \subseteq \Omega = \{1, 2, 3, 4, 5, 6\}$$.
 
 ## Complement of an event
 
-Phần bù của một biến cố E là tập hợp các **điểm mẫu thuộc không gian mẫu** $$\Omega$$ nhưng **không thuộc biến cố E**, được kí hiệu $$E^c$$.
+Phần bù của một biến cố $$E$$ là tập hợp các **điểm mẫu thuộc không gian mẫu** $$\Omega$$ nhưng **không thuộc biến cố E**, được kí hiệu $$E^c$$.
 
 
-**Xác suất phần bù** của biến cố E:
+**Xác suất phần bù** của biến cố $$E$$:
 
 {: .highlight }
 $$
@@ -48,7 +53,7 @@ $$
 
 Ví dụ:
 
-Gọi E là biến cố mặt xúc xắc chẵn. Tính xác suất phần bù $$E^c$$.
+Gọi $$E$$ là biến cố mặt xúc xắc chẵn. Tính xác suất phần bù $$E^c$$.
 
 Ta biết không gian mẫu $$\Omega = \{1, 2, 3, 4, 5, 6\}$$, biến cố $$E = \{2, 4, 6\}$$, $$P(E) = \frac{3}{6}$$. Do đó $$P(E^c) = 1 - \frac{3}{6} = \frac{1}{2}$$
 
@@ -75,6 +80,8 @@ Hai biến cố xung khắc nếu không có điểm mẫu chung nào, hay $$E_1
 ## Collectively exhaustive events
 
 **Các biến cố xung khắc và đẩy đủ nếu thoả những điều kiện sau:**
+
+Cho $$E_1, E_2$$ là hai biến cố đầy đủ và xung khắc của không gian mẫu $$\Omega$$, thì:
 
 1. Không có điểm mẫu chung nào: $$E_1 \cap E_2 = \emptyset$$, $$P(E_1 \cap E_2) = 0$$.
 2. Tập hợp điểm mẫu của tất cả biến cố chính bằng không gian mẫu: $$\Omega$$, $$E_1 \cup E_2 = \Omega$$.
