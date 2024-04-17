@@ -69,7 +69,7 @@ $$
 > - Tổng xác suất (theo dòng) $$\sum_j P_{ij} = 1$$ cho mọi $$i$$.
 
 {: .highlight }
-**Quy tắc đọc ma trận xác suất chuyển là dọc từ dòng (trạng thái tại $$n$$) sang cột (trạng thái tại $$n + 1$$).**
+Quy tắc đọc ma trận xác suất chuyển là dọc từ dòng (trạng thái tại $$n$$) sang cột (trạng thái tại $$n + 1$$).
 
 Ví dụ 1:
 
@@ -108,8 +108,8 @@ và xác suất phân phối khởi đầu (xuất phát của xích Markov) $$P
 
 Tính:
 
-1. $$P(X_0 = 0, X_1 = 2, X_2 = 2)$$
-2. $$P(X_1 = 1, X_2 = 1 \vert X_0 = 0)$$
+1. Xác suất giao: $$P(X_0 = 0, X_1 = 2, X_2 = 2)$$.
+2. Xác suất có điều kiện: $$P(X_1 = 1, X_2 = 1 \vert X_0 = 0)$$.
 
 Đáp án:
 
@@ -126,7 +126,7 @@ $$
 \end{aligned}
 $$
 
-Ở đây, $$P(X_2 = 2 \vert X_0 = 0, X_1 = 1)$$ có thể bằng $$P(X_2 = 2 \vert X_1 = 1)$$ vì giả định của xích Markov là những gì xảy ra ở tương lai ($$X_2$$) chỉ phụ thuộc vào hiện tại ($$X_1$$), nên ta có thể bỏ qua quá khứ $$X_0$$ trong trường hợp này.
+Ở đây, $$P(X_2 = 2 \vert X_0 = 0, X_1 = 1)$$ có thể bằng $$P(X_2 = 2 \vert X_1 = 1)$$ vì giả định của xích Markov là những gì xảy ra ở tương lai ($$X_2$$) chỉ phụ thuộc vào hiện tại ($$X_1$$), nên ta có thể **bỏ qua quá khứ $$X_0$$ trong trường hợp này**.
 
 - Tính $$P(X_1 = 1, X_2 = 1 \vert X_0 = 0)$$:
 
@@ -155,14 +155,13 @@ $$
 
 Cho $$P_{ij}^{(n)}$$ là xác suất trạng thái $$i$$ chuyển sang trạng thái $$j$$ sau $$n$$ bước chuyển, tức là:
 
-{: .important }
+{: .highlight }
 $$
 P_{ij}^{(n)} = P\{X_{n + 1} = j \vert X_k = i\} \text{ , } n \ge 0, i, j \ge 0
 $$
 
-Thì phương trình Chapman-Kolmogorov để tính xác suất chuyển sau $$n$$ bước là:
-
 {: .important }
+Thì phương trình Chapman-Kolmogorov để tính xác suất chuyển sau $$n$$ bước là:
 $$
 P_{ij}^{(n + m)} = \sum_{k = 0}^{\infty} P_{ik}^{(n)} P_{kj}^{(m)} \text{ for all } n, m \ge 0 \text{ , all } i, j
 $$
@@ -285,8 +284,8 @@ Có thể rút ra những nhận xét sau:
 - Trạng thái 3 là một trạng thái hấp thụ vì khi đã vào thì không thể thoát ra.
 
 {: .highlight }
-- Hai trạng thái nếu liên lạc được với nhau thì cùng một lớp (class) và có tính chất tương tự nhau.
-- Một xích Markov được gọi là tối giản (irreducible) nếu chi có một lớp.
+> - Hai trạng thái nếu liên lạc được với nhau thì cùng một lớp (class) và có tính chất tương tự nhau.
+> - Một xích Markov được gọi là tối giản (irreducible) nếu chi có một lớp.
 
 Ví dụ 2:
 
