@@ -17,13 +17,11 @@ nav_order: 2
 {:toc}
 
 
+{: .important }
 **Các nguyên tắc cơ bản** khi tính xác suất:
-
-{: .highlight }
-
-- Xác suất của không gian mẫu: $$P(\Omega) = 1$$.
-- Xác suất của một biến cố $$E$$ bất kỳ: $$0 \le P(E) \le 1$$.
-- Tổng xác suất các biến cố xung khắc $$ E_i, i=1,2,3, ... $$: $$P\left(\bigcup_i E_i\right) = {\displaystyle \sum_i P(E_i)}$$.
+1. Xác suất của không gian mẫu: $$P(\Omega) = 1$$.
+2. Xác suất của một biến cố $$E$$ bất kỳ: $$0 \le P(E) \le 1$$.
+3. Tổng xác suất các biến cố xung khắc $$ E_i, i=1,2,3, ... $$: $$P\left(\bigcup_i E_i\right) = {\displaystyle \sum_i P(E_i)}$$.
 
 **Nguyên tắc thứ 3 là quan trọng nhất**.
 
@@ -159,12 +157,9 @@ $$
 
 # Total probability law
 
+{: .important }
 Một trong những **quy tắc rất quan trọng** trong lý thuyết xác suất đó là quy tắc **xác suất toàn phần**:
-
 Giả sử không gian mẫu $$\Omega$$ chỉ gồm ba biến cố $$E_1, E_1^c, E_2$$, thì:
-
-{: .highlight }
-
 $$
 P(E_2) = P(E_2 \cap E_1) + P(E_2 \cap E_1^c) = P(E_1)P(E_2|E_1) + P(E_1^c)P(E_2|E_1^c)
 $$
