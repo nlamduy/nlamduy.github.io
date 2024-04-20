@@ -284,8 +284,9 @@ Có thể rút ra những nhận xét sau:
 - Trạng thái 3 là một trạng thái hấp thụ vì khi đã vào thì không thể thoát ra.
 
 {: .highlight }
-> - Hai trạng thái nếu liên lạc được với nhau thì cùng một lớp (class) và có tính chất tương tự nhau.
-> - Một xích Markov được gọi là tối giản (irreducible) nếu chi có một lớp.
+> Hai trạng thái nếu liên lạc được với nhau thì cùng một lớp (class) và có tính chất tương tự nhau.
+>
+> Một xích Markov được gọi là tối giản (irreducible) nếu chi có một lớp.
 
 Ví dụ 2:
 
@@ -323,7 +324,96 @@ array([[0.5       , 0.375     , 0.125     ],
 {: .highlight }
 Trạng thái $$j$$ có thể tiếp cận được từ trạng thái $$i$$ sau $$n$$ bước.
 
+# Equivalences of recurrent and transient states
 
+Việc chứng minh một trạng thái là thường xuyên hay tạm thời đôi khi là khó khăn. Tuy nhiên, có thể dùng xác suất thay thế như sau:
+
+{: .important }
+> Một trạng thái i là thường xuyên nếu $$\Sigma_{i=1}^{\infty} P^n_{ii} = \infty$$
+>
+> Một trạng thái i là tạm thời nếu $$\Sigma_{i=1}^{\infty} P^n_{ii} < \infty$$
+
+Ví dụ:
+
+Cho ma trận xác suất chuyển với 4 trạng thái {0, 1, 2, 3, 4}:
+
+$$
+P = \begin{bmatrix}
+1/2 & 1/2 & 0 & 0 & 0 \\
+1/2 & 1/2 & 0 & 0 & 0\\
+0 & 0 & 1/2 & 1/2 & 0 \\
+0 & 0 & 1/2 & 1/2 & 0 \\
+1/4 & 1/4 & 0 & 0 & 1/2
+\end{bmatrix}  
+$$
+
+Xác định các trạng thái thường xuyên hoặc tạm thời.
+
+Đáp án:
+
+- Tính $$\sum P_{00}^{(n)}$$:
+
+$$P_{00}^{(1)} = \frac{1}{2}$$
+
+$$P_{00}^{(2)} = P_{00}P_{00} + P_{01}P_{10} + P_{02}P_{20} + P_{03}P_{30} + P_{04}P_{40} = \frac{1}{2}$$
+
+$$
+\begin{aligned}
+P_{00}^{(3)} & = P_{00}^{(1+2)} = \sum_{k = 0}^4 P_{0k}^{(1)} P_{k0}^{(2)} \\
+& = P_{00}^{(1)} P_{00}^{(2)} + P_{01}^{(1)} P_{10}^{(2)} + P_{02}^{(1)} P_{20}^{(2)} + P_{03}^{(1)} P_{30}^{(2)} + P_{04}^{(1)} P_{40}^{(2)} \\
+& = \frac{1}{2}
+\end{aligned}
+$$
+
+*Cần tính các xác suất $$P_{10}^{(2)}, P_{20}^{(2)}, P_{30}^{(2)}, P_{40}^{(2)}$$* tương tự như tính $$P_{00}^{(2)}$$
+
+Như vậy, $$\sum_{n=1}^{\infty} P_{00}^{(n)} = \frac{1}{2}\sum_{n=1}^{\infty} = \infty$$. Suy ra, 0 là trạng thái thường xuyên. Và vì {0, 1} có thể liên lạc được với nhau nên 1 cũng là trạng thái thường xuyên. Chứng minh tương tự cho trạng thái {2, 3} và {4}.
+
+Có thể thực hiện điều này với Python như sau:
+
+```python
+import numpy as np
+
+def is_recurrent(matrix, states, max_steps):
+
+    P_n = np.eye(P.shape[0])
+    
+    sum_probabilities = 0
+    
+    for n in range(1, max_steps + 1):
+        P_n = np.dot(P_n, P)
+        
+        sum_probabilities += P_n[state, state]
+        
+    return sum_probabilities
+
+P = np.array([[1/2, 1/2, 0, 0, 0], [1/2, 1/2, 0, 0, 0], [0, 0, 1/2, 1/2, 0], [0, 0, 1/2, 1/2, 0], [1/4, 1/4, 0, 0, 1/2]])
+
+state = 0
+
+for i in [2, 5, 10, 100, 1000]:
+    print('Tổng xác suất trở lại trạng thái {} sau {} bước là: {}'.format(state, i, is_recurrent(matrix=P, states=state, max_steps=i)))
+
+```
+```
+Tổng xác suất trở lại trạng thái 0 sau 2 bước là: 1.0
+Tổng xác suất trở lại trạng thái 0 sau 5 bước là: 2.5
+Tổng xác suất trở lại trạng thái 0 sau 10 bước là: 5.0
+Tổng xác suất trở lại trạng thái 0 sau 100 bước là: 50.0
+Tổng xác suất trở lại trạng thái 0 sau 1000 bước là: 500.0
+```
+
+Kiểm tra với trạng thái 4:
+
+```
+Tổng xác suất trở lại trạng thái 4 sau 2 bước là: 0.75
+Tổng xác suất trở lại trạng thái 4 sau 5 bước là: 0.96875
+Tổng xác suất trở lại trạng thái 4 sau 10 bước là: 0.9990234375
+Tổng xác suất trở lại trạng thái 4 sau 100 bước là: 1.0
+Tổng xác suất trở lại trạng thái 4 sau 1000 bước là: 1.0
+```
+
+Có thể thấy, trạng thái là thường xuyên sẽ có tổng xác suất tiến về vô cùng khi số bước chuyển tăng lên. Trạng thái là tạm thời khi tổng xác suất đạt giới hạn tại một điểm khi số bước chuyển tăng.
 
 # References
 
