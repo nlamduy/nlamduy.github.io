@@ -38,40 +38,41 @@ Ví dụ:
 
 # Cumulative Distribution Function
 
-Hàm phân phối tích luỹ **(CDF) đo xác suất của $$X \le x$$** của một biến ngẫu nhiên được định nghĩa:
-
 {: .highlight }
+> Hàm phân phối tích luỹ **(CDF) đo xác suất của $$X \le x$$** của một biến ngẫu nhiên được định nghĩa:
+> 
+> $$
+> 0 \le F_X(x) = P\{X \le x\} \le 1
+> $$
 
-$$
-0 \le F_X(x) = P\{X \le x\} \le 1
-$$
 
+{: .note }
+> **Một số tính chất của hàm CDF:**
+>
+> $$F_X(x)$$ là một hàm không giảm (nondecreasing function)[^1] của x.
+>
+> $$ \lim_{x \to \infty} F_X(x) = F(+\infty) = 1 $$.
+>
+> $$\lim_{x \to -\infty} F_X(x) = F(-\infty) = 0$$.
 
-**Một số tính chất của hàm CDF:**
-
-{: .highlight }
-
-- $$F_X(x)
-$$ là một hàm không giảm (nondecreasing function)[^1] của x
-- $$ \lim_{x \to \infty} F_X(x) = F(+\infty) = 1 $$
-- $$\lim_{x \to -\infty} F_X(x) = F(-\infty) = 0$$
 
 # Probability mass function
 
-Hàm khối xác suất **(PMF) đo xác suất tại một điểm cụ thể** của biến ngẫu nhiên rời rạc X. PMF được tính như sau:
-
 {: .highlight }
+> Hàm khối xác suất **(PMF) đo xác suất tại một điểm cụ thể** của biến ngẫu nhiên rời rạc X. PMF được tính như sau:
+> 
+> $$
+> p_X(x) = P\{X = x\} = \{\omega \in \Omega: X(\omega) = x\}
+> $$
 
-$$
-p_X(x) = P\{X = x\} = \{\omega \in \Omega: X(\omega) = x\}
-$$
-
-
-**Một số đặc điểm của hàm PMF:**
-
-- Tập support (tất cả giá trị có thể nhận được) của X là đếm được nên: $$p_X(x_i) > 0 \text{ với } i = 1,2,...$$
-- Tổng của tất cả các mass (xác suất từng giá trị của X): $$\Sigma^{\infty}_{i=1}p_X(x_i) = 1$$
-- Hàm CDF được tính: $$F_X(x) = \Sigma_{\text{ all } x_i \le x}p_X(x)$$
+{: .note }
+> **Một số đặc điểm của hàm PMF:**
+>
+> - Tập support (tất cả giá trị có thể nhận được) của X là đếm được nên: $$p_X(x_i) > 0 \text{ với } i = 1,2,...$$.
+>
+> - Tổng của tất cả các mass (xác suất từng giá trị của X): $$\Sigma^{\infty}_{i=1}p_X(x_i) = 1$$.
+> 
+> - Hàm CDF được tính: $$F_X(x) = \Sigma_{\text{ all } x_i \le x}p_X(x)$$.
 
 Ví dụ:
 
