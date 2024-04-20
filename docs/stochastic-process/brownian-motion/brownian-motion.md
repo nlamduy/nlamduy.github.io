@@ -4,7 +4,7 @@ math: mathjax
 title: Brownian Motion
 parent: Stochastic Process
 # has_children: true
-nav_order: 5
+nav_order: 6
 ---
 
 # Brownian Motion

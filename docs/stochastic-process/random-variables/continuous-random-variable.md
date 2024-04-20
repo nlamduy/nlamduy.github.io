@@ -199,49 +199,45 @@ Mối quan hệ giữa phân phối Poisson và phân phối mũ có thể đư�
 
 ## Normal distribution
 
-Cho X là biến ngẫu nhiên chuẩn **có hai tham số với trung bình (hay kỳ vọng) $$\mu > 0$$ và phương sai $$\sigma^2 > 0$$** (ký hiệu: $$X \sim N(0,1)$$), hàm mật độ xác suất (PDF) được cho bởi:
-
 {: .highlight }
-
-$$
-f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-(x - \mu)^2 / 2\sigma^2} \text{ , } -\infty < x < \infty
-$$
+> Cho X là biến ngẫu nhiên chuẩn **có hai tham số với trung bình (hay kỳ vọng) $$\mu > 0$$ và phương sai $$\sigma^2 > 0$$** (ký hiệu: $$X \sim N(0,1)$$), hàm mật độ xác suất (PDF) được cho bởi:
+>
+> $$
+> f(x) = \frac{1}{\sqrt{2\pi}\sigma} e^{-(x - \mu)^2 / 2\sigma^2} \text{ , } -\infty < x < \infty
+> $$
 
 ![norm_eg1](/assets/img/stochastic-process/normal_eg1.png)
 
 Từ $$X \sim N(0,1)$$, có thể định nghĩa một biến $$Y = \alpha X + \beta$$ tuỳ ý, với $$Y \sim N(\beta, \alpha^2)$$. Cần lưu ý hai điểm sau:
 
-{: .highlight }
-- Cộng một hằng số $$\beta$$ vào biến ngẫu nhiên chuẩn chỉ làm thay đổi kỳ vọng (trung bình) của biến đó.
-- Nhân một hệ số $$\alpha$$ vào biến ngẫu nhiên chuẩn sẽ làm thay đổi phương sai thành $$\alpha^2$$.
+{: .important }
+> - Cộng một hằng số $$\beta$$ vào biến ngẫu nhiên chuẩn chỉ làm thay đổi kỳ vọng (trung bình) của biến đó.
+> 
+> - Nhân một hệ số $$\alpha$$ vào biến ngẫu nhiên chuẩn sẽ làm thay đổi phương sai thành $$\alpha^2$$.
 
-**Một số đặc điểm của phân phối chuẩn:**
-
-{: .highlight }
-1. Các phân phối chuẩn được phân biệt bởi 2 tham số: trung bình $$\mu$$ và độ lệch chuẩn $$\sigma$$ (hoặc phương sai $$\sigma^2$$).
-2. Điểm cao nhất của đường cong chuẩn nằm tại vị trí trung bình, đây cũng là trung vị (median) và mode của phân phối.
-3. Giá trị trung bình của phân phối chuẩn có nhận bất kỳ số nào (âm, dương, bằng 0).
-4. Phân phối chuẩn là đối xứng với hai đuôi kéo dài đến vô cực.
-5. Độ lệch chuẩn quy định độ rộng và phẳng (kurtosis) của đường cong chuẩn.
-6. Xác suất được cho bởi diện tích nằm dưới đường cong chuẩn.
-7. Phần trăm để giá trị của biến ngẫu nhiên nằm trong khoảng thông dụng[^2] là:
-- 68.3% giá trị sẽ nằm trong khoảng $$(\mu - \sigma; \mu + \sigma)$$
-- 95.4% giá trị sẽ nằm trong khoảng $$(\mu - 2\sigma; \mu + 2\sigma)$$
-- 99.7% giá trị sẽ nằm trong khoảng $$(\mu - 3\sigma; \mu + 3\sigma)$$
-
+{: .note }
+> **Một số đặc điểm của phân phối chuẩn:**
+> 1. Các phân phối chuẩn được phân biệt bởi 2 tham số: trung bình $$\mu$$ và độ lệch chuẩn $$\sigma$$ (hoặc phương sai $$\sigma^2$$).
+> 2. Điểm cao nhất của đường cong chuẩn nằm tại vị trí trung bình, đây cũng là trung vị (median) và mode của phân phối.
+> 3. Giá trị trung bình của phân phối chuẩn có nhận bất kỳ số nào (âm, dương, bằng 0).
+> 4. Phân phối chuẩn là đối xứng với hai đuôi kéo dài đến vô cực.
+> 5. Độ lệch chuẩn quy định độ rộng và phẳng (kurtosis) của đường cong chuẩn.
+> 6. Xác suất được cho bởi diện tích nằm dưới đường cong chuẩn.
+> 7. Phần trăm để giá trị của biến ngẫu nhiên nằm trong khoảng thông dụng[^2] là:
+> - 68.3% giá trị sẽ nằm trong khoảng $$(\mu - \sigma; \mu + \sigma)$$
+> - 95.4% giá trị sẽ nằm trong khoảng $$(\mu - 2\sigma; \mu + 2\sigma)$$
+> - 99.7% giá trị sẽ nằm trong khoảng $$(\mu - 3\sigma; \mu + 3\sigma)$$
 
 
 ## Standard normal distribution
 
 Trường hợp **trung bình $$\mu = 0$$ và độ lệch chuẩn $$\sigma = 1$$, ta có phân phối chuẩn chuẩn hoá** (standard normal distribution). **Ký tự $$z$$ thường được sử dụng** để ký hiệu cho biến ngẫu nhiên có phân phối đặc biệt này.
 
-Công thức để chuyển đổi một biến ngẫu nhiên $$x$$ bất kỳ về phân phối chuẩn chuẩn hoá:
-
 {: .highlight }
-
-$$
-z = \frac{x - \mu}{\sigma}
-$$
+> Công thức để chuyển đổi một biến ngẫu nhiên $$x$$ bất kỳ về phân phối chuẩn chuẩn hoá:
+> $$
+> z = \frac{x - \mu}{\sigma}
+> $$
 
 Chuyển đổi về phân phối chuẩn chuẩn hoá sẽ giúp việc tính toán xác suất dễ dàng hơn, đặc biệt trong việc tính CDF. Việc chuyển đổi còn giúp chúng ta so sánh những biến có thang đo và phân phối khác nhau. Chẳng hạn, làm sao để so sánh điểm tiếng anh IELTS và TOEFL của hai sinh viên.
 
@@ -302,6 +298,7 @@ The mileage for the warranty to ensure no more than 10% of tires are eligible is
 
 ## Normal approximation of binomial probabilities
 
+{: .highlight }
 Khi số lượng phép thử của biến nhị thức lớn, cụ thể $$np \ge 5$$ và $$n(1 - p) \ge 5$$, với $$n$$ là số lượng phép thử và $$p$$ là xác suất thành công. Có thể sử dụng phân phối chuẩn để xấp xỉ nhị thức với $$\mu = np$$ và $$\sigma = \sqrt{np(1-p}$$.
 
 Lấy lại ví dụ ở phần xấp xỉ phân phối nhị thức với phân phối Poisson. Giả sử rằng 1% số ốc vít được sản xuất bởi một máy là lỗi. Tính xác suất rằng một lô 500 ốc vít có đúng 3 ốc vít lỗi.
@@ -331,6 +328,7 @@ $$\mu = np = 500 * 0.01 = 5$$
 
 $$\sigma = \sqrt{np(1-p)} = \sqrt{500 * 0.01 * 0.99} \approx 2.23$$
 
+{: .new }
 Vì phân phối chuẩn là liên tục, ta không thể tìm trực tiếp $$x = 3$$ mà phải sử dụng **yếu tố điều chỉnh tính liên tục (continuity correction)** để tìm xác suất có 3 ốc vít lỗi trong lô 500 ốc vít. Do đó, cần tìm $$z$$ với $$x = 2.5$$ và $$x = 3.5$$ như sau:
 
 ```python
@@ -353,22 +351,23 @@ The probability that a batch of 500 screws has exactly 3 defective screws is 0.1
 
 ![normal_eg3](/assets/img/stochastic-process/normal_eg3.png)
 
-**Từ các kết quả trên, xấp xỉ phân phối nhị thức của phân phối Poisson cho giá trị gần giá trị thực tế hơn phân phối chuẩn.**
+{: .new }
+Từ các kết quả trên, xấp xỉ phân phối nhị thức của phân phối Poisson cho giá trị gần giá trị thực tế hơn phân phối chuẩn.
 
 # Gamma random variable
 
 Phân phối gamma là một dạng **tổng quát hoá của phân phối mũ**. Phân phối mũ, phân phối chi-square là những trường hợp đặc biệt của phân phối gamma. Một trong những ứng dụng điển hình của phân phối gamma là **tính xác suất thời gian chờ giữa các sự kiện liên tục**, với tốc độ trung bình $$\lambda$$ không đổi.
 
-Cho biến ngẫu nhiên X tuân theo phân phối Gamma với $$\alpha > 0$$ và $$\lambda > 0$$, hàm mật độ xác suất (PDF) được cho bởi:
 
 {: .highlight }
-
-$$
-f(x) = \begin{cases}
-\frac{\lambda e^{-\lambda x}(\lambda x)^{\alpha - 1}}{\Gamma(\alpha)} \text{ , if } x \ge 0 \\
-0 \text{ , otherwise }
-\end{cases}
-$$
+> Cho biến ngẫu nhiên X tuân theo phân phối Gamma với $$\alpha > 0$$ và $$\lambda > 0$$, hàm mật độ xác suất (PDF) được cho bởi:
+> 
+> $$
+> f(x) = \begin{cases}
+> \frac{\lambda e^{-\lambda x}(\lambda x)^{\alpha - 1}}{\Gamma(\alpha)} \text{ , if } x \ge 0 \\
+> 0 \text{ , otherwise }
+> \end{cases}
+> $$
 
 Trong đó:
 
