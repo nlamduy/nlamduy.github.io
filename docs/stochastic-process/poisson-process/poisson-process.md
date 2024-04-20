@@ -31,7 +31,17 @@ Tung một đồng xu trong 8 ngày và biến cố thành công là mặt ngử
 > Cho một quá trình đếm $$\{ N(t), t \ge 0 \}$$ thoả mãn:
 >
 > 1. $$N(t) > 0$$ với mọi $$t \ge 0$$
-> 2. $$N(t) \text{ nhận giá trị nguyên (integer values)}$$
+> 2. $$N(t)$$ nhận giá trị nguyên (integer values)
 > 3. Nếu $$s < t$$ thì $$N(s) < N(t)$$
 > 4. Cho $$s < t, N(t) - N(s)$$ bằng số lượng biến cố xảy ra trong nửa khoảng $$(s, t]$$
+
+![poisson_eg1](/assets/img/stochastic-process/poisson_eg1.png)
+
+Một quá trình đếm có **có số gia độc lập** nếu: số biến cố xảy ra trong khoảng thời gian từ 0 đến s không liên quan đến số biến cố xảy ra trong khoảng thời gian từ s đến t, $$N(s) \perp N(t) - N(s)$$. Nói cách khác số biến cố trong một khoảng thời gian là độc lập với khoảng thời gian khác.
+
+# References
+
+Nguyen Huu, Thai (n.d.). Lecture: Poisson Process. Stochastic models and applications. University of Economics HCMC.
+
+Ross, S. M. (2019). Introduction to probability models. Academic Press.
 
