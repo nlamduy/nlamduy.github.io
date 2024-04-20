@@ -387,12 +387,18 @@ def is_recurrent(matrix, states, max_steps):
         
     return sum_probabilities
 
-P = np.array([[1/2, 1/2, 0, 0, 0], [1/2, 1/2, 0, 0, 0], [0, 0, 1/2, 1/2, 0], [0, 0, 1/2, 1/2, 0], [1/4, 1/4, 0, 0, 1/2]])
+P = np.array([[1/2, 1/2, 0, 0, 0]
+              , [1/2, 1/2, 0, 0, 0]
+              , [0, 0, 1/2, 1/2, 0]
+              , [0, 0, 1/2, 1/2, 0]
+              , [1/4, 1/4, 0, 0, 1/2]])
 
-state = 0
-
+state = 4
 for i in [2, 5, 10, 100, 1000]:
-    print('Tổng xác suất trở lại trạng thái {} sau {} bước là: {}'.format(state, i, is_recurrent(matrix=P, states=state, max_steps=i)))
+    p = is_recurrent(matrix=P, states=state, max_steps=i)
+
+    print('Xác suất trở lại trạng thái {} sau {} bước là: {}'.format(state, i, p))
+
 
 ```
 ```

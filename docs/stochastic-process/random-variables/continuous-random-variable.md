@@ -26,11 +26,11 @@ Ví dụ:
 | Amount of Iced Tea in a Glass | The amount of iced tea in a glass is another continuous random variable.  | Real numbers (e.g., volume in milliliters) |
 | Change in Temperature Throughout a Day | The change in temperature over the course of a day is a continuous random variable.  | Real numbers (e.g., degrees Celsius or Fahrenheit) |
 
-**Hai điểm khác biệt cơ bản của biến ngẫu nhiên liên tục so với rời rạc**:
-
-{: .highlight}
-1. Có thể tính xác suất tại một điểm cụ thể với biến rời rạc. Nhưng phải tính xác suất trong một khoảng cho trước (dù khoảng đó là rất bé) với biến liên tục vì xác suất tại một điểm là gần như bằng 0.
-2. Xác suất trong một khoảng (a,b) cho trước là diện tích nằm dưới đồ thì của hàm mật độ xác suất (PDF).
+{: .note }
+> **Hai điểm khác biệt cơ bản của biến ngẫu nhiên liên tục so với rời rạc**:
+>
+> 1. Có thể tính xác suất tại một điểm cụ thể với biến rời rạc. Nhưng phải tính xác suất trong một khoảng cho trước (dù khoảng đó là rất bé) với biến liên tục vì xác suất tại một điểm là gần như bằng 0.
+> 2. Xác suất trong một khoảng (a,b) cho trước là diện tích nằm dưới đồ thì của hàm mật độ xác suất (PDF).
 
 **Bên dưới là bảng tóm tắt hàm mật độ xác suất (PDF) của một số phân phối liên tục:**
 
@@ -43,12 +43,12 @@ Ví dụ:
 
 # Cumulative distribution function
 
-Hàm phân phối tích luỹ CDF của biến ngẫu nhiên liên tục được định nghĩa:
-
 {: .highlight }
-$$
-F(a) = P\{X \in (-\infty, a]\} = \int_{-\infty}^a f(x)dx
-$$
+> Hàm phân phối tích luỹ CDF của biến ngẫu nhiên liên tục được định nghĩa:
+>
+> $$
+> F(a) = P\{X \in (-\infty, a]\} = \int_{-\infty}^a f(x)dx
+> $$
 
 Mối quan hệ giữa hàm CDF và PDF (sẽ được trình bày tiếp theo) là:
 
@@ -58,15 +58,14 @@ $$
 
 # Probability density function
 
-Hàm mật độ xác suất (PDF) của một biến ngẫu nhiên liên tục X được tính bằng:
-
 {: .highlight }
-
-$$
-P\{X \in B\} = \int_B f_X(x)dx
-$$
-
-*Trong đó: $$B \subset \mathbb{R}$$*
+> Hàm mật độ xác suất (PDF) của một biến ngẫu nhiên liên tục X được tính bằng:
+>
+> $$
+> P\{X \in B\} = \int_B f_X(x)dx
+> $$
+>
+>*Trong đó: $$B \subset \mathbb{R}$$*
 
 
 Ví dụ:
@@ -75,19 +74,18 @@ Tính xác suất $$P\{X > 3\}$$ với $$B = (3, +\infty)$$:
 
 $$P\{X > 3\} = \int_3^{+\infty} f_X(x)dx$$
 
-**Một số tính chất cơ bản:**
-
-{: .highlight }
-
-1. Xác suất của biến ngẫu nhiên liên tục X nằm giữa khoảng $$(a; b)$$ là tích phân của hàm $$f_X$$ trên đoạn đó: $$P\{a \le X \le b\} = \int_a^b f_X(x)dx$$, cho $$a \le b$$
-
-2. Xác suất của biến ngẫu nhiên liên tục X tại một điểm cụ thể gần như bằng 0: $$P\{X = a\} = \int_a^a f_X(x)dx = 0$$
-
-3. Xác suất từ âm đến dương vô cực là 1: $$\int_{-\infty}^{+\infty} f_X(x)dx = 1$$
-
-4. CDF của X là tích phân của hàm PDF trên khoảng $$(-\infty; x)$$: $$F_X(x) = \int_{-\infty}^x f_X(x)dx$$
-
-5. PDF của X là đạo hàm CDF: $$\frac{dF(x)}{dx} = f(x)$$
+{: .note }
+> **Một số tính chất cơ bản:**
+>
+> 1. Xác suất của biến ngẫu nhiên liên tục X nằm giữa khoảng $$(a; b)$$ là tích phân của hàm $$f_X$$ trên đoạn đó: $$P\{a \le X \le b\} = \int_a^b f_X(x)dx$$, cho $$a \le b$$
+>
+> 2. Xác suất của biến ngẫu nhiên liên tục X tại một điểm cụ thể gần như bằng 0: $$P\{X = a\} = \int_a^a f_X(x)dx = 0$$
+>
+> 3. Xác suất từ âm đến dương vô cực là 1: $$\int_{-\infty}^{+\infty} f_X(x)dx = 1$$
+>
+> 4. CDF của X là tích phân của hàm PDF trên khoảng $$(-\infty; x)$$: $$F_X(x) = \int_{-\infty}^x f_X(x)dx$$
+>
+> 5. PDF của X là đạo hàm CDF: $$\frac{dF(x)}{dx} = f(x)$$
 
 Ở tính chất số (2), vì X có thể nhận vô hạn giá trị trên một khoảng (ví dụ từ 0 đến 1), nên xác suất tại một điểm gần như bằng 0.
 
@@ -118,16 +116,16 @@ Trực quan hoá với Python:
 
 # Uniform random variable
 
-Phân phối đều được sử dụng nếu **xác suất trong khoảng bất kỳ cũng bằng với xác suất trong khoảng khác**. Hàm mật độ xác suất (PDF) được cho bởi:
 
 {: .highlight }
-
-$$
-f(x) = \begin{cases} 
-\frac{1}{\beta - \alpha}  & \text{ , if } \alpha < x < \beta \\
-0 & \text{ , otherwise}
-\end{cases}
-$$
+> Phân phối đều được sử dụng nếu **xác suất trong khoảng bất kỳ cũng bằng với xác suất trong khoảng khác**. Hàm mật độ xác suất (PDF) được cho bởi:
+> 
+> $$
+> f(x) = \begin{cases} 
+> \frac{1}{\beta - \alpha}  & \text{ , if } \alpha < x < \beta \\
+> 0 & \text{ , otherwise}
+> \end{cases}
+> $$
 
 Phân phối đều thường được dùng để diễn tả những sự kiện đơn giản, hoặc cho mục đích giả lập (simulation).
 
@@ -147,16 +145,15 @@ Như vậy, xác suất là diện tích của hình chữ nhật với chiều 
 
 # Exponential random variable
 
-Phân phối mũ có tham số $$\lambda > 0$$ và hàm mật độ xác suất (PDF) được cho bởi:
-
 {: .highlight }
-
-$$
-f(x) = \begin{cases} 
-\lambda e^{-\lambda x}  & \text{ , if } x > 0 \\
-0 & \text{ , otherwise}
-\end{cases}
-$$
+> Phân phối mũ có tham số $$\lambda > 0$$ và hàm mật độ xác suất (PDF) được cho bởi:
+>
+> $$
+> f(x) = \begin{cases} 
+> \lambda e^{-\lambda x}  & \text{ , if } x > 0 \\
+> 0 & \text{ , otherwise}
+> \end{cases}
+> $$
 
 
 Một số ứng dụng của phân phối mũ như tính xác suất giữa các lượt khách hàng đến quầy giao dịch, khoảng cách giữa các ổ gà trên đường.
@@ -181,16 +178,22 @@ Trực quan hoá với Python:
 ![exp_eg1](/assets/img/stochastic-process/exp_eg1.png)
 
 {: .highlight }
-
-Tương tự như phân phối hình học (geometric distribution), phân phối mũ cũng có **tính không nhớ**.
-
-$$
-P\{X > x + t | X > t\} = P\{X > s\}
-$$
+> Tương tự như phân phối hình học (geometric distribution), phân phối mũ cũng có **tính không nhớ**.
+>
+> $$
+> P\{X > x + t | X > t\} = P\{X > s\}
+> $$
 
 Giả sử, một khách hàng đã chờ 15 phút ở ngân hàng, xác suất phải chờ thêm 5 phút để được phục vụ không bị ảnh hưởng bởi quá khứ.
 
 Mối quan hệ giữa phân phối Poisson và phân phối mũ có thể được diễn đạt như sau: Phân phối Poisson dùng để tính xác suất số lần xuất hiện trong một khoảng không gian, thời gian. Phân phối mũ cung cấp xác suất của khoảng giữa các lần xuất hiện.
+
+{: .highlight }
+> Nếu $$X_1, ..., X_n$$ là các biến ngẫu nhiên có phân phối mũ với $$\lambda$$ không đổi, thì $$\sum_{i=1}^n X_i$$ là biến ngẫu nhiên có phân phối Gamma với tham số $$n, \lambda$$, và hàm PDF được là:
+>
+> $$
+> f(t) = \lambda e^{-\lambda t} \frac{(\lambda t)^{n - 1}}{(n - 1)!} \text{ , } t > 0
+> $$
 
 # Normal random variable
 
