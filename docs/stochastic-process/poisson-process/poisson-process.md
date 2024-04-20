@@ -30,7 +30,7 @@ Tung một đồng xu trong 8 ngày và biến cố thành công là mặt ngử
 >
 > Cho một quá trình đếm $$\{ N(t), t \ge 0 \}$$ thoả mãn:
 >
-> 1. $$N(t) > 0 \text{, với mọi } t \ge 0$$
+> 1. $$N(t) > 0$$ với mọi $$t \ge 0$$
 > 2. $$N(t) \text{ nhận giá trị nguyên (integer values)}$$
 > 3. Nếu $$s < t$$ thì $$N(s) < N(t)$$
 > 4. Cho $$s < t, N(t) - N(s)$$ bằng số lượng biến cố xảy ra trong nửa khoảng $$(s, t]$$
