@@ -54,6 +54,51 @@ Từ những tiên đề này có thể suy ra một tính chất quan trọng, 
 
 ![poisson_eg2](/assets/img/stochastic-process/poisson_eg2.png)
 
+# Properties of Poisson process
+
+Một số tính chất của quá trình Poisson:
+
+{: .note-title }
+> Phân phối của thời gian chờ để xảy ra biến cố đầu tiên
+>
+> Nếu $$T_1$$ là thời gian chờ cho đến khi biến cố đầu tiên xảy ra của một quá trình Poisson $$\{N(t), t \ge 0\}$$ với tham số $$\lambda$$ thì: $$P(T_1 > t) = P(N(t) = 0) = e^{-\lambda t}$$.
+
+{: .note-title }
+> Thời gian chờ giữa các biến cố xảy ra liên tục (interarrival times)
+>
+> Cho biến ngẫu $$T_n, n = 1, 2, ...$$ là thời gian giữa biến cố thứ $$(n - 1)^{st}$$ và $$n^{th}$$ trong một quá trình Poisson $$\{N(t), t \ge 0\}$$ với tham số $$\lambda$$, thì $$T_1, T_2, ...$$ là độc lập và có cùng phân phối mũ với tham số $$\lambda$$.
+
+![poisson_eg3](/assets/img/stochastic-process/poisson_eg3.png)
+
+Trong đó, $$S_n$$ là thời điểm mà biến cố thứ $$n$$ xảy ra. Cụ thể, $$S_1 = T_1, S_2 = T_1 + T_2, S_3 = T_1 + T_2 + T_3$$ và $$S_2, S_3$$ có [phân phối gamma](https://nlamduy.github.io/docs/stochastic-process/random-variables/continuous-random-variable.html#gamma-random-variable) với:
+
+$$
+f(t) = \lambda e^{-\lambda t}\frac{(\lambda t)^{n - 1}}{(n - 1)!} \text{ , } t > 0
+$$
+
+Ví dụ: Tính $$S_2$$.
+
+$$
+f_{S_2} = \lambda e^{-\lambda t} \frac{(\lambda t)^{2-1}}{(2-1)!}
+$$
+
+{: .note-title }
+> Phân phối của quá trình Poisson
+>
+> Cho một quá trình Poisson $$\{N(t), t \ge 0\}$$ với tham số $$\lambda$$, $$N(t)$$ là một biến ngẫu nhiên có phân phối Poisson với tham số $$\lambda t$$. Trong đó, $$t$$ là độ dài đoạn thời gian chúng ta quan tâm và $$\lambda$$ là tốc độ (rate) luôn luôn cố định.
+
+![poisson_eg4](/assets/img/stochastic-process/poisson_eg4.png)
+
+*Lưu ý là chúng ta không biết có bao nhiêu biến cố xảy ra trong đoạn [0, t] mà chỉ biến phân phối trong đoạn này.*
+
+Ví dụ:
+
+![poisson_eg5](/assets/img/stochastic-process/poisson_eg5.png)
+
+- $$N(1)$$: là số biến cố xảy ra trong đoạn [0, 1] có phân phối $$N(1) \sim Pois(\lambda \cdot 1)$$.
+- $$N(3)$$: là số biến cố xảy ra trong đoạn [0, 3] có phân phối $$N(1) \sim Pois(\lambda \cdot 3)$$.
+- $$N(3) - N(1)$$: là số biến cố xảy ra trong nửa khoảng (1, 3] có phân phối $$N(1) \sim Pois(\lambda \cdot (3 - 1))$$.
+
 # References
 
 MIT OpenCourseWare. (n.d.). L22.2 Definition of the Poisson Process \[Video\]. YouTube. https://www.youtube.com/watch?v=D_EGYzqmapc
