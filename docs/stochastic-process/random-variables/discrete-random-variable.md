@@ -46,8 +46,8 @@ Ví dụ:
 > $$
 
 
-{: .note }
-> **Một số tính chất của hàm CDF:**
+{: .note-title }
+> Một số tính chất của hàm CDF:
 >
 > $$F_X(x)$$ là một hàm không giảm (nondecreasing function)[^1] của x.
 >
@@ -65,8 +65,8 @@ Ví dụ:
 > p_X(x) = P\{X = x\} = \{\omega \in \Omega: X(\omega) = x\}
 > $$
 
-{: .note }
-> **Một số đặc điểm của hàm PMF:**
+{: .note-title }
+> Một số đặc điểm của hàm PMF:
 >
 > - Tập support (tất cả giá trị có thể nhận được) của X là đếm được nên: $$p_X(x_i) > 0 \text{ với } i = 1,2,...$$.
 >
@@ -108,28 +108,28 @@ P\{X = 0\} + P\{X=1\} + P\{X=2\} = 4/8 + 3/8 = 7/8 \text{ , } 2 \le x < 3 \\
 
 Phân phối nhị thức (binomial distribution) được sử dụng để tính **xác suất số lần thành công $$i$$ trong $$n$$ phép thử (trials)**.
 
-**Tính chất phép thử nhị nhức (binomial):**
-
-{: .highlight }
-
-1. Dãy gồm $$n$$ phép thử giống nhau.
-2. Mỗi phép thử chỉ có 2 kết quả: thành công, thất bại.
-3. Xác suất thành công $$p$$ không đổi qua các phép thử. Xác suất thất bại là $$1 - p$$.
-4. Các phép thử độc lập với nhau. 
+{: .note-title }
+> Tính chất phép thử nhị nhức (binomial):
+> 
+> 1. Dãy gồm $$n$$ phép thử giống nhau.
+> 2. Mỗi phép thử chỉ có 2 kết quả: thành công, thất bại.
+> 3. Xác suất thành công $$p$$ không đổi qua các phép thử. Xác suất thất bại là $$1 - p$$.
+> 4. Các phép thử độc lập với nhau. 
 
 Các tính chất 2, 3, 4 thuộc quá trình [Bernoulli](https://vi.wikipedia.org/wiki/Jacob_Bernoulli). Nếu tính chất 1 thỏa mãn, ta có phép thử nhị thức.
 
-Gọi X là biến nhị thức có tham số $$(n, p)$$ với $$n$$ là số lượng phép thử, xác suất thành công $$p$$ không đổi ở mỗi phép thử. **Hàm khối xác suất (PMF)** được trình bày như sau:
+Gọi X là biến nhị thức có tham số $$(n, p)$$ với $$n$$ là số lượng phép thử, xác suất thành công $$p$$ không đổi ở mỗi phép thử.
 
 {: .highlight }
-
-$$
-p_X(i) = \left( 
-\begin{array}{c} 
-n \\ 
-i 
-\end{array} \right) p^i (1-p)^{n-i} = \frac{n!}{(n - i)!i!} p^i (1 - p)^{n-i} \text{ , } i =0, 1, ... n
-$$
+> Hàm khối xác suất (PMF) của phân phối nhị thức:
+>
+> $$
+> p_X(i) = \left( 
+> \begin{array}{c} 
+> n \\ 
+> i 
+> \end{array} \right) p^i (1-p)^{n-i} = \frac{n!}{(n - i)!i!} p^i (1 - p)^{n-i} \text{ , } i =0, 1, ... n
+> $$
 
 
 Ví dụ: Tung 4 đồng xu. Nếu kết quả mỗi phép thử (tung 1 đồng xu) là độc lập, tính xác suất có 2 mặt ngửa.
@@ -148,13 +148,14 @@ $$
 
 Phân phối hình học (gemotric distribution) được sử dụng để tính **xác suất của $$n$$ phép thử đến khi thành công**. 
 
-Gọi X là số lần thử đến khi thành công, thì X là một biến hình học với tham số $$p$$, với $$p$$ là xác suất thành công không đổi ở mỗi phép thử. **Hàm khối xác suất (PMF)** được trình bày như sau:
+Gọi X là số lần thử đến khi thành công, thì X là một biến hình học với tham số $$p$$, với $$p$$ là xác suất thành công không đổi ở mỗi phép thử.
 
 {: .highlight }
-
-$$
-p(n) = P \{ X=n \} = (1-p)^{n-1}p \text{ , n = 1, 2, ...}
-$$
+> Hàm khối xác suất (PMF) của phân phối hình học:
+>
+> $$
+> p(n) = P \{ X=n \} = (1-p)^{n-1}p \text{ , n = 1, 2, ...}
+> $$
 
 
 Ví dụ: Cho X là biến hình học đại diện cho số lần tung đồng xu đến khi xuất hiện mặt ngửa. Tính xác suất thành công sau 1, 2 và 3 lần thử, biết xác suất mặt ngửa  $$p = 0.5$$ là không đổi qua các phép thử.
@@ -163,13 +164,15 @@ Ví dụ: Cho X là biến hình học đại diện cho số lần tung đồng
 - $$p(2) = P \{ X=2 \} = (1-0.5)^{2-1}0.5 = 0.25$$
 - $$p(3) = P \{ X=3 \} = (1-0.5)^{3-1}0.5 = 0.125$$
 
-Biến hình học có tính **không nhớ (memoryless)**. Đây là biến ngẫu nhiên rời rạc **duy nhất** có tính chất này. Cụ thể, nếu đã thực hiện phép thử $$n$$ lần, thì xác suất thử thêm $$m$$ lần nữa cho đến khi thành công không bị ảnh hưởng bởi $$n$$ lần phép thử trước đó:
 
-{: .highlight }
+Biến hình học có tính **không nhớ (memoryless)**. Đây là biến ngẫu nhiên rời rạc **duy nhất** có tính chất này. Cụ thể, nếu đã thực hiện phép thử $$n$$ lần, thì xác suất thử thêm $$m$$ lần nữa cho đến khi thành công không bị ảnh hưởng bởi $$n$$ lần phép thử trước đó.
 
-$$
-P\{ X > n + m | X > n \} = P\{ X > m \} \text{ , } \forall m,n \in \mathbb{N}
-$$
+> {: .highlight }
+> Tính không nhớ của biến hình học được biểu đạt:
+> 
+> $$
+> P\{ X > n + m | X > n \} = P\{ X > m \} \text{ , } \forall m,n \in \mathbb{N}
+> $$
 
 # Negative binomial random variable
 
@@ -177,13 +180,12 @@ Phân phối nhị thức âm là một dạng mở rộng của phân phối h�
 
 Trong phân phối nhị thức, số lượng phép thử được xác định. Chẳng hạn, chúng ta quan tâm xác suất có 3 lần thành công trong 10 phép thử. Đối với nhị thức âm, số lần thành công được xác định. Chẳng hạn, chúng ta quan tâm xác suất số lượng phép thử bằng 10 khi thành công lần thứ 3. Nói cách khác, số phép thử sẽ tăng lên cho đến khi đạt được $$r^{th}$$ thành công. Không có giới hạn trên (upper bound) nào cho số lượng phép thử. 
 
-Cho X là biến nhị thức âm, **hàm khối xác suất (PMF)** được trình bày như sau:
-
 {: .highlight }
-
-$$
-p(n) = P \{ X=n \} = \binom{n - 1}{r - 1}(1-p)^{n-r}p^r \text{ , n = r, r+1, r+2, ...}
-$$
+> Hàm khối xác suất (PMF) của phân phối nhị thức âm:
+>
+> $$
+> p(n) = P \{ X=n \} = \binom{n - 1}{r - 1}(1-p)^{n-r}p^r \text{ , n = r, r+1, r+2, ...}
+> $$
 
 
 Ví dụ: Xác suất mặt ngửa (thành công) của việc tung một đồng xu $$p = 0.5$$. Gọi X là số lượng tung đồng xu cho đến khi được mặt ngửa thứ 3. Tìm xác suất X = 10.
@@ -194,26 +196,31 @@ $$ P\{X = 10\} = \binom{10-1}{3-1} \cdot (1-0.5)^{10-3} \cdot (0.5)^3 \approx 0.
 
 # Poisson random variable
 
-Phân phối Poisson (poisson distribution) được sử dụng để tính **xác suất số lần xảy ra trong một khoảng không gian, hoặc thời gian xác định**. Biến ngẫu nhiên cần quan tâm có thể là số khách hàng đến quầy giao dịch trong 1 giờ, số ổ gà trên 1km đường.
+Phân phối [Poisson](https://vi.wikipedia.org/wiki/Siméon-Denis_Poisson) (poisson distribution) được sử dụng để tính **xác suất số lần xảy ra trong một khoảng không gian, hoặc thời gian xác định**. Biến ngẫu nhiên cần quan tâm có thể là số khách hàng đến quầy giao dịch trong 1 giờ, số ổ gà trên 1km đường.
 
-Tính chất của phép thử [Poisson](https://vi.wikipedia.org/wiki/Siméon-Denis_Poisson):
+
+{: note-title }
+> Tính chất của phép thử Poisson:
+> 
+> 1. Đối với hai khoảng thời gian, hoặc không gian bất kỳ có độ dài như nhau thì xác suất xảy ra bằng nhau.
+> 2. Việc xảy ra hay không xảy ra trong khoảng này thì độc lập với việc xảy ra hay không xảy ra trong khoảng khác.
+
+Gọi X là biến ngẫu nhiên cần quan tâm với số lần xảy ra $$i$$ nhận các giá trị 0, 1, 2, ... X là biến Poisson có tham số $$\lambda$$, với $$\lambda > 0$$.
+
 
 {: .highlight }
+> Hàm khối xác suất (PMF) của phân phối Poisson:
+> 
+> $$
+> p(i) = P\{ X = i\} = e^{-\lambda} \cdot \frac{\lambda^i}{i!} \text{ , } i = 0, 1, ...
+> $$
+>
+> *Trong đó: $$e \approx 2.71828$$*
 
-1. Đối với hai khoảng thời gian, hoặc không gian bất kỳ có độ dài như nhau thì xác suất xảy ra bằng nhau.
-2. Việc xảy ra hay không xảy ra trong khoảng này thì độc lập với việc xảy ra hay không xảy ra trong khoảng khác.
+{: .important }
+$$\lambda$$ có ý nghĩa khác trung bình $$\mu$$. Cụ thể, **$$\lambda$$ là tốc độ (rate) của sự kiện** còn $$\mu$$ là trung bình của biến. 
 
-Gọi X là biến ngẫu nhiên cần quan tâm với số lần xảy ra $$i$$ nhận các giá trị 0, 1, 2, ... X là biến Poisson có tham số $$\lambda$$, với $$\lambda > 0$$. **Hàm khối xác suất (PMF)** được trình bày như sau:
-
-Lưu ý $$\lambda$$ có ý nghĩa khác trung bình $$\mu$$. Cụ thể, **$$\lambda$$ là tốc độ (rate) của sự kiện** còn $$\mu$$ là trung bình của biến. Ví dụ: X là biến ngẫu nhiên rời rạc thể hiện số lượng người đi thang máy trong một giờ. Trung bình trong một phút có 20 người đi thang máy, thì $$\lambda = \frac{1}{20}$$.
-
-{: .highlight }
-
-$$
-p(i) = P\{ X = i\} = e^{-\lambda}\frac{\lambda^i}{i!} \text{ , } i = 0, 1, ...
-$$
-
-*Trong đó: $$e \approx 2.71828$$*
+Ví dụ: X là biến ngẫu nhiên rời rạc thể hiện số lượng người đi thang máy trong một phút. Trung bình trong một phút có 20 người đi thang máy, thì $$\mu = 20$$ người/phút $$\lambda = \frac{1}{20}$$ phút, hay cứ cách 3 giây sẽ có 1 người đi thang máy.
 
 Ví dụ 1: Số lỗi đánh máy trên một trang sách tuân theo phân phối Poisson có tham số $$\lambda = 1$$. Tính xác suất có **ít nhất** một lỗi trên trang đó.
 
@@ -229,8 +236,7 @@ $$\lambda = \frac{10}{15} \cdot 3 = 2$$
 
 $$P \{ X=1 \} = e^{-2}\frac{2^1}{1!} \approx 0.2707$$
 
-{: .highlight }
-
+{: .important }
 Một tính chất quan trọng khác là có thể **xấp xỉ phân phối nhị thức bằng phân phối Poisson** khi số lần thử lớn và xác suất thành công nhỏ, với tham số $$\lambda = np$$. Theo kinh nghiệm, khi phép thử nhị thức có **$$n \ge 100$$ và $$np \le 10$$** thì phân phối Poisson có thể cung cấp xấp xỉ tốt.
 
 Ví dụ 4: Giả sử rằng 1% số ốc vít được sản xuất bởi một máy là lỗi. Tính xác suất rằng một lô 500 ốc vít có đúng 3 ốc vít lỗi.
@@ -263,20 +269,20 @@ Phân phối xác suất siêu bội được dùng để tính xác suất như
 
 Cho một bộ bài có 20 lá gồm 6 đỏ và 14 đen. Chọn ngẫu nhiên 5 lá không hoàn lại bộ bài. Tình xác suất có 4 lá bài đỏ.
 
-**Phân phối xác suất siêu bội khá gần với nhị thức**. Điểm khác nhau là:
+
+{: .note-title }
+> Phân phối xác suất siêu bội khá gần với nhị thức
+>
+> Điểm khác nhau là:
+> - Các phép thử không độc lập.
+> - Xác suất thành công thay đổi từ phép thử này sang phép thử khác.
 
 {: .highlight }
-
-- Các phép thử không độc lập.
-- Xác suất thành công thay đổi từ phép thử này sang phép thử khác.
-
-Gọi X là biến ngẫu nhiên cần quan tâm. **Hàm khối xác suất (PMF)** được trình bày như sau:
-
-{: .highlight }
-
-$$
-P\{ X = x \} = f(x) = \frac{\binom{r}{x} \binom{N - r}{n - x}}{\binom{N}{n}}
-$$
+> Hàm khối xác suất (PMF) của phân phối siêu bội:
+> 
+> $$
+> P\{ X = x \} = f(x) = \frac{\binom{r}{x} \binom{N - r}{n - x}}{\binom{N}{n}}
+> $$
 
 *Trong đó:*
 

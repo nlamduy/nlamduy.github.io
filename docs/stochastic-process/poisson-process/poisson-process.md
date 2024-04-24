@@ -91,13 +91,34 @@ $$
 
 *Lưu ý là chúng ta không biết có bao nhiêu biến cố xảy ra trong đoạn [0, t] mà chỉ biến phân phối trong đoạn này.*
 
-Ví dụ:
+Ví dụ 1:
 
 ![poisson_eg5](/assets/img/stochastic-process/poisson_eg5.png)
 
 - $$N(1)$$: là số biến cố xảy ra trong đoạn [0, 1] có phân phối $$N(1) \sim Pois(\lambda \cdot 1)$$.
 - $$N(3)$$: là số biến cố xảy ra trong đoạn [0, 3] có phân phối $$N(1) \sim Pois(\lambda \cdot 3)$$.
 - $$N(3) - N(1)$$: là số biến cố xảy ra trong nửa khoảng (1, 3] có phân phối $$N(1) \sim Pois(\lambda \cdot (3 - 1))$$.
+
+Ở mục thứ 3, có một số điểm cần làm rõ như sau:
+- Chúng ta chỉ quan tâm để những gì xảy ra **sau thời điểm 1** đến hết thời điểm 3.
+- Khoảng (1, 3] là **số biến cố** xảy ra trong khoảng thời gian này, khác với thời gian chờ giữa 2 hay nhiều biến cố xảy ra liên tiếp. Do đó khoảng (1, 3] trong trường hợp này có phân phối Poisson thay vì Gamma.
+- Quá trình Poisson cũng có tính chất của [quá trình Markov](https://nlamduy.github.io/docs/stochastic-process/markov-chain/markov-chain.html#markov-assumption), đó là tính không nhớ. Nên chúng ta có thể bỏ qua những gì đã xảy ra ở đoạn [0 , 1].
+
+Ví dụ 2:
+
+Giả sử số lượng cuộc gọi đến một tổng đài là một quá trình Poisson với tham số $$\lambda = 30$$ / giờ. Tính xác suất không có cuộc gọi nào đến trong 5 phút tiếp theo? Trung bình có bao nhiêu cuộc gọi trong 10 phút?
+
+Đáp án:
+- Gọi biến ngẫu nhiên $$N(t)$$ là số cuộc gọi đến tổng đài trong đoạn [0, t].
+- Phân phối của $$N(t) \sim Pois(\lambda \cdot t) \Leftrightarrow N(\frac{5}{60}) \sim Pois(30 \cdot \frac{5}{60})$$.
+
+Xác suất không có cuộc gọi nào trong 5 phút tiếp theo:
+
+$$
+P\{N(\frac{1}{12}) = 0\} = e^{-5/2} \cdot \frac{(5/2)^0}{0!} \approx 0.082
+$$
+
+*Xem lại [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
 
 # References
 
