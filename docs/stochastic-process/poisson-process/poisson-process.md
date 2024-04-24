@@ -109,16 +109,42 @@ Ví dụ 2:
 Giả sử số lượng cuộc gọi đến một tổng đài là một quá trình Poisson với tham số $$\lambda = 30$$ / giờ. Tính xác suất không có cuộc gọi nào đến trong 5 phút tiếp theo? Trung bình có bao nhiêu cuộc gọi trong 10 phút?
 
 Đáp án:
-- Gọi biến ngẫu nhiên $$N(t)$$ là số cuộc gọi đến tổng đài trong đoạn [0, t].
-- Phân phối của $$N(t) \sim Pois(\lambda \cdot t) \Leftrightarrow N(\frac{5}{60}) \sim Pois(30 \cdot \frac{5}{60})$$.
 
 Xác suất không có cuộc gọi nào trong 5 phút tiếp theo:
+
+- Gọi biến ngẫu nhiên $$N(t)$$ là số cuộc gọi đến tổng đài trong đoạn [0, t].
+- Phân phối của $$N(t) \sim Pois(\lambda \cdot t) \Leftrightarrow N(\frac{5}{60}) \sim Pois(30 \cdot \frac{5}{60})$$.
 
 $$
 P\{N(\frac{1}{12}) = 0\} = e^{-5/2} \cdot \frac{(5/2)^0}{0!} \approx 0.082
 $$
 
-*Xem lại [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
+*Xem lại phần [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
+
+Số cuộc gọi trung bình trong 10 phút:
+
+- Phân phối của $$N(\frac{10}{60}) \sim Pois(30 \cdot \frac{10}{60})$$.
+- Kỳ vọng của phân phối poisson: $$E[N] = \lambda$$.
+
+$$
+E[N(\frac{1}{6})] = E[Pois(30 \cdot \frac{10}{60})] = 5
+$$
+
+*Xem lại phần [Giá trị kỳ vọng cho phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/expectation-variance.html#discrete-random-variable).*
+
+Ví dụ 3:
+
+Cho $$N(t)$$ là số lượng khách hàng đến một cửa hàng là một quá trình Poisson với tham số $$\lambda = 2$$ / giờ. Tính các xác suất và kỳ vọng sau:
+
+a. $$P\{N(1) = 2\}$$
+
+b. $$P\{N(1) = 2, N(3) = 6\}$$
+
+c. $$P\{N(1) = 2 \vert N(3) = 6\}$$
+
+d. $$P\{N(3) = 6 \vert N(1) = 2\}$$
+
+e. $$E[N(2)], E[(N(1))^2], E[N(1)N(2)]$$
 
 # References
 

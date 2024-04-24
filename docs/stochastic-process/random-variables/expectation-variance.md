@@ -495,8 +495,6 @@ Như vậy, bất đẳng thức Chebyshev cho kết quả gần với thực t�
 
 # Strong law of large number
 
-
-
 {: .hightlight }
 > Định lý luật số lớn phát biểu rằng, cho $$X_1, X_2, ...$$ là một dãy các biến ngẫu nhiên độc lập và có phân phối giống nhau thì:
 > 
@@ -507,8 +505,6 @@ Như vậy, bất đẳng thức Chebyshev cho kết quả gần với thực t�
 Nói cách khác, nếu chúng ta lấy mẫu 1, mẫu 2 , ..., mẫu n với phân phối giữa các mẫu là giống nhau, và lấy trung bình của mẫu. Thì trung bình mẫu $$E[X_i]$$ sẽ tiến gần tới trung bình thực tế $$\mu$$.
 
 # Central limit theorem
-
-
 
 {: .highlight }
 > Định lý giới hạn trung tâm phát biểu rằng, cho $$X_1, X_2, ..., X_n$$ là một dãy các biến ngẫu nhiên độc lập có cùng phân phối với trung bình $$\mu$$ và phương sai $$\sigma^2$$. Thì phân phối của $$\frac{X_1 + X_2 + ... + X_n - n\mu}{\sigma\sqrt{n}}$$ tiến về phân phối chuẩn chuẩn hoá khi $$n \to \infty$$.
