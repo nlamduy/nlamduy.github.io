@@ -121,6 +121,9 @@ $$
 
 *Xem lại phần [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
 
+{: .warning }
+Trong **quá trình Poisson**, $$P\{ X = i\} = e^{-\lambda t} \cdot \frac{(\lambda t)^i}{i!}$$.
+
 Số cuộc gọi trung bình trong 10 phút:
 
 - Phân phối của $$N(\frac{10}{60}) \sim Pois(30 \cdot \frac{10}{60})$$.
@@ -134,7 +137,7 @@ $$
 
 Ví dụ 3:
 
-Cho $$N(t)$$ là số lượng khách hàng đến một cửa hàng là một quá trình Poisson với tham số $$\lambda = 2$$ / giờ. Tính các xác suất và kỳ vọng sau:
+Cho $$N(t)$$ là số lượng khách hàng đến một cửa hàng là một quá trình Poisson với tham số $$\lambda = 2$$ khách hàng / giờ. Tính các xác suất và kỳ vọng sau:
 
 a. $$P\{N(1) = 2\}$$
 
@@ -145,6 +148,56 @@ c. $$P\{N(1) = 2 \vert N(3) = 6\}$$
 d. $$P\{N(3) = 6 \vert N(1) = 2\}$$
 
 e. $$E[N(2)], E[(N(1))^2], E[N(1)N(2)]$$
+
+Đáp án:
+
+a. $$P\{N(1) = 2\} = e^{-\lambda} \cdot \frac{\lambda^2}{2!} \approx 0.2707 $$
+
+b. 
+
+$$
+\begin{aligned}
+P\{N(1) = 2, N(3) = 6\} & = P\{N(1) = 2, N(3) - N(1) = 4\} \\
+& = P\{N(1) = 2\}P\{N(3) - N(1) = 4\} \\
+& = 0.2707 \cdot e^{-2\lambda} \cdot \frac{(2\lambda)^4}{4!} \\
+& \approx 0.0528
+\end{aligned}
+$$
+
+c.
+
+$$
+\begin{aligned}
+P\{N(1) = 2 \vert N(3) = 6\} & = \frac{P\{N(1) = 2, N(3) = 6\}}{P\{N(3) = 6\}} \\
+& = \frac{0.0528}{e^{-3\lambda} \frac{(-3\lambda)^6}{6!}} \\
+& \approx 0.3287
+\end{aligned}
+$$
+
+e.
+
+$$E[N(2)] = 2\lambda = 4$$.
+
+$$E[(N(1))^2] = (1\lambda)^2 + 1\lambda = 6$$.
+
+$$
+\begin{aligned}
+E[N(1)N(2)] & = E[N(1) \cdot (N(2) - N(1))] \\
+& = E[N(1)] \cdot E[N(2) - N(1)] = \lambda \cdot \lambda = \lambda^2 \\
+& \Leftrightarrow E[N(1)N(2)] - E[N^2(1)] = \lambda^2 \\
+\Leftrightarrow E[N(1)N(2)] & = \lambda^2 + E[N^2(1)] \\
+\Leftrightarrow E[N(1)N(2)] & = \lambda^2 + \lambda^2 + \lambda = 2\lambda^2 + \lambda
+\end{aligned}
+$$
+
+{: .new }
+> Nếu biến ngẫu nhiên $$X \sim Pois(\mu)$$:
+>
+> - $$E[X] = \mu$$.
+> - $$E[X^2] = \mu^2 + \mu$$.
+> - $$Var[X] = \mu$$.
+>
+> *Trong đó $$\mu = \lambda \cdot t$$, với $$t$$ là độ dài thời gian quan tâm*.
 
 # References
 
