@@ -32,7 +32,7 @@ Ví dụ:
 > 1. Có thể tính xác suất tại một điểm cụ thể với biến rời rạc. Nhưng phải tính xác suất trong một khoảng cho trước (dù khoảng đó là rất bé) với biến liên tục vì xác suất tại một điểm là gần như bằng 0.
 > 2. Xác suất trong một khoảng (a,b) cho trước là diện tích nằm dưới đồ thì của hàm mật độ xác suất (PDF).
 
-**Bên dưới là bảng tóm tắt hàm mật độ xác suất (PDF) của một số phân phối liên tục:**
+**Bảng tóm tắt hàm mật độ xác suất (PDF) của một số phân phối liên tục:**
 
 | Phân phối        | Mục đích                                                                                      | Hàm mật độ xác suất (PDF), $$f(x)$$                                                                                                              |
 |------------------|-----------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
