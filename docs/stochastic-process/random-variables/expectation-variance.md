@@ -392,7 +392,7 @@ $$
 Từ biểu thức trên có thể thấy, **để tính được phương sai và hiệp phương sai, cần tính được kỳ vọng**.
 
 
-{: note-title }
+{: .note-title }
 > Một số tính chất của hiệp phương sai
 > 
 > 1. Nếu X và Y độc lập: Cov(X, Y) = 0
