@@ -26,20 +26,20 @@ Ví dụ:
 | Number of Heads in 10 Coin Flips      | Counts how many times a head appears when a fair coin is flipped 10 times.       | 0, 1, 2, ..., 10                       |
 | Dice Roll Outcome                     | Represents the outcome of rolling a fair six-sided die.                          | 1, 2, 3, 4, 5, 6                       |
 
-**Bên dưới là bảng tóm tắt hàm khối xác suất (PMF) của một số phân phối rời rạc:**
+**Bảng tóm tắt hàm khối xác suất (PMF) của một số phân phối rời rạc:**
 
 | Phân phối                       | Mục đích                                                                                                                       | Hàm khối xác suất (PMF), $$p(x)$$                                                                                                   |
 |---------------------------------|--------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| Nhị thức (binomial)             | Tính xác suất có $$i$$ lần thành công trong $$n$$ phép thử                                                                     | $$ \binom{n}{x}p^x(1-p)^{n-x}  $$ ,    $$  x = 0, 1, ..., n  $$                                                                     |
-| Poisson                         | Tính xác suất có $$i$$ lần sự kiện xảy ra trong không gian, hoặc thời gian xác định                                            | $$ e^-\lambda \cdot \frac{\lambda^x}{x!}  $$ ,    $$  x = 0, 1, 2, ...  $$                                                          |
+| Nhị thức (binomial)             | Tính xác suất có $$x$$ lần thành công trong $$n$$ phép thử                                                                     | $$ \binom{n}{x}p^x(1-p)^{n-x}  $$ ,    $$  x = 0, 1, ..., n  $$                                                                     |
+| Poisson                         | Tính xác suất có $$x$$ lần biến cố xảy ra trong **một khoảng không gian, hoặc thời gian** xác định                                            | $$ e^-\lambda \cdot \frac{\lambda^x}{x!}  $$ ,    $$  x = 0, 1, 2, ...  $$                                                          |
 | Hình học (geometric)            | Tính xác suất có $$n$$ phép thử cho đến khi thành công (lần đầu tiên)                                                          | $$  p(1-p)^{x - 1}  $$ ,    $$  x = 1, 2, ...  $$                                                                                   |
 | Nhị thức âm (negative binomial) | Tính xác suất lần thành công thứ $$r^{th}$$ ở lần thử thứ $$n$$                                                                | $$  \binom{n - 1}{r - 1}(1-p)^{n-r}p^r  $$                                                                                          |
-| Siêu bội (hypergemetric)        | Tính xác suất có $$x$$ lần thành công trong mẫu $$n$$ được chọn (không hoàn lại) từ tổng thể $$N$$ với số lần thành công $$r$$ | $$  P\{ X = x \} = f(x) = \frac{\binom{r}{x} \binom{N - r}{n - x}}{\binom{N}{n}}  $$ ,    $$  x \le n, x \le r, n - x \le N - r  $$ |
+| Siêu bội (hypergeometric)        | Tính xác suất có $$x$$ lần thành công trong mẫu $$n$$ được chọn (không hoàn lại) từ tổng thể $$N$$ với số lần thành công $$r$$ | $$  P\{ X = x \} = f(x) = \frac{\binom{r}{x} \binom{N - r}{n - x}}{\binom{N}{n}}  $$ ,    $$  x \le n, x \le r, n - x \le N - r  $$ |
 
 # Cumulative Distribution Function
 
 {: .highlight }
-> Hàm phân phối tích luỹ **(CDF) đo xác suất của $$X \le x$$** của một biến ngẫu nhiên được định nghĩa:
+> Hàm phân phối tích luỹ (CDF) đo xác suất của $$X \le x$$ của một biến ngẫu nhiên được định nghĩa:
 > 
 > $$
 > 0 \le F_X(x) = P\{X \le x\} \le 1
@@ -47,7 +47,7 @@ Ví dụ:
 
 
 {: .note-title }
-> Một số tính chất của hàm CDF:
+> Một số tính chất của hàm CDF
 >
 > $$F_X(x)$$ là một hàm không giảm (nondecreasing function)[^1] của x.
 >
@@ -59,7 +59,7 @@ Ví dụ:
 # Probability mass function
 
 {: .highlight }
-> Hàm khối xác suất **(PMF) đo xác suất tại một điểm cụ thể** của biến ngẫu nhiên rời rạc X. PMF được tính như sau:
+> Hàm khối xác suất (PMF) đo xác suất tại một điểm cụ thể của biến ngẫu nhiên rời rạc X. PMF được tính như sau:
 > 
 > $$
 > p_X(x) = P\{X = x\} = \{\omega \in \Omega: X(\omega) = x\}
@@ -109,7 +109,7 @@ P\{X = 0\} + P\{X=1\} + P\{X=2\} = 4/8 + 3/8 = 7/8 \text{ , } 2 \le x < 3 \\
 Phân phối nhị thức (binomial distribution) được sử dụng để tính **xác suất số lần thành công $$i$$ trong $$n$$ phép thử (trials)**.
 
 {: .note-title }
-> Tính chất phép thử nhị nhức (binomial):
+> Tính chất phép thử nhị nhức (binomial)
 > 
 > 1. Dãy gồm $$n$$ phép thử giống nhau.
 > 2. Mỗi phép thử chỉ có 2 kết quả: thành công, thất bại.
@@ -167,7 +167,7 @@ Ví dụ: Cho X là biến hình học đại diện cho số lần tung đồng
 
 Biến hình học có tính **không nhớ (memoryless)**. Đây là biến ngẫu nhiên rời rạc **duy nhất** có tính chất này. Cụ thể, nếu đã thực hiện phép thử $$n$$ lần, thì xác suất thử thêm $$m$$ lần nữa cho đến khi thành công không bị ảnh hưởng bởi $$n$$ lần phép thử trước đó.
 
-> {: .highlight }
+{: .highlight }
 > Tính không nhớ của biến hình học được biểu đạt:
 > 
 > $$
@@ -178,7 +178,7 @@ Biến hình học có tính **không nhớ (memoryless)**. Đây là biến ng�
 
 Phân phối nhị thức âm là một dạng mở rộng của phân phối hình học, được dùng để tính **xác suất lần thành công thứ $$r^{th}$$ ở lần thử thứ $$n$$**. 
 
-Trong phân phối nhị thức, số lượng phép thử được xác định. Chẳng hạn, chúng ta quan tâm xác suất có 3 lần thành công trong 10 phép thử. Đối với nhị thức âm, số lần thành công được xác định. Chẳng hạn, chúng ta quan tâm xác suất số lượng phép thử bằng 10 khi thành công lần thứ 3. Nói cách khác, số phép thử sẽ tăng lên cho đến khi đạt được $$r^{th}$$ thành công. Không có giới hạn trên (upper bound) nào cho số lượng phép thử. 
+**Trong phân phối nhị thức, số lượng phép thử được xác định**. Chẳng hạn, chúng ta quan tâm xác suất có 3 lần thành công trong 10 phép thử. **Đối với nhị thức âm, số lần thành công được xác định**. Chẳng hạn, chúng ta quan tâm xác suất số lượng phép thử bằng 10 khi thành công lần thứ 3. Nói cách khác, số phép thử sẽ tăng lên cho đến khi đạt được $$r^{th}$$ thành công. Không có giới hạn trên (upper bound) nào cho số lượng phép thử. 
 
 {: .highlight }
 > Hàm khối xác suất (PMF) của phân phối nhị thức âm:
@@ -196,11 +196,11 @@ $$ P\{X = 10\} = \binom{10-1}{3-1} \cdot (1-0.5)^{10-3} \cdot (0.5)^3 \approx 0.
 
 # Poisson random variable
 
-Phân phối [Poisson](https://vi.wikipedia.org/wiki/Siméon-Denis_Poisson) (poisson distribution) được sử dụng để tính **xác suất số lần xảy ra trong một khoảng không gian, hoặc thời gian xác định**. Biến ngẫu nhiên cần quan tâm có thể là số khách hàng đến quầy giao dịch trong 1 giờ, số ổ gà trên 1km đường.
+Phân phối [Poisson](https://vi.wikipedia.org/wiki/Siméon-Denis_Poisson) (poisson distribution) được sử dụng để tính **xác suất số lần xảy ra trong một khoảng không gian, hoặc thời gian xác định**. Biến ngẫu nhiên cần quan tâm có thể là số khách hàng đến quầy giao dịch trong 1 giờ, số hư hỏng trên 1km đường.
 
 
-{: note-title }
-> Tính chất của phép thử Poisson:
+{: .note-title }
+> Tính chất của phép thử Poisson
 > 
 > 1. Đối với hai khoảng thời gian, hoặc không gian bất kỳ có độ dài như nhau thì xác suất xảy ra bằng nhau.
 > 2. Việc xảy ra hay không xảy ra trong khoảng này thì độc lập với việc xảy ra hay không xảy ra trong khoảng khác.
@@ -218,9 +218,9 @@ Gọi X là biến ngẫu nhiên cần quan tâm với số lần xảy ra $$i$$
 > *Trong đó: $$e \approx 2.71828$$*
 
 {: .important }
-$$\lambda$$ có ý nghĩa khác trung bình $$\mu$$. Cụ thể, **$$\lambda$$ là tốc độ (rate) của sự kiện** còn $$\mu$$ là trung bình của biến. 
+Tham số $$\lambda$$ có ý nghĩa khác trung bình $$\mu$$. Cụ thể, **$$\lambda$$ là tốc độ (rate) của sự kiện** còn $$\mu$$ là trung bình của biến. 
 
-Ví dụ: X là biến ngẫu nhiên rời rạc thể hiện số lượng người đi thang máy trong một phút. Trung bình trong một phút có 20 người đi thang máy, thì $$\mu = 20$$ người/phút $$\lambda = \frac{1}{20}$$ phút, hay cứ cách 3 giây sẽ có 1 người đi thang máy.
+Ví dụ: X là biến ngẫu nhiên rời rạc thể hiện số lượng sinh viên đi qua cổng chính trường học trong một phút. Trung bình trong một phút có 20 sinh viên đi qua, thì $$\mu = 20$$ sinh viên/phút, và $$\lambda = \frac{1}{20}$$ phút. Nói cách khác cứ cách 3 giây sẽ có 1 sinh viên đi qua cổng chính.
 
 Ví dụ 1: Số lỗi đánh máy trên một trang sách tuân theo phân phối Poisson có tham số $$\lambda = 1$$. Tính xác suất có **ít nhất** một lỗi trên trang đó.
 
@@ -236,7 +236,7 @@ $$\lambda = \frac{10}{15} \cdot 3 = 2$$
 
 $$P \{ X=1 \} = e^{-2}\frac{2^1}{1!} \approx 0.2707$$
 
-{: .important }
+{: .note }
 Một tính chất quan trọng khác là có thể **xấp xỉ phân phối nhị thức bằng phân phối Poisson** khi số lần thử lớn và xác suất thành công nhỏ, với tham số $$\lambda = np$$. Theo kinh nghiệm, khi phép thử nhị thức có **$$n \ge 100$$ và $$np \le 10$$** thì phân phối Poisson có thể cung cấp xấp xỉ tốt.
 
 Ví dụ 4: Giả sử rằng 1% số ốc vít được sản xuất bởi một máy là lỗi. Tính xác suất rằng một lô 500 ốc vít có đúng 3 ốc vít lỗi.
