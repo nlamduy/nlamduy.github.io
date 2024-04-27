@@ -1,7 +1,8 @@
 ---
 layout: default
+math: mathjax
 title: Interpolation
-nav_order: 3
+nav_order: 1
 # has_children: true
 parent: Numerical Methods
 ---
@@ -36,15 +37,16 @@ Cho tập dữ liệu bên dưới:
 
 Trong nhiều trường hợp, chúng ta không xác định được hàm số $$f(x)$$, _như trong trường hợp này $$f(x) = \ln(x)$$_, mà chỉ có giá trị của $$f(x)$$ cho bởi $$x$$. 
 
-Giả sử cần tìm $$f(x)$$ khi $$x = 2$$, phương pháp đơn giản nhất là dùng **nội suy tuyến tính**. Nội suy tuyến tính **nối hai điểm dữ liệu bất kì để tạo thành một đường thẳng** và chứa giá trị cần tìm trong đoạn đó. Công thức được trình bày như sau:
+Giả sử cần tìm $$f(x)$$ khi $$x = 2$$, phương pháp đơn giản nhất là dùng **nội suy tuyến tính**. 
 
 {: .highlight }
-
-$$
-f_1(x) = f(x_0) + \frac{f(x_1) - f(x_0)}{x_1 - x_0}(x - x_0)
-$$
-
-*Trong đó, $$f_1(x)$$ biểu thị cho nội suy đa thức bậc 1.*
+> Nội suy tuyến tính **nối hai điểm dữ liệu bất kì để tạo thành một đường thẳng** và chứa giá trị cần tìm trong đoạn đó. Công thức được trình bày như sau:
+>
+> $$
+> f_1(x) = f(x_0) + \frac{f(x_1) - f(x_0)}{x_1 - x_0}(x - x_0)
+> $$
+>
+< *Trong đó, $$f_1(x)$$ biểu thị cho nội suy đa thức bậc 1.*
 
 
 Ví dụ: Tìm giá trị $$f(x)$$ khi $$x = 2$$, biết $$f(1) = 0$$, $$f(3) = 1.0986$$ và $$f(4) = 1.3863$$ (giá trị thực tế $$f(2) = 0.6931$$).
@@ -131,14 +133,16 @@ Time:  0.006623812999805523
 
 ## Quadratic interpolation
 
-Phương pháp **nội suy tuyến tính thường tạo ra sai số lớn** do chúng ta đang sử dụng đường thẳng nối giữa hai điểm để ước tính giá trị của $$f(x)$$. **Nếu sử dụng ba điểm, sử dụng nội suy đa thức bậc 2 sẽ cho ước lượng tốt hơn**. Công thức được trình bày như sau:
+Phương pháp **nội suy tuyến tính thường tạo ra sai số lớn** do chúng ta đang sử dụng đường thẳng nối giữa hai điểm để ước tính giá trị của $$f(x)$$. 
 
 {: .highlight }
-$$
-f_2(x) = b_0 + b_1(x - x_0) + b_2(x - x_0)(x - x_1)
-$$
-
-*Trong đó, $$f_2$$ biểu thị cho nội suy đa thức bậc 2*.
+> **Nếu sử dụng ba điểm, sử dụng nội suy đa thức bậc 2 sẽ cho ước lượng tốt hơn**. Công thức được trình bày như sau:
+> 
+> $$
+> f_2(x) = b_0 + b_1(x - x_0) + b_2(x - x_0)(x - x_1)
+> $$
+>
+> *Trong đó, $$f_2$$ biểu thị cho nội suy đa thức bậc 2*.
 
 Các **hệ số hồi quy (hệ số góc)** được tính toán như bên dưới:
 
@@ -202,13 +206,15 @@ Time:  0.011491664000004675
 
 Từ công thức nội suy tuyến tính và nội suy đa thức bậc 2 ở trên, công thức tổng quát cho n-bậc đa thức hay nội suy đa thức Newton được trình bày:
 
-{: .highlight }
-$$
-\begin{aligned}
-f_n(x) = f(x_0) + f[x_1, x_0](x - x_0) + f[x_2, x_1, x_0](x - x_0)(x - x_1)\\
- + ... + f[x_n, x_{n-1}, ..., x_0](x - x_0)(x - x_1) ... (x - x_{n-1})
-\end{aligned}
-$$
+{: .highlight-title }
+> Công thức tổng quát
+> 
+> $$
+> \begin{aligned}
+> f_n(x) = f(x_0) + f[x_1, x_0](x - x_0) + f[x_2, x_1, x_0](x - x_0)(x - x_1)\\
+> + ... + f[x_n, x_{n-1}, ..., x_0](x - x_0)(x - x_1) ... (x - x_{n-1})
+> \end{aligned}
+> $$
 
 Ví dụ: Sử dụng bảng dữ liệu ở phần [First-order interpolating polynomial](#first-order-interpolating-polynomial), tìm $$f(2)$$ sử dụng phương pháp nội suy đa thức bậc 3.
 
@@ -259,19 +265,18 @@ Time:  0.008166161000190186
 
 # Lagrange Interpolating Polynomials
 
-Nội suy đa thức [Lagrange](https://vi.wikipedia.org/wiki/Joseph_Louis_Lagrange) dựa trên nền tảng của phương pháp Newton nhưng có ưu điểm là đơn giản hoá quá trình tính toán khi bậc của đa thức tăng lên.
-
 {: .highlight }
-$$
-f_n(x) = \sum^n_{i = 0} L_i(x)f(x_i)
-$$
-
-trong đó,
-
-{: .highlight }
-$$
-L_i(x) = \prod_{\substack{j = 0 \\ j \ne i}}^n \frac{x - x_j}{x_i - x_j}
-$$
+> Nội suy đa thức [Lagrange](https://vi.wikipedia.org/wiki/Joseph_Louis_Lagrange) dựa trên nền tảng của phương pháp Newton nhưng có ưu điểm là đơn giản hoá quá trình tính toán khi bậc của đa thức tăng lên.
+>
+> $$
+> f_n(x) = \sum^n_{i = 0} L_i(x)f(x_i)
+> $$
+>
+> *trong đó,*
+> 
+> $$
+> L_i(x) = \prod_{\substack{j = 0 \\ j \ne i}}^n \frac{x - x_j}{x_i - x_j}
+> $$
 
 Ví dụ:
 
@@ -322,7 +327,7 @@ $$
 
 Ta biết giá trị thực tế của $$f(2) \approx 0.6931$$ do hàm $$f(x) = \ln(x)$$. Nội suy đa thức Lagrange bậc 1, 2 có kết quả bằng với Nội suy đa thức Newton bậc 1, 2.
 
-{: .highlight }
+{: .important }
 Như vậy hai phương pháp nội suy theo Lagrange và Newton đều cho giống kết quả ở cùng bậc đa thức.
 
 
