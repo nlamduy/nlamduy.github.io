@@ -73,7 +73,7 @@ $$
 b = (0.8 - 0.2)\frac{0.19596 + 0.48}{2} \approx 0.202788
 $$
 
-Chia nhỏ $$[0.2, 0.8]$$ ra thành 4 đoạn đều nhau, ta được:
+Chia nhỏ $$[0.2, 0.8]$$ ra thành 3 đoạn đều nhau, ta được:
 
 $$
 \begin{aligned}
