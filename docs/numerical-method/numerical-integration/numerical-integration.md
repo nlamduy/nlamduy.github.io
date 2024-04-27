@@ -46,7 +46,7 @@ Giả sử không tính được nguyên hàm của hàm số này, hoặc thậ
 
 ![newton_cotes_eg1](/assets/img/numerical-methods/newton_cotes_eg1.png)
 
-Không khó nhận ra, hình dạng tạo bởi đường thẳng nối hai điểm và $$x=0.2, x=0.8$$ là một hình thang. Trong phần [nội suy tuyến tính](https://nlamduy.github.io/docs/numerical-method/interpolation/#newton-interpolating-polynomials), một đường thằng nối 2 điểm được thể hiện bằng công thức:
+Không khó nhận ra, hình dạng tạo bởi đường thẳng nối hai điểm và $$x=0.2, x=0.8$$ là một hình thang. Trong phần [nội suy tuyến tính](https://nlamduy.github.io/docs/numerical-method/interpolation/interpolation.html), một đường thằng nối 2 điểm được thể hiện bằng công thức:
 
 $$
 f_1(x) = f(x_0) + \frac{f(x_1) - f(x_0)}{x_1 - x_0}(x - x_0)
