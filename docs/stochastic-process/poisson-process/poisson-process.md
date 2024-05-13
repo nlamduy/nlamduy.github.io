@@ -76,7 +76,7 @@ $$
 f(t) = \lambda e^{-\lambda t}\frac{(\lambda t)^{n - 1}}{(n - 1)!} \text{ , } t > 0
 $$
 
-Ví dụ: Tính $$S_2$$.
+Ví dụ 1: Tính $$S_2$$.
 
 $$
 f_{S_2} = \lambda e^{-\lambda t} \frac{(\lambda t)^{2-1}}{(2-1)!}
@@ -91,7 +91,7 @@ $$
 
 *Lưu ý là chúng ta không biết có bao nhiêu biến cố xảy ra trong đoạn [0, t] mà chỉ biến phân phối trong đoạn này.*
 
-Ví dụ 1:
+Ví dụ 2:
 
 ![poisson_eg5](/assets/img/stochastic-process/poisson_eg5.png)
 
@@ -104,7 +104,7 @@ Ví dụ 1:
 - Khoảng (1, 3] là **số biến cố** xảy ra trong khoảng thời gian này, khác với thời gian chờ giữa 2 hay nhiều biến cố xảy ra liên tiếp. Do đó khoảng (1, 3] trong trường hợp này có phân phối Poisson thay vì Gamma.
 - Quá trình Poisson cũng có tính chất của [quá trình Markov](https://nlamduy.github.io/docs/stochastic-process/markov-chain/markov-chain.html#markov-assumption), đó là tính không nhớ. Nên chúng ta có thể bỏ qua những gì đã xảy ra ở đoạn [0 , 1].
 
-Ví dụ 2:
+Ví dụ 3:
 
 Giả sử số lượng cuộc gọi đến một tổng đài là một quá trình Poisson với tham số $$\lambda = 30$$ / giờ. Tính xác suất không có cuộc gọi nào đến trong 5 phút tiếp theo? Trung bình có bao nhiêu cuộc gọi trong 10 phút?
 
@@ -121,8 +121,10 @@ $$
 
 *Xem lại phần [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
 
-{: .warning }
-Trong **quá trình Poisson**, $$P\{ X = i\} = e^{-\lambda t} \cdot \frac{(\lambda t)^i}{i!}$$.
+{: .warning-title}
+> Nhắc lại
+>
+> Trong **quá trình Poisson**, $$P\{ X = i\} = e^{-\mu} \cdot \frac{(\mu)^i}{i!}$$, với $$\mu = \lambda t$$.
 
 Số cuộc gọi trung bình trong 10 phút:
 
@@ -135,7 +137,7 @@ $$
 
 *Xem lại phần [Giá trị kỳ vọng cho phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/expectation-variance.html#discrete-random-variable).*
 
-Ví dụ 3:
+Ví dụ 4:
 
 Cho $$N(t)$$ là số lượng khách hàng đến một cửa hàng là một quá trình Poisson với tham số $$\lambda = 2$$ khách hàng / giờ. Tính các xác suất và kỳ vọng sau:
 
@@ -198,6 +200,43 @@ $$
 > - $$Var[X] = \mu$$.
 >
 > *Trong đó $$\mu = \lambda \cdot t$$, với $$t$$ là độ dài thời gian quan tâm*.
+
+{: .note-title}
+> Biến cố khác nhau trong quá trình Poisson
+>
+> Cho một quá trình Poisson $$\{N(T), t \ge 0 \}$$ với tham số $$\lambda$$ và mỗi thời điểm có một biến cố xảy ra, được định nghĩa Loại 1 với xác suất $$p$$ và Loại 2 với xác suất $$1 - p$$. Cho $$N_1(t), N_2(t)$$ là số biến cố Loại 1, Loại 2 xảy ra trong khoảng thời gian $$[0, t]$$. Khi đó, $$\{N_1(t), t \ge 0\}$$ và $$\{ N_2(t), t \ge 0 \}$$ là hai quá trình Poisson với tham số lần lượt là $$\lambda_1, \lambda_2$$.
+
+Ví dụ 5:
+
+Nếu người nhập cư đến khu A có phân phối Poisson với tốc độ (rate) 10 người / tuần, và xác suất người nhập cư nói tốt tiếng anh là 1/12, thì xác suất không người nhập cư nào nói tốt tiếng anh khi đến khu A vào tháng 2 là bao nhiêu?
+
+Đáp án:
+
+Gọi $$N_1(t)$$ là số người nhập cư nói tiếng anh tốt tại $$t$$ với xác suất $$p = \frac{1}{2}$$, $$N_2(t)$$ là số người nhập cư không nói tiếng anh tại $$t$$ với xác suất $$(1- p) = \frac{11}{12}$$, có tham số lần lượt là $$\lambda_1 = \lambda p = 10 \cdot \frac{1}{12} = \frac{5}{6}$$, $$\lambda_2 = \lambda (1-p) = 10 \cdot \frac{11}{12} = \frac{55}{6}$$.
+
+Xác suất không có người nói tốt tiếng anh trong tháng 2 là $$P\{N_1(4) = 0\}$$. Trong đó, $$t=4$$ do đơn vị tính đang là người / tuần và $$N_1(4) \sim Pois(10 \cdot \frac{1}{12} \cdot 4 = \frac{10}{3})$$.
+
+$$P\{N_1(4) = 0\} = e^{-\mu} \cdot \frac{(\mu)^i}{i!} = e^{-10/3} \cdot \frac{(10/3)^0}{0!}$$
+
+{: .warning-title}
+> Lưu ý
+>
+> Trong trường hợp này, $$\mu = \lambda p t$$, do có thêm xác suất $$p$$ để biến cố xảy ra.
+
+Ví dụ 6:
+
+Một công ty bảo hiểm có hai loại đền bù. Cho $$N_i(t)$$ là số đền bù lại $$i$$ tại thời điểm $$t$$, $$N\{N_1(t), t \ge 0\}$$ và $$N\{N_2(t), t \ge 0\}$$ là hai quá trình Poisson độc lập với tham số lần lượt $$\lambda_1 = 10, \lambda_2 = 1$$. Trong đó, số tiền yêu cầu đền bù loại 1 và loại 2 tuân theo phân phối mũ với trung bình lần lượt là $$\mu_1 = 1000, \mu_2 = 5000$$. Một yêu cầu đền bù $4000 vừa xuất hiện, xác suất đây là đền bù loại 1 là bao nhiêu?
+
+Đáp án:
+
+$$\lambda_1 = \lambda p = 10$$.
+
+$$\lambda_2 = \lambda (1-p) = 1$$.
+
+Ta biết $$\lambda_1 + \lambda_2 = \lambda p + \lambda (1-p) = \lambda$$
+
+Do đó, $$\lambda = \lambda_1 + \lambda_2 = 11$$.
+
 
 # References
 
