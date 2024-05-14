@@ -48,7 +48,7 @@ Một quá trình đếm có **có số gia độc lập** (independent incremen
 > 1. Giá trị xuất phát tại $$N(0) = 0$$.
 > 2. Tính độc lập (independence): $$N$$ có tính chất số gia độc lập. Chẳng hạn, số lượng biến cố xảy ra tại các khoảng thời gian không giao nhau (disjoint time) là độc lập.
 > 3. Tính thuần nhất (homogeneity): Phân phối xác suất của số lượng biến cố trong một khoảng thời gian chỉ phụ thuộc vào độ dài của khoảng thời gian đó, $$P(N(t + h) - N(t) = 1) = \lambda h + o(h)$$. Nói cách khác, nếu cho một khoảng thời gian (time duration) xác định, thì xác suất xảy ra $$k$$ sự kiện là như nhau dù khoảng này nằm ở thời điểm nào.
-> 4. Tính không đồng thời (non-concurrence): Xác suất để ít nhất hai biến cố xảy ra đồng thời tại một điểm  có độ dài $$h$$ là rất nhỏ, $$P(N(t + h) - N(t) \ge 2) = o(h)$$.
+> 4. Tính không đồng thời (non-concurrence): Xác suất để ít nhất hai biến cố xảy ra tại một khoảng thời gian rất ngắn $$h$$ là vô cùng nhỏ, $$P(N(t + h) - N(t) \ge 2) = o(h)$$.
 >
 > *trong đó, $$o(h)$$ là $$lim_{h \to 0}\frac{f(h)}{h} = 0$$*.
 
@@ -56,7 +56,7 @@ Từ những tiên đề này có thể suy ra một tính chất quan trọng, 
 
 ![poisson_eg2](/assets/img/stochastic-process/poisson_eg2.png)
 
-# Properties of Poisson process
+## Properties of Poisson process
 
 Một số tính chất của quá trình Poisson:
 
@@ -249,24 +249,25 @@ P\{ type 1 | claim \ge $4000 \} & = \frac{P\{\ge $4000 | 1\}P(1)}{P\{\ge $4000 |
 \end{aligned}
 $$
 
-{: .new}
+# Non-homogeneous Poisson process
+
 Quá trình Poisson tính đến thời điểm này được gọi là quá trình Poisson thuần nhất (Homogeneous Poisson Process) do tham số $$\lambda$$ là hằng số.
 
 {: .note-title}
 > Quá trình Poisson không thuần nhất (Nonhomogeneous)
 >
-> Một quá trình đếm $$\{ N(t) \}, t \ge 0$$ là một quá trình Poisson không thuần nhất với hàm cường độ $$\lambda(t), t ge 0$$ nếu
+> Một quá trình đếm $$\{ N(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất với hàm cường độ $$\lambda(t), t \ge 0$$ nếu
 > 1. Giá trị xuất phát tại $$N(0) = 0$$.
 > 2. Tính độc lập (independence): $$N$$ có tính chất số gia độc lập. Chẳng hạn, số lượng biến cố xảy ra tại các khoảng thời gian không giao nhau (disjoint time) là độc lập.
 > 3. Tính thuần nhất (homogeneity): Phân phối xác suất của số lượng biến cố trong một khoảng thời gian chỉ phụ thuộc vào độ dài của khoảng thời gian đó, $$P(N(t + h) - N(t) = 1) = \lambda(t)) h + o(h)$$. Nói cách khác, nếu cho một khoảng thời gian (time duration) xác định, thì xác suất xảy ra $$k$$ sự kiện là như nhau dù khoảng này nằm ở thời điểm nào.
-> 4. Tính không đồng thời (non-concurrence): Xác suất để ít nhất hai biến cố xảy ra đồng thời tại một điểm  có độ dài $$h$$ là rất nhỏ, $$P(N(t + h) - N(t) \ge 2) = o(h)$$.
+> 4. Tính không đồng thời (non-concurrence): Xác suất để ít nhất hai biến cố xảy ra tại một khoảng thời gian rất ngắn $$h$$ là vô cùng nhỏ, $$P(N(t + h) - N(t) \ge 2) = o(h)$$.
 >
 > *trong đó, $$o(h)$$ là $$lim_{h \to 0}\frac{f(h)}{h} = 0$$*.
 
 {: .note-title}
 > Bổ đề
 >
-> Nếu $$\{ N(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất với hàm cường độ $$\lambda(t)$$ thì:
+> Nếu $$\{ N(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất với hàm tần suất $$\lambda(t)$$ thì:
 >
 > $$P\{ N(t) = 0 \} = e^{-m(t)}$$
 >
@@ -274,6 +275,75 @@ Quá trình Poisson tính đến thời điểm này được gọi là quá tr�
 >
 > $$m(t) = \int_0^t \lambda(y)dy$$
 
+## Properties of nonhomogeneous Poisson process
+
+{: .note-title}
+> Quá trình Poisson không thuần nhất bắt đầu tại thời gian $$s > 0$$
+>
+> Cho $$s > 0$$, $$N_s(t) = N(s + t) - N(s)$$ với $$\{ N(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất và hàm tần suất $$\lambda(t)$$. Khi ấy, $$\{ N_s(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất với hàm tần suất $$\lambda(s + t), t \ge 0$$.
+
+{: .note-title}
+> Phân phối của quá trình Poisson không thuần nhất
+>
+> Nếu $$\{ N(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất với hàm tần suất $$\lambda(t)$$, khi đó $$N(t)$$ là một biến ngẫu nhiên Poisson với trung bình $$m(t)$$, tức là:
+>
+> $$P\{ N(t) = n \} = e^{-m(t)} \cdot \frac{(m(t))^n}{n!}, n \ge 0$$
+
+Ví dụ 7:
+
+Siegbert có một quầy bán hot dog mở cửa lúc 8:00.
+- Từ 8:00 - 11:00, khách hàng đến có tốc độ trung bình tăng dần đều từ 5 khách / giờ lúc 08:00 và đạt tối đa 20 khách / giờ lúc 11:00.
+- Từ 11:00 - 13:00, tốc độ trung bình không đổi ở mức 20 khách / giờ.
+- Sau 13:00, tốc độ giảm đều đến mức 12 khách / giờ vào lúc 17:00.
+
+Giả sử số lượng khách hàng đến vào những khoảng thời gian rời nhau (disjoint) là độc lập và cấu thành một quá trình Poisson không thuần nhất có hàm tần suất:
+
+$$
+\lambda(t) = \begin{cases} 
+5 + 5t & \text{, if } 0 \le t \le 3 \\
+20 & \text{, if } 3 \le t \le 5 \\
+20 - 2(t - 5) & \text{, if } 5 \le t \le 9
+\end{cases}
+$$
+
+Xác suất không có khách hàng nào đến trong 08:30 - 09:30? Trung bình số khách đến trong thời gian này?
+
+Đáp án:
+
+- Xác suất không có khách hàng trong 08:30 - 09:30
+
+$$
+\begin{aligned}
+P\{ \text{no cust} \} & = P\{ [N(1.5) - N(0.5)] = 0 \}  \\
+& = e^{-\int_{0.5}^{1.5}(5+5t)dt} \cdot \frac{(\int_{0.5}^{1.5}(5+5t)dt)^0}{0!} \\
+& \approx 0.0000454
+\end{aligned}
+$$
+
+![poisson_eg6](/assets/img/stochastic-process/poisson_eg6.png)
+
+- Trung bình số khách đến trong thời gian 08:30 - 09:30
+
+$$
+E[N(1.5) - N(0.5)] = \int_{0.5}^{1.5} (5 + 5t)dt = 10
+$$
+
+# Compound Poisson process
+
+{: .note-title}
+> Quá trình Poisson kép
+>
+> Một quá trình Poisson $$\{ X(t), t \ge 0 \}$$ là quá trình Poisson kép nếu nó có thể được biểu diễn bằng:
+>
+> $$X(t) = \sum_{i = 1}^{N(t)} Y_i, t \ge 0$$
+>
+> trong đó, $$\{ N(t), t \ge 0 \}$$ là quá trình Poisson, và $$\{ Y_i, i \ge 1 \}$$ là một họ các biến độc lập có phân phối giống nhau và cũng độc lập với $$\{ N(t), t \ge 0 \}$$.
+
+Ví dụ 8:
+
+- Nếu $$Y_i = 1$$ cho mọi $$i$$, khi đó $$X(t) = N(t)$$ và chúng ta có một quá trình Poisson bình thường.
+- Giả sử khách hàng số khách hàng thanh toán tại cửa hàng là quá trình Poisson với tham số $$\lambda$$. Khi đó, $$Y_i$$ thể hiện thời gian thanh toán của khách hàng thứ $$i$$. $$X(t)$$ sẽ là tổng thời gian thanh toán của tất cả khách hàng đến thời điểm $$t$$.
+- Giả sử một biến cố là sinh ra $$Y_i = 1$$ hoặc chết đi $$Y_i = -1$$ trong dân số. Nếu các sự kiện này diễn ra theo phân phối Poisson, thì $$X(t)$$ là sự thay đổi kích thước dân số trong thời khoảng thời gian (0, t].
 
 # References
 
