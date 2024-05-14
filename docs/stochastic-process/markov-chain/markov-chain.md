@@ -108,7 +108,7 @@ và xác suất phân phối khởi đầu (xuất phát của xích Markov) $$P
 
 Tính:
 
-1. Xác suất giao: $$P(X_0 = 0, X_1 = 2, X_2 = 2)$$.
+1. Xác suất giao: $$P(X_0 = 0, X_1 = 1, X_2 = 2)$$.
 2. Xác suất có điều kiện: $$P(X_1 = 1, X_2 = 1 \vert X_0 = 0)$$.
 
 Đáp án:
