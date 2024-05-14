@@ -41,7 +41,9 @@ Một quá trình đếm có **có số gia độc lập** (independent incremen
 
 # Poisson process
 
-{: .note }
+{: .note-title}
+> Quá trình Poisson thuần nhất (homogenous)
+>
 > Một quá trình đếm $$\{N(t), t \ge 0\}$$ được gọi là quá trình Poisson với tốc độ (rate) $$\lambda > 0$$ nếu các tiên đề sau đúng:
 > 1. Giá trị xuất phát tại $$N(0) = 0$$.
 > 2. Tính độc lập (independence): $$N$$ có tính chất số gia độc lập. Chẳng hạn, số lượng biến cố xảy ra tại các khoảng thời gian không giao nhau (disjoint time) là độc lập.
@@ -225,17 +227,52 @@ $$P\{N_1(4) = 0\} = e^{-\mu} \cdot \frac{(\mu)^i}{i!} = e^{-10/3} \cdot \frac{(1
 
 Ví dụ 6:
 
-Một công ty bảo hiểm có hai loại đền bù. Cho $$N_i(t)$$ là số đền bù lại $$i$$ tại thời điểm $$t$$, $$N\{N_1(t), t \ge 0\}$$ và $$N\{N_2(t), t \ge 0\}$$ là hai quá trình Poisson độc lập với tham số lần lượt $$\lambda_1 = 10, \lambda_2 = 1$$. Trong đó, số tiền yêu cầu đền bù loại 1 và loại 2 tuân theo phân phối mũ với trung bình lần lượt là $$\mu_1 = 1000, \mu_2 = 5000$$. Một yêu cầu đền bù $4000 vừa xuất hiện, xác suất đây là đền bù loại 1 là bao nhiêu?
+Một công ty bảo hiểm có hai loại đền bù. Cho $$N_i(t)$$ là số đền bù lại $$i$$ tại thời điểm $$t$$, $$N\{N_1(t), t \ge 0\}$$ và $$N\{N_2(t), t \ge 0\}$$ là hai quá trình Poisson độc lập với tham số lần lượt $$\lambda_1 = 10, \lambda_2 = 1$$. Trong đó, số tiền yêu cầu đền bù loại 1 và loại 2 tuân theo phân phối mũ với trung bình lần lượt là $$\mu_1 = 1000, \mu_2 = 5000$$. Một yêu cầu đền bù lớn hơn bằng $4000 vừa xuất hiện, xác suất đây là đền bù loại 1 là bao nhiêu?
 
 Đáp án:
 
-$$\lambda_1 = \lambda p = 10$$.
+- $$\lambda_1 = \lambda p = 10$$.
 
-$$\lambda_2 = \lambda (1-p) = 1$$.
+- $$\lambda_2 = \lambda (1-p) = 1$$.
 
-Ta biết $$\lambda_1 + \lambda_2 = \lambda p + \lambda (1-p) = \lambda$$
+Ta biết $$\lambda_1 + \lambda_2 = \lambda p + \lambda (1-p) = \lambda \Rightarrow \lambda = \lambda_1 + \lambda_2 = 11$$.
 
-Do đó, $$\lambda = \lambda_1 + \lambda_2 = 11$$.
+- $$P(type 1) = \frac{\lambda_1}{\lambda} = \frac{10}{11}$$.
+
+- $$P(type 2) = 1 - P(type 1) = \frac{1}{11}$$.
+
+$$
+\begin{aligned}
+P\{ type 1 | claim \ge $4000 \} & = \frac{P\{\ge $4000 | 1\}P(1)}{P\{\ge $4000 | 1\}P(1) + P\{\ge $4000 | 2\}P(2)}\\
+& = \frac{e^{-4000 \cdot 1/1000}(10/11)}{e^{-4000 \cdot 1/1000}(10/11) + e^{-4000 \cdot 1/5000}(1/11)} \\
+& \approx 0.2896
+\end{aligned}
+$$
+
+{: .new}
+Quá trình Poisson tính đến thời điểm này được gọi là quá trình Poisson thuần nhất (Homogeneous Poisson Process) do tham số $$\lambda$$ là hằng số.
+
+{: .note-title}
+> Quá trình Poisson không thuần nhất (Nonhomogeneous)
+>
+> Một quá trình đếm $$\{ N(t) \}, t \ge 0$$ là một quá trình Poisson không thuần nhất với hàm cường độ $$\lambda(t), t ge 0$$ nếu
+> 1. Giá trị xuất phát tại $$N(0) = 0$$.
+> 2. Tính độc lập (independence): $$N$$ có tính chất số gia độc lập. Chẳng hạn, số lượng biến cố xảy ra tại các khoảng thời gian không giao nhau (disjoint time) là độc lập.
+> 3. Tính thuần nhất (homogeneity): Phân phối xác suất của số lượng biến cố trong một khoảng thời gian chỉ phụ thuộc vào độ dài của khoảng thời gian đó, $$P(N(t + h) - N(t) = 1) = \lambda(t)) h + o(h)$$. Nói cách khác, nếu cho một khoảng thời gian (time duration) xác định, thì xác suất xảy ra $$k$$ sự kiện là như nhau dù khoảng này nằm ở thời điểm nào.
+> 4. Tính không đồng thời (non-concurrence): Xác suất để ít nhất hai biến cố xảy ra đồng thời tại một điểm  có độ dài $$h$$ là rất nhỏ, $$P(N(t + h) - N(t) \ge 2) = o(h)$$.
+>
+> *trong đó, $$o(h)$$ là $$lim_{h \to 0}\frac{f(h)}{h} = 0$$*.
+
+{: .note-title}
+> Bổ đề
+>
+> Nếu $$\{ N(t), t \ge 0 \}$$ là một quá trình Poisson không thuần nhất với hàm cường độ $$\lambda(t)$$ thì:
+>
+> $$P\{ N(t) = 0 \} = e^{-m(t)}$$
+>
+> với hàm $$m(t)$$ được gọi là hàm giá trị trung bình, được định nghĩa
+>
+> $$m(t) = \int_0^t \lambda(y)dy$$
 
 
 # References
