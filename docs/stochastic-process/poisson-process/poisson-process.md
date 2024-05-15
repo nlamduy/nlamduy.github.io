@@ -338,12 +338,35 @@ $$
 > $$X(t) = \sum_{i = 1}^{N(t)} Y_i, t \ge 0$$
 >
 > trong đó, $$\{ N(t), t \ge 0 \}$$ là quá trình Poisson, và $$\{ Y_i, i \ge 1 \}$$ là một họ các biến độc lập có phân phối giống nhau và cũng độc lập với $$\{ N(t), t \ge 0 \}$$.
+>
+> Kỳ vọng và phương sai của biến ngẫu nhiên Poisson kép $$X(t)$$ được định nghĩa:
+>
+> $$E[X(t)] = \lambda t E[Y_1]$$
+>
+> $$Var(X(t)) = \lambda t [EY_1^2]$$
 
 Ví dụ 8:
 
 - Nếu $$Y_i = 1$$ cho mọi $$i$$, khi đó $$X(t) = N(t)$$ và chúng ta có một quá trình Poisson bình thường.
 - Giả sử khách hàng số khách hàng thanh toán tại cửa hàng là quá trình Poisson với tham số $$\lambda$$. Khi đó, $$Y_i$$ thể hiện thời gian thanh toán của khách hàng thứ $$i$$. $$X(t)$$ sẽ là tổng thời gian thanh toán của tất cả khách hàng đến thời điểm $$t$$.
 - Giả sử một biến cố là sinh ra $$Y_i = 1$$ hoặc chết đi $$Y_i = -1$$ trong dân số. Nếu các sự kiện này diễn ra theo phân phối Poisson, thì $$X(t)$$ là sự thay đổi kích thước dân số trong thời khoảng thời gian (0, t].
+
+Ví dụ 9:
+
+Giả sử các gia đình di cư đến một khu vực là một quá trình Poisson với tham số $$\lambda = 2$$ / tuần. Nếu số thành viên trong mỗi gia đình là độc lập và có thể nhận giá trị 1, 2, 3, 4 với xác suất 1/6, 1/3, 1/3, 1/6, kỳ vọng và phương sai của số lượng người di cư đến khu vực trong 5 tuần là bao nhiêu?
+
+Đáp án:
+
+$$E[Y_i] = 1 \cdot \frac{1}{6} + 2 \cdot \frac{1}{3} + 3 \cdot \frac{1}{3} + 4 \cdot \frac{1}{6} = \frac{5}{2}$$.
+
+$$E[Y_i^2] = 1^2 \cdot \frac{1}{6} + 2^2 \cdot \frac{1}{3} + 3^2 \cdot \frac{1}{3} + 4^2 \cdot \frac{1}{6} = \frac{43}{6}$$.
+
+$$E[X(5)] = 2 \cdot 5 \cdot \frac{5}{2} = 25$$.
+
+$$Var[X(5)] = 2 \cdot 5 \cdot \frac{43}{6} = \frac{215}{3}$$.
+
+
+
 
 # References
 

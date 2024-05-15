@@ -119,7 +119,7 @@ Tính:
 
 $$
 \begin{aligned}
-& P(X_0 = 0, X_1 = 2, X_2 = 2) \\
+& P(X_0 = 0, X_1 = 1, X_2 = 2) \\
 & = P(X_2 = 2 | X_0 = 0, X_1 = 1)P(X_0 = 0, X_1 = 1) \\
 & = P(X_2 = 2 | X_1 = 1)P(X_1 = 1 | X_0 = 0)P(X_0 = 0) \\
 & = 0 \cdot 0.2 \cdot 0.3 = 0
@@ -228,7 +228,7 @@ Ví dụ 2:
 Cho ma trận xác suất chuyển với 2 trạng thái như sau:
 
 $$
-P = \begin{bmatrix}
+P = \begin{bmatrix} 
 0.7 & 0.3 \\
 0.4 & 0.6
 \end{bmatrix}  
@@ -335,7 +335,7 @@ Việc chứng minh một trạng thái là thường xuyên hay tạm thời đ
 
 Ví dụ:
 
-Cho ma trận xác suất chuyển với 4 trạng thái {0, 1, 2, 3, 4}:
+Cho ma trận xác suất chuyển với 5 trạng thái {0, 1, 2, 3, 4}:
 
 $$
 P = \begin{bmatrix}
