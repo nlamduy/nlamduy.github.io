@@ -121,7 +121,7 @@ $$
 P\{N(\frac{1}{12}) = 0\} = e^{-5/2} \cdot \frac{(5/2)^0}{0!} \approx 0.082
 $$
 
-*Xem lại phần [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
+*Lưu ý $$\lambda$$ có đơn vị là giờ, nhưng chúng ta xét theo phút, nên cần phải đổi phút sang giờ 5 phút = 1/12 giờ. Xem thêm phần [Phân phối Poisson](https://nlamduy.github.io/docs/stochastic-process/random-variables/discrete-random-variable.html#poisson-random-variable).*
 
 {: .warning-title}
 > Nhắc lại
