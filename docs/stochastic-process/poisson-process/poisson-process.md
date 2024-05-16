@@ -98,7 +98,7 @@ Ví dụ 2:
 ![poisson_eg5](/assets/img/stochastic-process/poisson_eg5.png)
 
 - $$N(1)$$: là số biến cố xảy ra trong đoạn [0, 1] có phân phối $$N(1) \sim Pois(\lambda \cdot 1)$$.
-- $$N(3)$$: là số biến cố xảy ra trong đoạn [0, 3] có phân phối $$N(1) \sim Pois(\lambda \cdot 3)$$.
+- $$N(3)$$: là số biến cố xảy ra trong đoạn [0, 3] có phân phối $$N(3) \sim Pois(\lambda \cdot 3)$$.
 - $$N(3) - N(1)$$: là số biến cố xảy ra trong nửa khoảng (1, 3] có phân phối $$N(1) \sim Pois(\lambda \cdot (3 - 1))$$.
 
 Ở mục thứ 3, có một số điểm cần làm rõ như sau:
