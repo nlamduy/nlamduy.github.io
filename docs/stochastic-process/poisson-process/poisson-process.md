@@ -204,7 +204,7 @@ $$
 > *Trong đó $$\mu = \lambda \cdot t$$, với $$t$$ là độ dài thời gian quan tâm*.
 
 {: .note-title}
-> Biến cố khác nhau trong quá trình Poisson
+> Quá trình Poisson chứa quá trình con
 >
 > Cho một quá trình Poisson $$\{N(T), t \ge 0 \}$$ với tham số $$\lambda$$ và mỗi thời điểm có một biến cố xảy ra, được định nghĩa Loại 1 với xác suất $$p$$ và Loại 2 với xác suất $$1 - p$$. Cho $$N_1(t), N_2(t)$$ là số biến cố Loại 1, Loại 2 xảy ra trong khoảng thời gian $$[0, t]$$. Khi đó, $$\{N_1(t), t \ge 0\}$$ và $$\{ N_2(t), t \ge 0 \}$$ là hai quá trình Poisson với tham số lần lượt là $$\lambda_1, \lambda_2$$.
 
@@ -214,7 +214,7 @@ Nếu người nhập cư đến khu A có phân phối Poisson với tốc đ�
 
 Đáp án:
 
-Gọi $$N_1(t)$$ là số người nhập cư nói tiếng anh tốt tại $$t$$ với xác suất $$p = \frac{1}{2}$$, $$N_2(t)$$ là số người nhập cư không nói tiếng anh tại $$t$$ với xác suất $$(1- p) = \frac{11}{12}$$, có tham số lần lượt là $$\lambda_1 = \lambda p = 10 \cdot \frac{1}{12} = \frac{5}{6}$$, $$\lambda_2 = \lambda (1-p) = 10 \cdot \frac{11}{12} = \frac{55}{6}$$.
+Gọi $$N_1(t)$$ là số người nhập cư nói tiếng anh tốt tại $$t$$ với xác suất $$p = \frac{1}{12}$$, $$N_2(t)$$ là số người nhập cư không nói tiếng anh tại $$t$$ với xác suất $$(1- p) = \frac{11}{12}$$, có tham số lần lượt là $$\lambda_1 = \lambda p = 10 \cdot \frac{1}{12} = \frac{5}{6}$$, $$\lambda_2 = \lambda (1-p) = 10 \cdot \frac{11}{12} = \frac{55}{6}$$.
 
 Xác suất không có người nói tốt tiếng anh trong tháng 2 là $$P\{N_1(4) = 0\}$$. Trong đó, $$t=4$$ do đơn vị tính đang là người / tuần và $$N_1(4) \sim Pois(10 \cdot \frac{1}{12} \cdot 4 = \frac{10}{3})$$.
 
@@ -227,7 +227,7 @@ $$P\{N_1(4) = 0\} = e^{-\mu} \cdot \frac{(\mu)^i}{i!} = e^{-10/3} \cdot \frac{(1
 
 Ví dụ 6:
 
-Một công ty bảo hiểm có hai loại đền bù. Cho $$N_i(t)$$ là số đền bù lại $$i$$ tại thời điểm $$t$$, $$N\{N_1(t), t \ge 0\}$$ và $$N\{N_2(t), t \ge 0\}$$ là hai quá trình Poisson độc lập với tham số lần lượt $$\lambda_1 = 10, \lambda_2 = 1$$. Trong đó, số tiền yêu cầu đền bù loại 1 và loại 2 tuân theo phân phối mũ với trung bình lần lượt là $$\mu_1 = 1000, \mu_2 = 5000$$. Một yêu cầu đền bù lớn hơn bằng $4000 vừa xuất hiện, xác suất đây là đền bù loại 1 là bao nhiêu?
+Một công ty bảo hiểm có hai loại đền bù. Cho $$N_i(t)$$ là số đền bù loại $$i$$ tại thời điểm $$t$$, $$N\{N_1(t), t \ge 0\}$$ và $$N\{N_2(t), t \ge 0\}$$ là hai quá trình Poisson độc lập với tham số lần lượt $$\lambda_1 = 10, \lambda_2 = 1$$. Trong đó, số tiền yêu cầu đền bù loại 1 và loại 2 tuân theo phân phối mũ với trung bình lần lượt là $$\mu_1 = 1000, \mu_2 = 5000$$. Một yêu cầu đền bù lớn hơn bằng $4000 vừa xuất hiện, xác suất đây là đền bù loại 1 là bao nhiêu?
 
 Đáp án:
 
@@ -343,12 +343,12 @@ $$
 >
 > $$E[X(t)] = \lambda t E[Y_1]$$
 >
-> $$Var(X(t)) = \lambda t [EY_1^2]$$
+> $$Var(X(t)) = \lambda t E[Y_1^2]$$
 
 Ví dụ 8:
 
 - Nếu $$Y_i = 1$$ cho mọi $$i$$, khi đó $$X(t) = N(t)$$ và chúng ta có một quá trình Poisson bình thường.
-- Giả sử khách hàng số khách hàng thanh toán tại cửa hàng là quá trình Poisson với tham số $$\lambda$$. Khi đó, $$Y_i$$ thể hiện thời gian thanh toán của khách hàng thứ $$i$$. $$X(t)$$ sẽ là tổng thời gian thanh toán của tất cả khách hàng đến thời điểm $$t$$.
+- Giả sử khách hàng rời khỏi siêu thị là quá trình Poisson với tham số $$\lambda$$. Khi đó, $$Y_i$$ thể hiện số tiền thanh toán của khách hàng thứ $$i$$. $$X(t)$$ sẽ là tổng tiền thanh toán của tất cả khách hàng đến thời điểm $$t$$.
 - Giả sử một biến cố là sinh ra $$Y_i = 1$$ hoặc chết đi $$Y_i = -1$$ trong dân số. Nếu các sự kiện này diễn ra theo phân phối Poisson, thì $$X(t)$$ là sự thay đổi kích thước dân số trong thời khoảng thời gian (0, t].
 
 Ví dụ 9:
